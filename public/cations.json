@@ -1,0 +1,242 @@
+[
+    {
+      "id": 1,
+      "name": "Sodium",
+      "formula": "Na⁺",
+      "charge": 1,
+      "tests": [
+        {
+          "experiment": "Flame test",
+          "observation": "Golden yellow flame",
+          "inference": "Presence of Na⁺ is indicated"
+        },
+        {
+          "name": "Zinc Uranyl Acetate Test",
+          "experiment": "Salt solution + Zinc Uranyl Acetate reagent",
+          "observation": "Yellow crystalline precipitate",
+          "inference": "Presence of Na⁺ is confirmed",
+          "confirmatory": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Potassium",
+      "formula": "K⁺",
+      "charge": 1,
+      "tests": [
+        {
+          "experiment": "Flame test",
+          "observation": "Lilac flame",
+          "inference": "Presence of K⁺ is indicated"
+        },
+        {
+          "name": "Sodium Cobaltinitrite Test",
+          "experiment": "Salt solution + Sodium Cobaltinitrite reagent",
+          "observation": "Yellow precipitate",
+          "inference": "Presence of K⁺ is confirmed",
+          "confirmatory": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Ammonium",
+      "formula": "NH₄⁺",
+      "charge": 1,
+      "tests": [
+        {
+          "experiment": "Salt + NaOH solution, heat",
+          "observation": "Colorless gas with pungent smell evolves, turns red litmus blue",
+          "inference": "Presence of NH₄⁺ is indicated"
+        },
+        {
+          "name": "Nessler's Reagent Test",
+          "experiment": "Salt solution + Nessler's reagent",
+          "observation": "Reddish-brown precipitate",
+          "inference": "Presence of NH₄⁺ is confirmed",
+          "confirmatory": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Magnesium",
+      "formula": "Mg²⁺",
+      "charge": 2,
+      "tests": [
+        {
+          "experiment": "Salt solution + NaOH solution",
+          "observation": "White precipitate",
+          "inference": "Mg²⁺ may be present"
+        },
+        {
+          "name": "Magneson Test",
+          "experiment": "Salt solution + Magneson reagent + NaOH solution",
+          "observation": "Blue lake formation",
+          "inference": "Presence of Mg²⁺ is confirmed",
+          "confirmatory": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Calcium",
+      "formula": "Ca²⁺",
+      "charge": 2,
+      "tests": [
+        {
+          "experiment": "Flame test",
+          "observation": "Brick red flame",
+          "inference": "Presence of Ca²⁺ is indicated"
+        },
+        {
+          "name": "Ammonium Oxalate Test",
+          "experiment": "Salt solution + Ammonium Oxalate solution",
+          "observation": "White precipitate",
+          "inference": "Presence of Ca²⁺ is confirmed",
+          "confirmatory": true
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Barium",
+      "formula": "Ba²⁺",
+      "charge": 2,
+      "tests": [
+        {
+          "experiment": "Flame test",
+          "observation": "Apple green flame",
+          "inference": "Presence of Ba²⁺ is indicated"
+        },
+        {
+          "name": "Potassium Chromate Test",
+          "experiment": "Salt solution + K₂CrO₄ solution",
+          "observation": "Yellow precipitate",
+          "inference": "Presence of Ba²⁺ is confirmed",
+          "confirmatory": true
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Zinc",
+      "formula": "Zn²⁺",
+      "charge": 2,
+      "tests": [
+        {
+          "experiment": "Salt solution + NaOH solution",
+          "observation": "White precipitate, soluble in excess",
+          "inference": "Zn²⁺ may be present"
+        },
+        {
+          "name": "Potassium Ferrocyanide Test",
+          "experiment": "Salt solution + K₄[Fe(CN)₆] solution",
+          "observation": "Bluish-white precipitate",
+          "inference": "Presence of Zn²⁺ is confirmed",
+          "confirmatory": true
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Aluminum",
+      "formula": "Al³⁺",
+      "charge": 3,
+      "tests": [
+        {
+          "experiment": "Salt solution + NaOH solution",
+          "observation": "White gelatinous precipitate, soluble in excess",
+          "inference": "Al³⁺ may be present"
+        },
+        {
+          "name": "Aluminon Test",
+          "experiment": "Salt solution + Aluminon reagent + Ammonium carbonate",
+          "observation": "Red lake formation",
+          "inference": "Presence of Al³⁺ is confirmed",
+          "confirmatory": true
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Iron(II)",
+      "formula": "Fe²⁺",
+      "charge": 2,
+      "tests": [
+        {
+          "experiment": "Salt solution + NaOH solution",
+          "observation": "Dirty green precipitate",
+          "inference": "Fe²⁺ may be present"
+        },
+        {
+          "name": "Potassium Ferricyanide Test",
+          "experiment": "Salt solution + K₃[Fe(CN)₆] solution",
+          "observation": "Dark blue precipitate (Turnbull's blue)",
+          "inference": "Presence of Fe²⁺ is confirmed",
+          "confirmatory": true
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Iron(III)",
+      "formula": "Fe³⁺",
+      "charge": 3,
+      "tests": [
+        {
+          "experiment": "Salt solution + NaOH solution",
+          "observation": "Reddish-brown precipitate",
+          "inference": "Fe³⁺ may be present"
+        },
+        {
+          "name": "Potassium Ferrocyanide Test",
+          "experiment": "Salt solution + K₄[Fe(CN)₆] solution",
+          "observation": "Dark blue precipitate (Prussian blue)",
+          "inference": "Presence of Fe³⁺ is confirmed",
+          "confirmatory": true
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Copper(II)",
+      "formula": "Cu²⁺",
+      "charge": 2,
+      "tests": [
+        {
+          "experiment": "Salt solution + NaOH solution",
+          "observation": "Blue precipitate",
+          "inference": "Cu²⁺ may be present"
+        },
+        {
+          "name": "Potassium Ferrocyanide Test",
+          "experiment": "Salt solution + K₄[Fe(CN)₆] solution",
+          "observation": "Chocolate brown precipitate",
+          "inference": "Presence of Cu²⁺ is confirmed",
+          "confirmatory": true
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Lead(II)",
+      "formula": "Pb²⁺",
+      "charge": 2,
+      "tests": [
+        {
+          "experiment": "Salt solution + HCl",
+          "observation": "White precipitate",
+          "inference": "Pb²⁺ may be present"
+        },
+        {
+          "name": "Potassium Iodide Test",
+          "experiment": "Salt solution + KI solution",
+          "observation": "Yellow precipitate",
+          "inference": "Presence of Pb²⁺ is confirmed",
+          "confirmatory": true
+        }
+      ]
+    }
+  ]

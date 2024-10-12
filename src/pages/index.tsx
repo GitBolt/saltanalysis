@@ -1,52 +1,85 @@
+import Link from 'next/link';
+import Layout from '@/components/Layout';
+import styles from '@/styles/Home.module.css';
 import { useState, useEffect } from 'react';
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import SearchBar from '@/components/SearchBar';
-import SaltList from '@/components/SaltList';
+import { calculateSaltFormula } from '@/utils/formula';
+import { Ion } from '@/types/ions';
+import { formulaToUrl } from '@/utils/encoders';
 
-interface Salt {
-  id: number;
-  name: string;
-  formula: string;
+
+async function getRandomSalts(count: number): Promise<{ name: string; formula: string; url: string }[]> {
+  const cations = await fetch('/cations.json').then(res => res.json());
+  const anions = await fetch('/anions.json').then(res => res.json());
+  console.log(cations, anions);
+  const salts = [];
+  for (let i = 0; i < count; i++) {
+    const cation = cations[Math.floor(Math.random() * cations.length)];
+    const anion = anions[Math.floor(Math.random() * anions.length)];
+
+    const formula = calculateSaltFormula(cation, anion);
+    const urlencoding = formulaToUrl(cation.formula, anion.formula);
+    const name = `${cation.name} ${anion.name}`;
+    const url = `/salt/${urlencoding.toLowerCase()}/analysis`;
+
+    salts.push({ name, formula, url });
+  }
+
+  return salts;
 }
 
+
 export default function Home() {
-  const [salts, setSalts] = useState<Salt[]>([]);
-  const [filteredSalts, setFilteredSalts] = useState<Salt[]>([]);
+  const [randomSalts, setRandomSalts] = useState<Array<{ name: string; formula: string; url: string }>>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('/salts.json')
-      .then(response => response.json())
-      .then(data => {
-        setSalts(data);
-        setFilteredSalts(data);
-      });
+    fetchRandomSalts();
   }, []);
 
-  const handleSearch = (query: string) => {
-    const filtered = salts.filter(salt =>
-      salt.name.toLowerCase().includes(query.toLowerCase()) ||
-      salt.formula.toLowerCase().includes(query.toLowerCase())
-    );
-    setFilteredSalts(filtered);
+  const fetchRandomSalts = async () => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const salts = await getRandomSalts(5);
+      setRandomSalts(salts);
+    } catch (err) {
+      console.error('Error fetching random salts:', err);
+      setError('Failed to fetch random salts. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Salt Analysis</title>
-        <meta name="description" content="Interactive Salt Analysis Website" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Layout>
+      <div className={styles.container}>
+        <h1 className={styles.title}>Salt Analyzer</h1>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>Salt Analysis</h1>
-        <SearchBar onSearch={handleSearch} />
-        <SaltList salts={filteredSalts} />
-      </main>
+        <Link href="/lab" className={styles.createButton}>
+          Create Your Salt
+        </Link>
 
-      <footer className={styles.footer}>
-      </footer>
-    </div>
+        <h2 className={styles.subtitle}>Explore Random Salts:</h2>
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : error ? (
+          <p className={styles.error}>{error}</p>
+        ) : (
+          <div className={styles.saltGrid}>
+            {randomSalts.map((salt) => (
+              <Link key={salt.formula} href={salt.url} className={styles.saltCard}>
+                <h3>{salt.name}</h3>
+                <p>{salt.formula}</p>
+              </Link>
+            ))}
+          </div>
+        )}
+
+        <button onClick={fetchRandomSalts} className={styles.refreshButton}>
+          Refresh Salts
+        </button>
+      </div>
+    </Layout>
   );
 }

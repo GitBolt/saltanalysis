@@ -1,0 +1,244 @@
+[
+    {
+      "id": 1,
+      "name": "Chloride",
+      "formula": "Cl⁻",
+      "charge": -1,
+      "tests": [
+        {
+          "experiment": "To dry salt, dilute H₂SO₄ is added",
+          "observation": "No reaction",
+          "inference": "Dilute H₂SO₄ group is absent"
+        },
+        {
+          "experiment": "Salt + Conc H₂SO₄",
+          "observation": "Colorless gas with pungent smell evolves",
+          "inference": "Cl⁻ may be present"
+        },
+        {
+          "name": "Silver Nitrate Test",
+          "experiment": "Salt Solution + Dilute HNO₃ + AgNO₃ solution",
+          "observation": "White ppt soluble in NH₄OH",
+          "inference": "Presence of Cl⁻ anion is confirmed",
+          "confirmatory": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Bromide",
+      "formula": "Br⁻",
+      "charge": -1,
+      "tests": [
+        {
+          "experiment": "To dry salt, dilute H₂SO₄ is added",
+          "observation": "No reaction",
+          "inference": "Dilute H₂SO₄ group is absent"
+        },
+        {
+          "experiment": "Salt + Conc H₂SO₄",
+          "observation": "Reddish-brown vapors evolve",
+          "inference": "Br⁻ may be present"
+        },
+        {
+          "name": "Silver Nitrate Test",
+          "experiment": "Salt Solution + Dilute HNO₃ + AgNO₃ solution",
+          "observation": "Pale yellow ppt slightly soluble in NH₄OH",
+          "inference": "Presence of Br⁻ anion is confirmed",
+          "confirmatory": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Iodide",
+      "formula": "I⁻",
+      "charge": -1,
+      "tests": [
+        {
+          "experiment": "Salt + Conc H₂SO₄",
+          "observation": "Violet vapors evolve",
+          "inference": "I⁻ may be present"
+        },
+        {
+          "name": "Silver Nitrate Test",
+          "experiment": "Salt Solution + Dilute HNO₃ + AgNO₃ solution",
+          "observation": "Yellow ppt insoluble in NH₄OH",
+          "inference": "Presence of I⁻ anion is confirmed",
+          "confirmatory": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Fluoride",
+      "formula": "F⁻",
+      "charge": -1,
+      "tests": [
+        {
+          "experiment": "Salt + Conc H₂SO₄",
+          "observation": "Colorless gas evolves that etches glass",
+          "inference": "F⁻ may be present"
+        },
+        {
+          "name": "Calcium Chloride Test",
+          "experiment": "Salt Solution + CaCl₂ solution",
+          "observation": "White gelatinous ppt forms",
+          "inference": "Presence of F⁻ anion is confirmed",
+          "confirmatory": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Sulfate",
+      "formula": "SO₄²⁻",
+      "charge": -2,
+      "tests": [
+        {
+          "experiment": "To dry salt, dilute H₂SO₄ is added",
+          "observation": "No reaction",
+          "inference": "Dilute H₂SO₄ group is absent"
+        },
+        {
+          "experiment": "Salt + Conc H₂SO₄",
+          "observation": "No reaction",
+          "inference": "SO₄²⁻ may be present"
+        },
+        {
+          "name": "Barium Chloride Test",
+          "experiment": "Salt solution + Dil HCl + BaCl₂ solution",
+          "observation": "White ppt insoluble in conc HCl",
+          "inference": "Presence of SO₄²⁻ anion is confirmed",
+          "confirmatory": true
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Nitrate",
+      "formula": "NO₃⁻",
+      "charge": -1,
+      "tests": [
+        {
+          "name": "Brown Ring Test",
+          "experiment": "Salt Solution + FeSO₄ + Conc H₂SO₄ (added carefully along the sides of the test tube)",
+          "observation": "Brown ring forms at the junction of two liquids",
+          "inference": "Presence of NO₃⁻ anion is confirmed",
+          "confirmatory": true
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Carbonate",
+      "formula": "CO₃²⁻",
+      "charge": -2,
+      "tests": [
+        {
+          "experiment": "Salt + Dilute HCl",
+          "observation": "Colorless, odorless gas evolves with effervescence",
+          "inference": "CO₃²⁻ may be present"
+        },
+        {
+          "name": "Lime Water Test",
+          "experiment": "Pass the evolved gas through lime water",
+          "observation": "Lime water turns milky",
+          "inference": "Presence of CO₃²⁻ anion is confirmed",
+          "confirmatory": true
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Phosphate",
+      "formula": "PO₄³⁻",
+      "charge": -3,
+      "tests": [
+        {
+          "name": "Ammonium Molybdate Test",
+          "experiment": "Salt Solution + Conc HNO₃ + Ammonium molybdate, then heat",
+          "observation": "Canary yellow ppt forms",
+          "inference": "Presence of PO₄³⁻ anion is confirmed",
+          "confirmatory": true
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Hydroxide",
+      "formula": "OH⁻",
+      "charge": -1,
+      "tests": [
+        {
+          "experiment": "Salt Solution + Universal Indicator",
+          "observation": "Solution turns blue or purple",
+          "inference": "OH⁻ may be present"
+        },
+        {
+          "name": "Phenolphthalein Test",
+          "experiment": "Salt Solution + Phenolphthalein indicator",
+          "observation": "Solution turns pink",
+          "inference": "Presence of OH⁻ anion is confirmed",
+          "confirmatory": true
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Acetate",
+      "formula": "CH₃COO⁻",
+      "charge": -1,
+      "tests": [
+        {
+          "experiment": "To dry salt, dilute H₂SO₄ is added",
+          "observation": "No reaction",
+          "inference": "Dilute H₂SO₄ group is absent"
+        },
+        {
+          "experiment": "Salt + Conc H₂SO₄",
+          "observation": "Vinegar-like smell",
+          "inference": "CH₃COO⁻ may be present"
+        },
+        {
+          "name": "Oxalic Acid Test",
+          "experiment": "Take pinch of salt on palm and pinch of oxalic acid and 2-3 drops of water and make a paste",
+          "observation": "Strong vinegar-like smell",
+          "inference": "Presence of CH₃COO⁻ anion is confirmed",
+          "confirmatory": true
+        },
+        {
+          "name": "Ferric Chloride Test",
+          "experiment": "Salt Solution + FeCl₃ solution",
+          "observation": "Deep red coloration",
+          "inference": "Presence of CH₃COO⁻ anion is confirmed",
+          "confirmatory": true
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Oxalate",
+      "formula": "C₂O₄²⁻",
+      "charge": -2,
+      "tests": [
+        {
+          "experiment": "To dry salt, dilute H₂SO₄ is added",
+          "observation": "No reaction",
+          "inference": "Dilute H₂SO₄ group is absent"
+        },
+        {
+          "experiment": "Salt + Conc H₂SO₄",
+          "observation": "No reaction",
+          "inference": "C₂O₄²⁻ may be present"
+        },
+        {
+          "name": "KMnO₄ Test",
+          "experiment": "Salt + Conc H₂SO₄ + KMnO₄ solution",
+          "observation": "KMnO₄ decolorizes",
+          "inference": "Presence of C₂O₄²⁻ anion is confirmed",
+          "confirmatory": true
+        }
+      ]
+    }
+  ]
