@@ -136,13 +136,17 @@ const Analysis: React.FC<AnalysisProps> = ({ anion, cation }) => {
 
 
 
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async ({ params, req }) => {
   const salt = params?.salt as string;
   const { cation: decodedCation, anion: decodedAnion } = urlToFormula(salt);
 
+  const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
+  const host = req.headers.host || 'localhost:3000';
+  const baseUrl = `${protocol}://${host}`;
+
   console.log(decodedCation, decodedAnion);
-  const anionsResponse = await fetch('http://localhost:3000/anions.json');
-  const cationsResponse = await fetch('http://localhost:3000/cations.json');
+  const anionsResponse = await fetch(`${baseUrl}/anions.json`);
+  const cationsResponse = await fetch(`${baseUrl}/cations.json`);
 
   const anionsData: Ion[] = await anionsResponse.json();
   const cationsData: Ion[] = await cationsResponse.json();

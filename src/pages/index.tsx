@@ -70,7 +70,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <h2 className={styles.sectionTitle}>Quick Check</h2>
+        <h2 className={styles.sectionTitle}>Quick Analysis</h2>
         {isLoading ? (
           <p>Loading...</p>
         ) : error ? (

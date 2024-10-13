@@ -21,7 +21,7 @@
 }
 
 .navItem {
-    padding: 15px 12px;
+    padding: 15px 20px;
     text-align: center;
     color: white;
     font-size: 1.2rem;
@@ -32,7 +32,6 @@
     text-decoration: none;
     transition: all 0.2s ease-in-out;
 }
-
 .navItem:hover {
     transform: translate(0, -2px);
 }
