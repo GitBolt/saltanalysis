@@ -1,8 +1,8 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 2rem 2rem 2rem;
-  }
+  padding: 1rem;
+}
 
 .main {
   padding: 5rem 2rem;
@@ -15,17 +15,17 @@
 }
 
 .title {
-  font-size: 4rem;
+  font-size: 2.5rem;
   text-align: left;
-  margin-bottom: -1.5rem;
+  margin-bottom: 0.5rem;
   color: white;
   font-weight: 700;
 }
 
 .subtitle {
-  font-size: 1.875rem;
+  font-size: 1.25rem;
   color: rgb(196, 196, 213);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   text-align: left;
   font-weight: 300;
 }
@@ -38,9 +38,10 @@
 
 .createButton {
   display: inline-block;
-  width: 15rem;
+  width: 100%;
+  max-width: 15rem;
   padding: 0.6rem;
-  font-size: 2.25rem;
+  font-size: 1.5rem;
   text-align: center;
   background-color: #0084FF;
   color: white;
@@ -49,15 +50,15 @@
 }
 
 .sectionTitle {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 500;
-  margin-top: 8rem;
+  margin-top: 4rem;
   margin-bottom: 1rem;
 }
 
 .saltGrid {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
   margin-bottom: 1rem;
 }
@@ -71,13 +72,14 @@
   transition: transform 0.2s ease;
 }
 
-.saltCard:hover{
-  transform: scale(1.08) translateY(-5px);
+.saltCard:hover {
+  transform: scale(1.05);
 }
 
 .saltBox {
-  width: 8rem;
-  height: 8rem; 
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 8rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -86,17 +88,97 @@
   margin-bottom: 0.5rem;
 }
 
-.cation, .anion {
-  font-size: 600;
-  font-size: 2.25rem;
+.cation {
+  font-size: 1.75rem;
   font-weight: bold;
   text-align: center;
 }
+
 .anion {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 .formula {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   margin: 0;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 1rem 2rem 2rem 2rem;
+  }
+
+  .title {
+    font-size: 3.5rem;
+    margin-bottom: -1rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .createButton {
+    font-size: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.5rem;
+    margin-top: 6rem;
+  }
+
+  .saltGrid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .cation {
+    font-size: 2rem;
+  }
+
+  .anion {
+    font-size: 1.5rem;
+  }
+
+  .formula {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 4rem;
+    margin-bottom: -1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.875rem;
+  }
+
+  .createButton {
+    font-size: 2.25rem;
+  }
+
+  .sectionTitle {
+    font-size: 3rem;
+    margin-top: 8rem;
+  }
+
+  .saltGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .cation {
+    font-size: 2.25rem;
+  }
+
+  .anion {
+    font-size: 1.75rem;
+  }
+
+  .formula {
+    font-size: 1.75rem;
+  }
 }
