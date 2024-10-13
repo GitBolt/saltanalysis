@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { calculateSaltFormula } from '@/utils/formula';
 import { formulaToUrl } from '@/utils/encoders';
 import { getGradientColors } from '@/utils/gradients';
+import mixpanel from 'mixpanel-browser';
 
 
 type RandomSalt = {
@@ -44,6 +45,13 @@ export default function Home() {
     fetchRandomSalts();
   }, []);
 
+  const handleSaltClick = (salt: RandomSalt) => {
+    mixpanel.track('Salt Clicked', {
+      formula: salt.formula,
+      name: salt.name,
+    });
+  };
+
   const fetchRandomSalts = async () => {
     setIsLoading(true);
     setError(null);
@@ -78,7 +86,11 @@ export default function Home() {
         ) : (
           <div className={styles.saltGrid}>
             {randomSalts.map((salt, index) => (
-              <Link key={salt.formula} href={salt.url} className={styles.saltCard}>
+              <Link
+                key={salt.formula} href={salt.url}
+                className={styles.saltCard}
+                onClick={() => handleSaltClick(salt)}
+              >
                 <div className={styles.saltBox} style={{ background: `linear-gradient(to bottom, ${getGradientColors()})` }}>
                   <span className={styles.cation}>{salt.cation}</span>
                   <span className={styles.anion}>{salt.anion}</span>

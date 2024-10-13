@@ -9,7 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "mixpanel": "^0.18.0",
+    "@types/mixpanel-browser": "^2.50.0",
+    "mixpanel-browser": "^2.55.1",
     "next": "14.2.15",
     "react": "^18",
     "react-dom": "^18"

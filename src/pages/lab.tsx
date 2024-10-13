@@ -7,6 +7,7 @@ import { Ion } from '@/types/ions';
 import { formulaToUrl } from '@/utils/encoders';
 import IonList from '@/components/IonList';
 import SaltResult from '@/components/SaltResult';
+import mixpanel from 'mixpanel-browser';
 
 export default function Combine() {
   const [anions, setAnions] = useState<Ion[]>([]);
@@ -32,12 +33,22 @@ export default function Combine() {
       if (selectedCation) {
         const saltFormula = calculateSaltFormula(selectedCation, ion);
         setSalt(saltFormula);
+        mixpanel.track('Salt Created', {
+          cation: selectedCation.formula,
+          anion: ion.formula,
+          formula: saltFormula,
+        });
       }
     } else {
       setSelectedCation(ion);
       if (selectedAnion) {
         const saltFormula = calculateSaltFormula(ion, selectedAnion);
         setSalt(saltFormula);
+        mixpanel.track('Salt Created', {
+          cation: ion.formula,
+          anion: selectedAnion.formula,
+          formula: saltFormula,
+        });
       }
     }
   };
