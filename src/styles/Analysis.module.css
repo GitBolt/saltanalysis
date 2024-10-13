@@ -45,7 +45,6 @@
 
 /* Notebook like design stuff */
 .notebook {
-  font-family: 'Courier New', monospace;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
@@ -81,6 +80,22 @@
 .testTable {
   width: 100%;
   border-collapse: collapse;
+}
+
+.testRow {
+  display: table-row;
+}
+
+.experimentCell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.testRow td {
+  vertical-align: top;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
 }
 
 .testTable th, .testTable td {
@@ -136,6 +151,10 @@
   border-radius: 34px;
 }
 
+.underline {
+  text-decoration: underline;
+  font-weight: 600;
+}
 .slider:before {
   position: absolute;
   content: "";
@@ -162,6 +181,7 @@ input:checked + .slider:before {
   background-size: 100% 25px;
   padding: 30px 20px 20px;
   color: #2424ff;
+  font-family: 'Courier New', monospace;
 }
 
 .lightTheme .experimentTitle,

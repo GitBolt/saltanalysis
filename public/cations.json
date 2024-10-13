@@ -1,242 +1,393 @@
 [
-    {
-      "id": 1,
-      "name": "Sodium",
-      "formula": "Na⁺",
-      "charge": 1,
-      "tests": [
-        {
-          "experiment": "Flame test",
-          "observation": "Golden yellow flame",
-          "inference": "Presence of Na⁺ is indicated"
-        },
-        {
-          "name": "Zinc Uranyl Acetate Test",
-          "experiment": "Salt solution + Zinc Uranyl Acetate reagent",
-          "observation": "Yellow crystalline precipitate",
-          "inference": "Presence of Na⁺ is confirmed",
-          "confirmatory": true
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Potassium",
-      "formula": "K⁺",
-      "charge": 1,
-      "tests": [
-        {
-          "experiment": "Flame test",
-          "observation": "Lilac flame",
-          "inference": "Presence of K⁺ is indicated"
-        },
-        {
-          "name": "Sodium Cobaltinitrite Test",
-          "experiment": "Salt solution + Sodium Cobaltinitrite reagent",
-          "observation": "Yellow precipitate",
-          "inference": "Presence of K⁺ is confirmed",
-          "confirmatory": true
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Ammonium",
-      "formula": "NH₄⁺",
-      "charge": 1,
-      "tests": [
-        {
-          "experiment": "Salt + NaOH solution, heat",
-          "observation": "Colorless gas with pungent smell evolves, turns red litmus blue",
-          "inference": "Presence of NH₄⁺ is indicated"
-        },
-        {
-          "name": "Nessler's Reagent Test",
-          "experiment": "Salt solution + Nessler's reagent",
-          "observation": "Reddish-brown precipitate",
-          "inference": "Presence of NH₄⁺ is confirmed",
-          "confirmatory": true
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "name": "Magnesium",
-      "formula": "Mg²⁺",
-      "charge": 2,
-      "tests": [
-        {
-          "experiment": "Salt solution + NaOH solution",
-          "observation": "White precipitate",
-          "inference": "Mg²⁺ may be present"
-        },
-        {
-          "name": "Magneson Test",
-          "experiment": "Salt solution + Magneson reagent + NaOH solution",
-          "observation": "Blue lake formation",
-          "inference": "Presence of Mg²⁺ is confirmed",
-          "confirmatory": true
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "name": "Calcium",
-      "formula": "Ca²⁺",
-      "charge": 2,
-      "tests": [
-        {
-          "experiment": "Flame test",
-          "observation": "Brick red flame",
-          "inference": "Presence of Ca²⁺ is indicated"
-        },
-        {
-          "name": "Ammonium Oxalate Test",
-          "experiment": "Salt solution + Ammonium Oxalate solution",
-          "observation": "White precipitate",
-          "inference": "Presence of Ca²⁺ is confirmed",
-          "confirmatory": true
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "name": "Barium",
-      "formula": "Ba²⁺",
-      "charge": 2,
-      "tests": [
-        {
-          "experiment": "Flame test",
-          "observation": "Apple green flame",
-          "inference": "Presence of Ba²⁺ is indicated"
-        },
-        {
-          "name": "Potassium Chromate Test",
-          "experiment": "Salt solution + K₂CrO₄ solution",
-          "observation": "Yellow precipitate",
-          "inference": "Presence of Ba²⁺ is confirmed",
-          "confirmatory": true
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "name": "Zinc",
-      "formula": "Zn²⁺",
-      "charge": 2,
-      "tests": [
-        {
-          "experiment": "Salt solution + NaOH solution",
-          "observation": "White precipitate, soluble in excess",
-          "inference": "Zn²⁺ may be present"
-        },
-        {
-          "name": "Potassium Ferrocyanide Test",
-          "experiment": "Salt solution + K₄[Fe(CN)₆] solution",
-          "observation": "Bluish-white precipitate",
-          "inference": "Presence of Zn²⁺ is confirmed",
-          "confirmatory": true
-        }
-      ]
-    },
-    {
-      "id": 8,
-      "name": "Aluminum",
-      "formula": "Al³⁺",
-      "charge": 3,
-      "tests": [
-        {
-          "experiment": "Salt solution + NaOH solution",
-          "observation": "White gelatinous precipitate, soluble in excess",
-          "inference": "Al³⁺ may be present"
-        },
-        {
-          "name": "Aluminon Test",
-          "experiment": "Salt solution + Aluminon reagent + Ammonium carbonate",
-          "observation": "Red lake formation",
-          "inference": "Presence of Al³⁺ is confirmed",
-          "confirmatory": true
-        }
-      ]
-    },
-    {
-      "id": 9,
-      "name": "Iron(II)",
-      "formula": "Fe²⁺",
-      "charge": 2,
-      "tests": [
-        {
-          "experiment": "Salt solution + NaOH solution",
-          "observation": "Dirty green precipitate",
-          "inference": "Fe²⁺ may be present"
-        },
-        {
-          "name": "Potassium Ferricyanide Test",
-          "experiment": "Salt solution + K₃[Fe(CN)₆] solution",
-          "observation": "Dark blue precipitate (Turnbull's blue)",
-          "inference": "Presence of Fe²⁺ is confirmed",
-          "confirmatory": true
-        }
-      ]
-    },
-    {
-      "id": 10,
-      "name": "Iron(III)",
-      "formula": "Fe³⁺",
-      "charge": 3,
-      "tests": [
-        {
-          "experiment": "Salt solution + NaOH solution",
-          "observation": "Reddish-brown precipitate",
-          "inference": "Fe³⁺ may be present"
-        },
-        {
-          "name": "Potassium Ferrocyanide Test",
-          "experiment": "Salt solution + K₄[Fe(CN)₆] solution",
-          "observation": "Dark blue precipitate (Prussian blue)",
-          "inference": "Presence of Fe³⁺ is confirmed",
-          "confirmatory": true
-        }
-      ]
-    },
-    {
-      "id": 11,
-      "name": "Copper(II)",
-      "formula": "Cu²⁺",
-      "charge": 2,
-      "tests": [
-        {
-          "experiment": "Salt solution + NaOH solution",
-          "observation": "Blue precipitate",
-          "inference": "Cu²⁺ may be present"
-        },
-        {
-          "name": "Potassium Ferrocyanide Test",
-          "experiment": "Salt solution + K₄[Fe(CN)₆] solution",
-          "observation": "Chocolate brown precipitate",
-          "inference": "Presence of Cu²⁺ is confirmed",
-          "confirmatory": true
-        }
-      ]
-    },
-    {
-      "id": 12,
-      "name": "Lead(II)",
-      "formula": "Pb²⁺",
-      "charge": 2,
-      "tests": [
-        {
-          "experiment": "Salt solution + HCl",
-          "observation": "White precipitate",
-          "inference": "Pb²⁺ may be present"
-        },
-        {
-          "name": "Potassium Iodide Test",
-          "experiment": "Salt solution + KI solution",
-          "observation": "Yellow precipitate",
-          "inference": "Presence of Pb²⁺ is confirmed",
-          "confirmatory": true
-        }
-      ]
-    }
-  ]
+  {
+    "id": 1,
+    "name": "Sodium",
+    "formula": "Na⁺",
+    "charge": 1,
+    "tests": [
+      {
+        "experiment": "Flame test",
+        "observation": "Golden yellow flame",
+        "inference": "Presence of Na⁺ is indicated"
+      },
+      {
+        "name": "Zinc Uranyl Acetate Test",
+        "experiment": "Salt solution + Zinc Uranyl Acetate reagent",
+        "observation": "Yellow crystalline precipitate",
+        "inference": "Presence of Na⁺ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Potassium",
+    "formula": "K⁺",
+    "charge": 1,
+    "tests": [
+      {
+        "experiment": "Flame test",
+        "observation": "Lilac flame",
+        "inference": "Presence of K⁺ is indicated"
+      },
+      {
+        "name": "Sodium Cobaltinitrite Test",
+        "experiment": "Salt solution + Sodium Cobaltinitrite reagent",
+        "observation": "Yellow precipitate",
+        "inference": "Presence of K⁺ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Ammonium",
+    "formula": "NH₄⁺",
+    "charge": 1,
+    "tests": [
+      {
+        "experiment": "Salt + NaOH solution",
+        "observation": "Evolution of vapours with ammonical smell",
+        "inference": "NH₄⁺ may be present"
+      },
+      {
+        "experiment": "Bring glass rod dipped in conc. HCl near the mouth of the test tube",
+        "observation": "Dense white fumes evolve",
+        "inference": "NH₄⁺ may be present"
+      },
+      {
+        "name": "Nessler's Reagent Test",
+        "experiment": "Salt solution + Nessler's reagent",
+        "observation": "Reddish-brown ppt is obtained",
+        "inference": "Presence of NH₄⁺ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Magnesium",
+    "formula": "Mg²⁺",
+    "charge": 2,
+    "tests": [
+      {
+        "experiment": "Salt solution + NaOH solution",
+        "observation": "White precipitate",
+        "inference": "Mg²⁺ may be present"
+      },
+      {
+        "name": "Magneson Test",
+        "experiment": "Salt solution + Magneson reagent + NaOH solution",
+        "observation": "Blue lake formation",
+        "inference": "Presence of Mg²⁺ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Barium",
+    "formula": "Ba²⁺",
+    "charge": 2,
+    "tests": [
+      {
+        "experiment": "Salt + NaOH solution",
+        "observation": "No reaction",
+        "inference": "Zero group cation is absent"
+      },
+      {
+        "experiment": "Original salt + Dil. HCl",
+        "observation": "No reaction",
+        "inference": "First group cation is absent"
+      },
+      {
+        "experiment": "Original salt + Dil. HCl + H₂S gas (Na₂S chips)",
+        "observation": "No reaction",
+        "inference": "Second group cation is absent"
+      },
+      {
+        "experiment": "Original salt + Dil. HCl + NH₄Cl solid + NH₄OH solution",
+        "observation": "No reaction",
+        "inference": "Third group cation is absent"
+      },
+      {
+        "experiment": "Original solution + Dil. HCl + NH₄Cl + NH₄OH + (NH₄)₂CO₃",
+        "observation": "White ppt is formed",
+        "inference": "Ba²⁺ may be present"
+      },
+      {
+        "name": "",
+        "experiment": "Dissolve the white ppt in dil. acetic acid and add potassium chromate",
+        "observation": "White ppt",
+        "inference": "Ba²⁺ confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+
+  {
+    "id": 7,
+    "name": "Zinc",
+    "formula": "Zn²⁺",
+    "charge": 2,
+    "tests": [
+      {
+        "experiment": "Salt + NaOH solution",
+        "observation": "No reaction",
+        "inference": "Zero group cation is absent"
+      },
+      {
+        "experiment": "Original Salt + Dil. HCl",
+        "observation": "No reaction",
+        "inference": "First group cation is absent"
+      },
+      {
+        "experiment": "Original Salt + Dil. HCl + NH₄Cl solid + NH₄OH solution",
+        "observation": "No reaction",
+        "inference": "Third group cation is absent"
+      },
+
+      {
+        "experiment": "Original Salt + Dil. HCl + NH₄Cl solid + NH₄OH solution + H₂SO₄",
+        "observation": "Dirty white ppt",
+        "inference": "Presence of Zn²⁺ may be present"
+      },
+      {
+        "name": "Sodium Hydroxide Test",
+        "experiment": "Salt solution + NaOH solution drop wise",
+        "observation": "White ppt dissolved in HCl",
+        "inference": "Presence of Zn²⁺ is confirmed",
+        "confirmatory": true
+      },
+      {
+        "name": "Potassium Ferrocyanide Test",
+        "experiment": "Salt solution + K₄[Fe(CN)₆] solution",
+        "observation": "Bluish-white ppt",
+        "inference": "Presence of Zn²⁺ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Aluminum",
+    "formula": "Al³⁺",
+    "charge": 3,
+    "tests": [
+      {
+        "experiment": "Salt solution + NaOH",
+        "observation": "No reaction",
+        "inference": "Zero group cation is absent"
+      },
+      {
+        "experiment": "Salt solution + Dil HCl",
+        "observation": "No reaction",
+        "inference": "First group cation is absent"
+      },
+      {
+        "experiment": "Salt solution + Dil HCl + H₂S gas (N₂S chips)",
+        "observation": "No reaction",
+        "inference": "Second group cation is absent"
+      },
+      {
+        "experiment": "Salt solution + Dil HCl + NH₄Cl solid + NH₄OH solution",
+        "observation": "White gelatinous ppt",
+        "inference": "Al³⁺ may be present"
+      },
+      {
+        "name": "Blue Lake Test",
+        "experiment": "Dissolve the white ppt in HCl + 2-3 drops of blue litmus + 2-3 drops of NH₄OH solution",
+        "observation": "Blue ppt floating in colorless solution",
+        "inference": "Presence of Al³⁺ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Iron(II)",
+    "formula": "Fe²⁺",
+    "charge": 2,
+    "tests": [
+      {
+        "experiment": "Salt solution + NaOH solution",
+        "observation": "Dirty green precipitate",
+        "inference": "Fe²⁺ may be present"
+      },
+      {
+        "name": "Potassium Ferricyanide Test",
+        "experiment": "Salt solution + K₃[Fe(CN)₆] solution",
+        "observation": "Dark blue precipitate (Turnbull's blue)",
+        "inference": "Presence of Fe²⁺ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Iron(III)",
+    "formula": "Fe³⁺",
+    "charge": 3,
+    "tests": [
+      {
+        "experiment": "Salt solution + NaOH solution",
+        "observation": "Reddish-brown precipitate",
+        "inference": "Fe³⁺ may be present"
+      },
+      {
+        "name": "Potassium Ferrocyanide Test",
+        "experiment": "Salt solution + K₄[Fe(CN)₆] solution",
+        "observation": "Dark blue precipitate (Prussian blue)",
+        "inference": "Presence of Fe³⁺ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Copper(II)",
+    "formula": "Cu²⁺",
+    "charge": 2,
+    "tests": [
+      {
+        "experiment": "Salt solution + NaOH solution",
+        "observation": "Blue precipitate",
+        "inference": "Cu²⁺ may be present"
+      },
+      {
+        "name": "Potassium Ferrocyanide Test",
+        "experiment": "Salt solution + K₄[Fe(CN)₆] solution",
+        "observation": "Chocolate brown precipitate",
+        "inference": "Presence of Cu²⁺ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Lead(II)",
+    "formula": "Pb²⁺",
+    "charge": 2,
+    "tests": [
+      {
+        "experiment": "Salt solution + diluteHCl",
+        "observation": "White precipitate",
+        "inference": "Pb²⁺ may be present"
+      },
+      {
+        "name": "Potassium Iodide Test",
+        "experiment": "Salt solution + KI solution",
+        "observation": "Yellow precipitate",
+        "inference": "Presence of Pb²⁺ is confirmed",
+        "confirmatory": true
+      },
+      {
+        "name": "Potassium Dichromate Test",
+        "experiment": "Salt solution + K₂Cr₂O₇ solution",
+        "observation": "Yellow precipitate",
+        "inference": "Presence of Pb²⁺ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Strontium",
+    "formula": "Sr²⁺",
+    "charge": 2,
+    "tests": [
+      {
+        "experiment": "Salt + NaOH solution",
+        "observation": "No reaction",
+        "inference": "Zero group cation is absent"
+      },
+      {
+        "experiment": "Original salt + Dil. HCl",
+        "observation": "No reaction",
+        "inference": "First group cation is absent"
+      },
+      {
+        "experiment": "Original salt + Dil. HCl + H₂S gas (Na₂S chips)",
+        "observation": "No reaction",
+        "inference": "Second group cation is absent"
+      },
+      {
+        "experiment": "Original salt + Dil. HCl + NH₄Cl solid + NH₄OH solution",
+        "observation": "No reaction",
+        "inference": "Third group cation is absent"
+      },
+      {
+        "experiment": "Original solution + Dil. HCl + NH₄Cl + NH₄OH + (NH₄)₂CO₃",
+        "observation": "White ppt is formed",
+        "inference": "Ba²⁺ may be present"
+      },
+      {
+        "name": "",
+        "experiment": "Dissolve the white ppt in dil. acetic acid and add potassium chromate",
+        "observation": "No reaction",
+        "inference": "Ba²⁺ absent",
+        "confirmatory": true
+      },
+      {
+        "name": "",
+        "experiment": "Dissolve the white ppt in dil. acetic acid and add (NH₄)₂SO₄",
+        "observation": "White ppt",
+        "inference": "Sr²⁺ confirmed",
+        "confirmatory": true
+      }
+    ]
+  },{
+    "id": 14,
+    "name": "Calcium",
+    "formula": "Ca²⁺",
+    "charge": 2,
+    "tests": [
+      {
+        "experiment": "Salt + NaOH solution",
+        "observation": "No reaction",
+        "inference": "Zero group cation is absent"
+      },
+      {
+        "experiment": "Original salt + Dil. HCl",
+        "observation": "No reaction",
+        "inference": "First group cation is absent"
+      },
+      {
+        "experiment": "Original salt + Dil. HCl + H₂S gas (Na₂S chips)",
+        "observation": "No reaction",
+        "inference": "Second group cation is absent"
+      },
+      {
+        "experiment": "Original salt + Dil. HCl + NH₄Cl solid + NH₄OH solution",
+        "observation": "No reaction",
+        "inference": "Third group cation is absent"
+      },
+      {
+        "experiment": "Original solution + Dil. HCl + NH₄Cl + NH₄OH + (NH₄)₂CO₃",
+        "observation": "White ppt is formed",
+        "inference": "Ba²⁺ may be present"
+      },
+      {
+        "name": "",
+        "experiment": "Dissolve the white ppt in dil. acetic acid and add potassium chromate",
+        "observation": "No reaction",
+        "inference": "Ba²⁺ absent",
+        "confirmatory": true
+      },
+      {
+        "name": "",
+        "experiment": "Dissolve the white ppt in dil. acetic acid and add (NH₄)₂SO₄",
+        "observation": "No reaction",
+        "inference": "Sr²⁺ absent",
+        "confirmatory": true
+      },
+      {
+        "name": "",
+        "experiment": "Dissolve the white ppt in dil. acetic acid and add ammonium oxalate + a few drops of NH₄OH",
+        "observation": "White ppt",
+        "inference": "Ca²⁺ confirmed",
+        "confirmatory": true
+      }
+    ]
+  }
+]

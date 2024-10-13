@@ -18,25 +18,28 @@ const Analysis: React.FC<AnalysisProps> = ({ anion, cation }) => {
   const [isNotebookTheme, setIsNotebookTheme] = useState(false);
 
   const renderTests = (tests: Test[]) => {
+    let isConfirmatoryHeaderRendered = false;
+
     return tests.map((test, index) => (
       <React.Fragment key={index}>
-        {test.confirmatory && (
+        {test.confirmatory && !isConfirmatoryHeaderRendered && (
           <tr>
-            <td className={styles.confirmatoryTest}>
-              <span className={styles.underline}>Confirmatory Test</span>
-              {test.name && (
-                <>
-                  <br />
-                  <span className={styles.blueUnderline}>{test.name}</span>
-                </>
-              )}
+            <td className={styles.confirmatoryTest} colSpan={3}>
+              <span className={styles.underline}>Confirmatory Test{tests.filter(t => t.confirmatory).length > 1 ? 's' : ''}</span>
             </td>
-            <td></td>
-            <td></td>
           </tr>
         )}
+        {test.confirmatory && (isConfirmatoryHeaderRendered = true)}
         <tr>
-          <td>{test.experiment}</td>
+          <td>
+            {test.confirmatory && test.name && (
+              <>
+                <b className={styles.blueUnderline}>{test.name}</b>
+                <br />
+              </>
+            )}
+            {test.experiment}
+          </td>
           <td>{test.observation}</td>
           <td>{test.inference}</td>
         </tr>
@@ -111,15 +114,19 @@ const Analysis: React.FC<AnalysisProps> = ({ anion, cation }) => {
 
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Result</h2>
-        <p className={styles.blueText}>The given salt is {calculateSaltFormula(cation, anion)}</p>
+        <p className={styles.blueText}>
+          The given salt contains {cation.formula} ions as cation and {anion.formula} ions as anion. 
+          The salt is {calculateSaltFormula(cation, anion)}.
+        </p>
+
       </div>
 
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Precautions</h2>
         <ol className={styles.blueText}>
-          <li>Always wear safety goggles and gloves while handling chemicals.</li>
-          <li>Perform the experiments in a well-ventilated area.</li>
-          <li>Dispose of the chemicals properly as per laboratory guidelines.</li>
+          <li>Handle the chemicals with care.</li>
+          <li>Don't use excess of chemicals.</li>
+          <li>Keep the mouth of the test tube away from the face.</li>
         </ol>
       </div>
     </div>

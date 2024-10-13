@@ -31,20 +31,20 @@
       "charge": -1,
       "tests": [
         {
-          "experiment": "To dry salt, dilute H₂SO₄ is added",
+          "experiment": "Salt + dilute H₂SO₄",
           "observation": "No reaction",
           "inference": "Dilute H₂SO₄ group is absent"
         },
         {
           "experiment": "Salt + Conc H₂SO₄",
-          "observation": "Reddish-brown vapors evolve",
+          "observation": "Reddish-brown fumes with pungent smell evolve",
           "inference": "Br⁻ may be present"
         },
         {
           "name": "Silver Nitrate Test",
           "experiment": "Salt Solution + Dilute HNO₃ + AgNO₃ solution",
           "observation": "Pale yellow ppt slightly soluble in NH₄OH",
-          "inference": "Presence of Br⁻ anion is confirmed",
+          "inference": "Presence of Br⁻ is confirmed",
           "confirmatory": true
         }
       ]
@@ -96,20 +96,20 @@
       "charge": -2,
       "tests": [
         {
-          "experiment": "To dry salt, dilute H₂SO₄ is added",
+          "experiment": "Salt + dilute H₂SO₄",
           "observation": "No reaction",
           "inference": "Dilute H₂SO₄ group is absent"
         },
         {
           "experiment": "Salt + Conc H₂SO₄",
           "observation": "No reaction",
-          "inference": "SO₄²⁻ may be present"
+          "inference": "Conc H₂SO₄ group is absent"
         },
         {
           "name": "Barium Chloride Test",
           "experiment": "Salt solution + Dil HCl + BaCl₂ solution",
-          "observation": "White ppt insoluble in conc HCl",
-          "inference": "Presence of SO₄²⁻ anion is confirmed",
+          "observation": "White ppt insoluble in conc. HCl",
+          "inference": "Presence of SO₄²⁻ is confirmed",
           "confirmatory": true
         }
       ]
@@ -137,14 +137,21 @@
       "tests": [
         {
           "experiment": "Salt + Dilute HCl",
-          "observation": "Colorless, odorless gas evolves with effervescence",
+          "observation": "Colorless, odorless gas evolves with brisk effervescence",
           "inference": "CO₃²⁻ may be present"
         },
         {
           "name": "Lime Water Test",
           "experiment": "Pass the evolved gas through lime water",
           "observation": "Lime water turns milky",
-          "inference": "Presence of CO₃²⁻ anion is confirmed",
+          "inference": "Presence of CO₃²⁻ is confirmed",
+          "confirmatory": true
+        },
+        {
+          "name": "Magnesium Sulphate Test",
+          "experiment": "Salt solution + MgSO₄ solution",
+          "observation": "White ppt is obtained",
+          "inference": "Presence of CO₃²⁻ is confirmed",
           "confirmatory": true
         }
       ]
@@ -191,27 +198,27 @@
       "charge": -1,
       "tests": [
         {
-          "experiment": "To dry salt, dilute H₂SO₄ is added",
+          "experiment": "Salt + Dilute H₂SO₄",
           "observation": "No reaction",
           "inference": "Dilute H₂SO₄ group is absent"
         },
         {
-          "experiment": "Salt + Conc H₂SO₄",
-          "observation": "Vinegar-like smell",
+          "experiment": "Salt + Conc. H₂SO₄",
+          "observation": "Vapours with vinger like smell evolve",
           "inference": "CH₃COO⁻ may be present"
         },
         {
           "name": "Oxalic Acid Test",
           "experiment": "Take pinch of salt on palm and pinch of oxalic acid and 2-3 drops of water and make a paste",
-          "observation": "Strong vinegar-like smell",
-          "inference": "Presence of CH₃COO⁻ anion is confirmed",
+          "observation": "Strong vinegar-like smell is obtained",
+          "inference": "Presence of CH₃COO⁻ is confirmed",
           "confirmatory": true
         },
         {
           "name": "Ferric Chloride Test",
           "experiment": "Salt Solution + FeCl₃ solution",
-          "observation": "Deep red coloration",
-          "inference": "Presence of CH₃COO⁻ anion is confirmed",
+          "observation": "Reddish-brown ppt is obtained",
+          "inference": "Presence of CH₃COO⁻ is confirmed",
           "confirmatory": true
         }
       ]
@@ -223,13 +230,13 @@
       "charge": -2,
       "tests": [
         {
-          "experiment": "To dry salt, dilute H₂SO₄ is added",
+          "experiment": "Salt + dilute H₂SO₄",
           "observation": "No reaction",
           "inference": "Dilute H₂SO₄ group is absent"
         },
         {
           "experiment": "Salt + Conc H₂SO₄",
-          "observation": "No reaction",
+          "observation": "Evolution of colorless gas",
           "inference": "C₂O₄²⁻ may be present"
         },
         {
