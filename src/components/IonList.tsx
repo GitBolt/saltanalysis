@@ -32,18 +32,19 @@ const IonList: React.FC<IonListProps> = ({
         onChange={onSearchChange}
         className={styles.searchInput}
       />
-      {ions.map((ion) => (
-        <button
-          key={ion.formula}
-          onClick={() => onIonSelect(ion)}
-          className={`${styles.ionButton} ${selectedIon?.formula === ion.formula ? styles.selected : ''}`}
-        >
-          {ion.name} 
-          <br />
-          ({ion.formula})
-        </button>
-      ))} 
-
+      <div className={styles.ionButtonContainer}>
+        {ions.map((ion) => (
+          <button
+            key={ion.formula}
+            onClick={() => onIonSelect(ion)}
+            className={`${styles.ionButton} ${selectedIon?.formula === ion.formula ? styles.selected : ''}`}
+          >
+            {ion.name} 
+            <br />
+            ({ion.formula})
+          </button>
+        ))}
+      </div>
     </div>
   );
 };

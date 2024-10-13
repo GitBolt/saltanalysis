@@ -57,20 +57,20 @@
 }
 
 .experimentTitle {
-  font-size: 24px;
+  font-size: 1.5rem;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
   color: white;
 }
 
 .section {
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
 }
 
 .sectionTitle {
-  font-size: 18px;
+  font-size: 1.2rem;
   color: #ffffff;
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
 }
 
 .blueText {
@@ -80,6 +80,7 @@
 .testTable {
   width: 100%;
   border-collapse: collapse;
+  font-size: 0.9rem;
 }
 
 .testRow {
@@ -95,11 +96,11 @@
 .testRow td {
   vertical-align: top;
   padding: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid #929292;
 }
 
 .testTable th, .testTable td {
-  border: 1px solid #444;
+  border: 1px solid #929292;
   padding: 8px;
   text-align: left;
 }
@@ -111,26 +112,28 @@
 .saltName {
   color: white;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
 }
 
 /* Update other existing styles to use blue or white as needed */
 
 .themeToggle {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 10px;
+  right: 10px;
   display: flex;
   align-items: center;
   color: #fff;
+  font-size: 0.8rem;
 }
 
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
-  margin-right: 10px;
+  width: 40px;
+  height: 20px;
+  margin-right: 5px;
 }
 
 .switch input {
@@ -148,20 +151,21 @@
   bottom: 0;
   background-color: #ccc;
   transition: .4s;
-  border-radius: 34px;
+  border-radius: 20px;
 }
 
 .underline {
   text-decoration: underline;
   font-weight: 600;
 }
+
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
   background-color: white;
   transition: .4s;
   border-radius: 50%;
@@ -172,7 +176,7 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(26px);
+  transform: translateX(20px);
 }
 
 .lightTheme {
@@ -204,7 +208,46 @@ input:checked + .slider:before {
   color: #000;
 }
 
+@media (min-width: 768px) {
+  .notebook {
+    padding: 30px;
+  }
 
-.testTable th, .testTable td {
-  border: 1px solid #929292;
+  .experimentTitle {
+    font-size: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .testTable {
+    font-size: 1rem;
+  }
+
+  .saltName {
+    font-size: 1.8rem;
+  }
+
+  .themeToggle {
+    top: 20px;
+    right: 20px;
+    font-size: 1rem;
+  }
+
+  .switch {
+    width: 60px;
+    height: 34px;
+  }
+
+  .slider:before {
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
 }

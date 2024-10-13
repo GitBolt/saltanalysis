@@ -1,19 +1,19 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 1rem;
 }
 
 .title {
-  font-size: 4rem;
+  font-size: 2.5rem;
   text-align: left;
-  margin-bottom: -1rem;
+  margin-bottom: 0.5rem;
   color: white;
   font-weight: 700;
 }
 
 .subtitle {
-  font-size: 1.875rem;
+  font-size: 1.25rem;
   color: rgb(196, 196, 213);
   margin-bottom: 2rem;
   text-align: left;
@@ -22,20 +22,21 @@
 
 .ionListsContainer {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   width: 100%;
   margin-bottom: 2rem;
 }
 
-.ionList {
-  width: 30%;
+.ionListColumn {
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
 .searchInput {
   width: 100%;
   margin-bottom: 1rem;
   padding: 0.75rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 0.5rem;
@@ -44,43 +45,41 @@
 
 .ionButton {
   cursor: pointer;
-  padding: 1rem 0.5rem;
-  margin: 0.75rem 0.5rem;
+  padding: 0.75rem 0.5rem;
+  margin: 0.5rem 0.25rem;
   border: 2px solid transparent;
-  border-radius: 1rem;
+  border-radius: 0.75rem;
   list-style-type: none;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: white;
   transition: all 0.2s ease;
-  width: calc(50% - 1rem);
+  width: calc(50% - 0.5rem);
 }
 
 .ionButton:hover {
   filter: brightness(110%);
 }
 
-/* Cation buttons */
-.ionList:first-child .ionButton {
+.ionListColumn:first-child .ionButton {
   background-color: rgba(255, 100, 100, 0.2);
 }
 
-/* Anion buttons */
-.ionList:last-child .ionButton {
+.ionListColumn:last-child .ionButton {
   background-color: rgba(100, 100, 255, 0.2);
 }
 
-.ionList:first-child .ionButton.selected {
+.ionListColumn:first-child .ionButton.selected {
   background-color: rgb(255, 69, 69)
 }
 
-.ionList:last-child .ionButton.selected {
+.ionListColumn:last-child .ionButton.selected {
   background-color: rgb(83, 132, 255)
 }
 
 .centerColumn {
-  width: 30%;
-  margin-top:4rem;
+  width: 100%;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -97,20 +96,20 @@
 
 .saltResult {
   text-align: center;
-  padding: 1.5rem;
+  padding: 1rem;
   background-color: rgba(132, 156, 183, 0.1);
-  border-radius: 1rem;
+  border-radius: 0.75rem;
   transition: all 0.2s ease;
   margin-bottom: 1rem;
   width: 100%;
 }
 
 .saltFormula {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   color: white;
   margin: 0;
-  padding: 1rem;
+  padding: 0.75rem;
   background-color: rgba(159, 173, 198, 0.1);
   border-radius: 0.5rem;
   display: inline-block;
@@ -123,13 +122,13 @@
 }
 
 .selectedIon {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: white;
   font-weight: 800;
 }
 
 .buttonContainer {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   width: 100%;
 }
 
@@ -137,15 +136,61 @@
   display: inline-block;
   width: 100%;
   padding: 0.6rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
   background-color: #0084FF;
   color: white;
-  border-radius: 2rem;
+  border-radius: 1.5rem;
   text-decoration: none;
   transition: all 0.2s ease;
 }
 
 .viewAnalysisButton:hover {
   background-color: #0066CC;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 1rem 2rem;
+  }
+
+  .title {
+    font-size: 3.5rem;
+    margin-bottom: -1rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+
+  .ionListsContainer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .ionListColumn {
+    width: 30%;
+    margin-bottom: 0;
+  }
+
+  .centerColumn {
+    width: 30%;
+    margin-top: 4rem;
+  }
+
+  .ionButton {
+    font-size: 1.25rem;
+  }
+
+  .saltFormula {
+    font-size: 2.5rem;
+  }
+
+  .selectedIon {
+    font-size: 1.8rem;
+  }
+
+  .viewAnalysisButton {
+    font-size: 2rem;
+  }
 }

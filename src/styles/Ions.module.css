@@ -1,18 +1,18 @@
 .title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   color: #3498db;
   animation: fadeInDown 0.5s ease-out;
 }
 
 .group {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   animation: fadeIn 0.7s ease-out;
 }
 
 .group h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: #2c3e50;
   border-bottom: 2px solid #3498db;
   padding-bottom: 0.5rem;
@@ -21,13 +21,13 @@
 
 .ionList {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.75rem;
 }
 
 .ionItem {
   background: white;
-  padding: 1rem;
+  padding: 0.75rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease;
@@ -41,11 +41,13 @@
 .ionItem h3 {
   margin: 0 0 0.5rem 0;
   color: #3498db;
+  font-size: 1rem;
 }
 
 .ionItem p {
   margin: 0;
   color: #2c3e50;
+  font-size: 0.875rem;
 }
 
 @keyframes fadeIn {
@@ -56,4 +58,32 @@
 @keyframes fadeInDown {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .group h2 {
+    font-size: 1.8rem;
+  }
+
+  .ionList {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .ionItem {
+    padding: 1rem;
+  }
+
+  .ionItem h3 {
+    font-size: 1.25rem;
+  }
+
+  .ionItem p {
+    font-size: 1rem;
+  }
 }

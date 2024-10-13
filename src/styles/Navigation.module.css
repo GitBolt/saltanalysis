@@ -1,50 +1,53 @@
 .navigation {
     position: fixed;
-    bottom: 30px;
+    bottom: 20px;
     left: 50%;
+    z-index: 100;
     transform: translateX(-50%);
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: rgba(255, 255, 255, 0.069);
     backdrop-filter: blur(5px);
-    border-radius: 25px;
-    padding: 10px 20px;
+    border-radius: 20px;
+    padding: 8px 16px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 500px;
-    height: 70px;
+    width: 90%;
+    max-width: 450px;
+    height: 60px;
 }
 
 .leftSection {
     display: flex;
-    gap: 10px;
+    gap: 8px;
 }
 
 .navItem {
-    padding: 15px 20px;
+    padding: 10px 15px;
     text-align: center;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     background-color: #3477fd;
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-decoration: none;
     transition: all 0.2s ease-in-out;
 }
+
 .navItem:hover {
     transform: translate(0, -2px) scale(1.05);
 }
 
 .separator {
     width: 1px;
-    height: 40px;
+    height: 30px;
     background-color: rgba(165, 165, 165, 0.2);
-    margin: 0 15px;
+    margin: 0 12px;
 }
 
 .rightSection {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white;
 }
 
@@ -56,4 +59,32 @@
 
 .boltLink:hover {
     text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    .navigation {
+        bottom: 30px;
+        padding: 10px 20px;
+        border-radius: 25px;
+        height: 70px;
+    }
+
+    .leftSection {
+        gap: 10px;
+    }
+
+    .navItem {
+        padding: 15px 20px;
+        font-size: 1.2rem;
+        border-radius: 10px;
+    }
+
+    .separator {
+        height: 40px;
+        margin: 0 15px;
+    }
+
+    .rightSection {
+        font-size: 2rem;
+    }
 }

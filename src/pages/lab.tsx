@@ -76,7 +76,7 @@ export default function Combine() {
             onIonSelect={(ion) => handleCombine(ion, false)}
             searchValue={cationSearch}
             onSearchChange={(e) => setCationSearch(e.target.value)}
-            className={styles.twoColumnList}
+            className={styles.ionListColumn}
           />
           <div className={styles.centerColumn}>
             <SaltResult
@@ -99,7 +99,7 @@ export default function Combine() {
             onIonSelect={(ion) => handleCombine(ion, true)}
             searchValue={anionSearch}
             onSearchChange={(e) => setAnionSearch(e.target.value)}
-            className={styles.twoColumnList}
+            className={styles.ionListColumn}
           />
         </div>
       </div>
