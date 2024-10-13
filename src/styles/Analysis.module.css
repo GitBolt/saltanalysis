@@ -47,13 +47,14 @@
 .notebook {
   max-width: 800px;
   margin: 0 auto;
+  border-radius: 2rem;
   padding: 20px;
   border: 1px solid #444;
-  box-shadow: 0 0 10px rgba(255,255,255,0.1);
   background-color: #1a1a1a;
   color: #8181ff;
   position: relative;
   transition: all 0.3s ease;
+  margin-bottom: 8rem;
 }
 
 .experimentTitle {
