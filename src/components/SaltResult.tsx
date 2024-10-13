@@ -15,20 +15,19 @@ const SaltResult: React.FC<SaltResultProps> = ({
 }) => {
   return (
     <div className={styles.resultArea}>
+      {salt && (
+        <div className={styles.saltResult}>
+          <p className={styles.saltFormula} dangerouslySetInnerHTML={{ __html: salt }}></p>
+        </div>
+      )}
       {(selectedCation || selectedAnion) && (
         <div className={styles.selectedIons}>
           {selectedCation && (
-            <span className={styles.selectedCation}>{selectedCation.name}</span>
+            <span className={styles.selectedIon}>{selectedCation.name}</span>
           )}
           {selectedAnion && (
-            <span className={styles.selectedAnion}>{selectedAnion.name}</span>
+            <span className={styles.selectedIon}>{selectedAnion.name}</span>
           )}
-        </div>
-      )}
-      {salt && (
-        <div className={styles.saltResult}>
-          <h2>Formed Salt:</h2>
-          <p className={styles.saltFormula} dangerouslySetInnerHTML={{ __html: salt }}></p>
         </div>
       )}
     </div>

@@ -10,8 +10,8 @@ export const calculateSaltFormula = (cation: Ion, anion: Ion): string => {
     const cationFormula = removeCharge(cation.formula);
     const anionFormula = removeCharge(anion.formula);
 
-    const cationPart = cationSubscript > 1 ? `[${cationFormula}]${subscriptNumber(cationSubscript)}` : cationFormula;
-    const anionPart = anionSubscript > 1 ? `[${anionFormula}]${subscriptNumber(anionSubscript)}` : anionFormula;
+    const cationPart = cationSubscript > 1 ? `(${cationFormula})${subscriptNumber(cationSubscript)}` : cationFormula;
+    const anionPart = anionSubscript > 1 ? `(${anionFormula})${subscriptNumber(anionSubscript)}` : anionFormula;
 
     return `${cationPart}${anionPart}`;
   };

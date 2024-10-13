@@ -26,8 +26,8 @@ export const urlToFormula = (urlSafeFormula: string): { cation: string, anion: s
 
     const decodeSingleFormula = (formula: string): string => {
         let decoded = formula
-            .replace(/\(/g, '[')
-            .replace(/\)/g, ']')
+            .replace(/\(/g, '(')
+            .replace(/\)/g, ')')
             .replace(/_([0-9])/g, (match, p1) => subscripts[`_${p1}`])
             .replace(/%2B/g, '+')
             .replace(/%2D/g, '-')

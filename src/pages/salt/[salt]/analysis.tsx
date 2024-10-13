@@ -5,6 +5,8 @@ import styles from '@/styles/Analysis.module.css';
 import { calculateSaltFormula } from '@/utils/formula';
 import { urlToFormula } from '@/utils/encoders';
 import { Ion, Test } from '@/types/ions';
+import { useState } from 'react';
+import Layout from '@/components/Layout';
 
 
 interface AnalysisProps {
@@ -13,6 +15,8 @@ interface AnalysisProps {
 }
 
 const Analysis: React.FC<AnalysisProps> = ({ anion, cation }) => {
+  const [isNotebookTheme, setIsNotebookTheme] = useState(false);
+
   const renderTests = (tests: Test[]) => {
     return tests.map((test, index) => (
       <React.Fragment key={index}>
@@ -41,8 +45,21 @@ const Analysis: React.FC<AnalysisProps> = ({ anion, cation }) => {
   };
 
   return (
-    <div className={styles.notebook}>
-      <h1 className={styles.experimentTitle}>Experiment No. 1</h1>
+    <Layout>
+    <div className={`${styles.notebook} ${isNotebookTheme ? styles.lightTheme : ''}`}>
+      <div className={styles.themeToggle}>
+        <label className={styles.switch}>
+          <input
+            type="checkbox"
+            checked={isNotebookTheme}
+            onChange={() => setIsNotebookTheme(!isNotebookTheme)}
+          />
+          <span className={styles.slider}></span>
+        </label>
+        <span>Notebook Theme</span>
+      </div>
+      
+      <h1 className={styles.experimentTitle}>Experiment No. N</h1>
       <h2 className={styles.saltName}>Analysis of {calculateSaltFormula(cation, anion)}</h2>
       
       <div className={styles.section}>
@@ -94,7 +111,7 @@ const Analysis: React.FC<AnalysisProps> = ({ anion, cation }) => {
 
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Result</h2>
-        <p className={styles.blueText}>The given salt is Sodium Sulphate (Na2SO4)</p>
+        <p className={styles.blueText}>The given salt is {calculateSaltFormula(cation, anion)}</p>
       </div>
 
       <div className={styles.section}>
@@ -106,6 +123,7 @@ const Analysis: React.FC<AnalysisProps> = ({ anion, cation }) => {
         </ol>
       </div>
     </div>
+    </Layout>
   );
 };
 

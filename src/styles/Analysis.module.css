@@ -16,7 +16,6 @@
 }
 
 .card {
-  background-color: #f9f9f9;
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -33,7 +32,6 @@
 }
 
 .description {
-  background-color: #f0f0f0;
   border-radius: 8px;
   padding: 1.5rem;
 }
@@ -51,15 +49,19 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border: 1px solid #444;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  background-color: #1a1a1a;
+  color: #8181ff;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
 .experimentTitle {
   font-size: 24px;
   text-align: center;
   margin-bottom: 20px;
+  color: white;
 }
 
 .section {
@@ -68,12 +70,12 @@
 
 .sectionTitle {
   font-size: 18px;
-  color: #000;
+  color: #ffffff;
   margin-bottom: 10px;
 }
 
 .blueText {
-  color: #0000FF;
+  color: #8181ff;
 }
 
 .testTable {
@@ -82,11 +84,107 @@
 }
 
 .testTable th, .testTable td {
-  border: 1px solid #ddd;
+  border: 1px solid #444;
   padding: 8px;
   text-align: left;
 }
 
 .testTable th {
-  background-color: #f2f2f2;
+  color: white;
+}
+
+.saltName {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Update other existing styles to use blue or white as needed */
+
+.themeToggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-right: 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #8181ff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.lightTheme {
+  background-color: #fff;
+  background-image: linear-gradient(#eee 1px, transparent 1px);
+  background-size: 100% 25px;
+  padding: 30px 20px 20px;
+  color: #2424ff;
+}
+
+.lightTheme .experimentTitle,
+.lightTheme .sectionTitle,
+.lightTheme .testTable th,
+.lightTheme .saltName {
+  color: #000;
+}
+
+.lightTheme .blueText {
+  color: #2424ff;
+}
+
+.lightTheme .testTable th, 
+.lightTheme .testTable td {
+  border-color: #000;
+}
+
+.lightTheme .themeToggle {
+  color: #000;
+}
+
+
+.testTable th, .testTable td {
+  border: 1px solid #929292;
 }

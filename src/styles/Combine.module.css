@@ -1,23 +1,30 @@
-.title {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 2.5rem;
-  color: #3498db;
-  animation: fadeInDown 0.5s ease-out;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
 }
 
-.combineContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  animation: fadeIn 0.7s ease-out;
+.title {
+  font-size: 4rem;
+  text-align: left;
+  margin-bottom: -1rem;
+  color: white;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1.875rem;
+  color: rgb(196, 196, 213);
+  margin-bottom: 2rem;
+  text-align: left;
+  font-weight: 300;
 }
 
 .ionListsContainer {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 2rem;
 }
 
 .ionList {
@@ -26,99 +33,111 @@
 
 .searchInput {
   width: 100%;
-  margin-bottom: 10px;
-  padding: 5px;
-  border: 1px solid #3498db;
-  border-radius: 4px;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  font-size: 1.25rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: white;
 }
 
 .ionButton {
   cursor: pointer;
-  padding: 8px 16px;
-  margin: 5px 0;
-  background-color: #f8f9fa;
-  border: 1px solid #3498db;
-  border-radius: 4px;
+  padding: 1rem 1.5rem;
+  margin: 0.75rem 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
   list-style-type: none;
   text-align: center;
-  font-size: 16px;
+  font-size: 1.5rem;
+  color: white;
   transition: all 0.2s ease;
+  width: calc(100% - 1rem);
 }
 
 .ionButton:hover {
-  background-color: #3498db;
-  color: white;
+  filter: brightness(110%);
+}
+
+/* Cation buttons */
+.ionList:first-child .ionButton {
+  background-color: rgba(255, 100, 100, 0.2);
+}
+
+/* Anion buttons */
+.ionList:last-child .ionButton {
+  background-color: rgba(100, 100, 255, 0.2);
+}
+
+.centerColumn {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .resultArea {
-  width: 30%;
+  width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .saltResult {
   text-align: center;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
   transition: all 0.2s ease;
-}
-
-.saltResult:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1rem;
+  width: 100%;
 }
 
 .saltFormula {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #3498db;
+  color: white;
   margin: 0;
-  padding: 10px;
-  background-color: #f8f9fa;
-  border-radius: 4px;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
   display: inline-block;
 }
 
-.analysisButton {
-  margin-top: 10px;
-  padding: 5px 10px;
-  background-color: #3498db;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+.selectedIons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-.analysisButton:hover {
-  background-color: #2980b9;
+.selectedIon {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.buttonContainer {
+  margin-top: 1rem;
+  width: 100%;
 }
 
 .viewAnalysisButton {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: #3498db;
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 2rem;
+  text-align: center;
+  background-color: #0084FF;
   color: white;
+  border-radius: 2rem;
   text-decoration: none;
-  border-radius: 5px;
-  margin-bottom: 20px;
   transition: all 0.2s ease;
 }
 
 .viewAnalysisButton:hover {
-  background-color: #2980b9;
+  background-color: #0066CC;
   transform: translateY(-2px);
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
 }

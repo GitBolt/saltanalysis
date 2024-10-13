@@ -49,9 +49,10 @@
 }
 
 .sectionTitle {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 500;
-  margin-top: 1rem;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
 }
 
 .saltGrid {

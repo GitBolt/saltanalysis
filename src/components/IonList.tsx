@@ -37,7 +37,7 @@ const IonList: React.FC<IonListProps> = ({
             onClick={() => onIonSelect(ion)}
             className={`${styles.ionButton} ${selectedIon?.id === ion.id ? styles.selected : ''}`}
           >
-            {removeCharge(ion.formula)}
+            {ion.formula}
           </button>
         ))}
       </div>

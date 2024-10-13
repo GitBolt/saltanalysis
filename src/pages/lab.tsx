@@ -54,8 +54,9 @@ export default function Combine() {
 
   return (
     <Layout>
-      <div className={styles.combineContainer}>
-        <h1 className={styles.title}>Combine Ions</h1>
+      <div className={styles.container}>
+        <h1 className={styles.title}>Create Salt To View Analysis</h1>
+        <p className={styles.subtitle}>Click on the anion and cation to create a salt</p>
         <div className={styles.ionListsContainer}>
           <IonList
             title="Cations"
@@ -65,11 +66,20 @@ export default function Combine() {
             searchValue={cationSearch}
             onSearchChange={(e) => setCationSearch(e.target.value)}
           />
-          <SaltResult
-            selectedCation={selectedCation}
-            selectedAnion={selectedAnion}
-            salt={salt}
-          />
+          <div className={styles.centerColumn}>
+            <SaltResult
+              selectedCation={selectedCation}
+              selectedAnion={selectedAnion}
+              salt={salt}
+            />
+            {salt && (
+              <div className={styles.buttonContainer}>
+                <Link href={`/salt/${formulaToUrl(selectedCation?.formula || '', selectedAnion?.formula || '')}/analysis`} className={styles.viewAnalysisButton}>
+                  View Analysis
+                </Link>
+              </div>
+            )}
+          </div>
           <IonList
             title="Anions"
             ions={filteredAnions}
@@ -79,11 +89,6 @@ export default function Combine() {
             onSearchChange={(e) => setAnionSearch(e.target.value)}
           />
         </div>
-        {salt && (
-          <Link href={`/salt/${formulaToUrl(selectedCation?.formula || '', selectedAnion?.formula || '')}/analysis`} className={styles.viewAnalysisButton}>
-            View Analysis
-          </Link>
-        )}
       </div>
     </Layout>
   );
