@@ -2,6 +2,7 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 1rem;
+  margin-top: 2rem;
 }
 
 .main {
@@ -39,7 +40,7 @@
 .createButton {
   display: inline-block;
   width: 100%;
-  max-width: 15rem;
+  max-width: 10rem;
   padding: 0.6rem;
   font-size: 1.5rem;
   text-align: center;
@@ -60,7 +61,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
 }
 
 .saltCard {
@@ -159,6 +160,9 @@
 
   .createButton {
     font-size: 2.25rem;
+    max-width: 15rem;
+
+
   }
 
   .sectionTitle {
