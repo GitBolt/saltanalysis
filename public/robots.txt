@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://saltanalysis.com
+
+# Sitemaps
+Sitemap: https://saltanalysis.com/sitemap.xml
