@@ -10,6 +10,7 @@ interface IonListProps {
   onIonSelect: (ion: Ion) => void;
   searchValue: string;
   onSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  className?: string;
 }
 
 const IonList: React.FC<IonListProps> = ({
@@ -19,28 +20,30 @@ const IonList: React.FC<IonListProps> = ({
   onIonSelect,
   searchValue,
   onSearchChange,
+  className,
 }) => {
   return (
-    <div className={styles.ionList}>
+    <div className={`${styles.ionList} ${className || ''}`}>
       <h2>{title}</h2>
       <input
         type="text"
-        placeholder={`Search ${title.toLowerCase()}...`}
+        placeholder={`Search by name or formula`}
         value={searchValue}
         onChange={onSearchChange}
         className={styles.searchInput}
       />
-      <div className={styles.ionGrid}>
-        {ions.map((ion) => (
-          <button
-            key={ion.id}
-            onClick={() => onIonSelect(ion)}
-            className={`${styles.ionButton} ${selectedIon?.id === ion.id ? styles.selected : ''}`}
-          >
-            {ion.formula}
-          </button>
-        ))}
-      </div>
+      {ions.map((ion) => (
+        <button
+          key={ion.formula}
+          onClick={() => onIonSelect(ion)}
+          className={`${styles.ionButton} ${selectedIon?.formula === ion.formula ? styles.selected : ''}`}
+        >
+          {ion.name} 
+          <br />
+          ({ion.formula})
+        </button>
+      ))} 
+
     </div>
   );
 };

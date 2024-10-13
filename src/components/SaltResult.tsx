@@ -30,6 +30,9 @@ const SaltResult: React.FC<SaltResultProps> = ({
           )}
         </div>
       )}
+      {(!selectedCation && !selectedAnion) && (
+        <p className={styles.selectedIon}>Nothing Selected</p>
+      )}
     </div>
   );
 };

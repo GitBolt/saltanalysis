@@ -44,16 +44,16 @@
 
 .ionButton {
   cursor: pointer;
-  padding: 1rem 1.5rem;
+  padding: 1rem 0.5rem;
   margin: 0.75rem 0.5rem;
-  border: none;
-  border-radius: 0.5rem;
+  border: 2px solid transparent;
+  border-radius: 1rem;
   list-style-type: none;
   text-align: center;
   font-size: 1.5rem;
   color: white;
   transition: all 0.2s ease;
-  width: calc(100% - 1rem);
+  width: calc(50% - 1rem);
 }
 
 .ionButton:hover {
@@ -70,8 +70,17 @@
   background-color: rgba(100, 100, 255, 0.2);
 }
 
+.ionList:first-child .ionButton.selected {
+  background-color: rgb(255, 69, 69)
+}
+
+.ionList:last-child .ionButton.selected {
+  background-color: rgb(83, 132, 255)
+}
+
 .centerColumn {
   width: 30%;
+  margin-top:4rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -89,7 +98,7 @@
 .saltResult {
   text-align: center;
   padding: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(132, 156, 183, 0.1);
   border-radius: 1rem;
   transition: all 0.2s ease;
   margin-bottom: 1rem;
@@ -102,7 +111,7 @@
   color: white;
   margin: 0;
   padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(159, 173, 198, 0.1);
   border-radius: 0.5rem;
   display: inline-block;
 }
@@ -110,17 +119,17 @@
 .selectedIons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 0.5rem;
 }
 
 .selectedIon {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: white;
+  font-weight: 800;
 }
 
 .buttonContainer {
-  margin-top: 1rem;
+  margin-top: 2rem;
   width: 100%;
 }
 
@@ -139,5 +148,4 @@
 
 .viewAnalysisButton:hover {
   background-color: #0066CC;
-  transform: translateY(-2px);
 }

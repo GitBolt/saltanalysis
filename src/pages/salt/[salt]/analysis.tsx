@@ -73,10 +73,11 @@ const Analysis: React.FC<AnalysisProps> = ({ anion, cation }) => {
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Preliminary Test</h2>
         <ul className={styles.blueText}>
-          <li>Odor: Odorless</li>
+          <i style={{fontWeight: 800, opacity: 0.5, marginLeft: '-2rem'}}>In Progress</i>
+          {/* <li>Odor: Odorless</li>
           <li>Texture: Crystalline</li>
           <li>Color: White</li>
-          <li>Solubility: Soluble in water</li>
+          <li>Solubility: Soluble in water</li> */}
         </ul>
       </div>
 

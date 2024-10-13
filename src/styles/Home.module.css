@@ -1,8 +1,8 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-}
+  padding: 1rem 2rem 2rem 2rem;
+  }
 
 .main {
   padding: 5rem 2rem;
@@ -51,7 +51,7 @@
 .sectionTitle {
   font-size: 3rem;
   font-weight: 500;
-  margin-top: 5rem;
+  margin-top: 8rem;
   margin-bottom: 1rem;
 }
 
@@ -68,6 +68,11 @@
   align-items: center;
   text-decoration: none;
   color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.saltCard:hover{
+  transform: scale(1.08) translateY(-5px);
 }
 
 .saltBox {
