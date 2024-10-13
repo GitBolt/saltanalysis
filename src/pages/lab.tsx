@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Layout from '@/components/Layout';
 import styles from '@/styles/Combine.module.css';
 import Link from 'next/link';
-import { calculateSaltFormula, removeCharge } from '@/utils/formula';
+import { calculateSaltFormula } from '@/utils/formula';
 import { Ion } from '@/types/ions';
 import { formulaToUrl } from '@/utils/encoders';
 import IonList from '@/components/IonList';
@@ -65,7 +65,7 @@ export default function Combine() {
 
   return (
     <Layout>
-      <div className={styles.container}>
+      <div className={styles.labContainer}>
         <h1 className={styles.title}>Create Salt To View Analysis</h1>
         <p className={styles.subtitle}>Click on the anion and cation to create a salt</p>
         <div className={styles.ionListsContainer}>
