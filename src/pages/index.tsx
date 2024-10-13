@@ -3,14 +3,21 @@ import Layout from '@/components/Layout';
 import styles from '@/styles/Home.module.css';
 import { useState, useEffect } from 'react';
 import { calculateSaltFormula } from '@/utils/formula';
-import { Ion } from '@/types/ions';
 import { formulaToUrl } from '@/utils/encoders';
+import { getGradientColors } from '@/utils/gradients';
 
 
-async function getRandomSalts(count: number): Promise<{ name: string; formula: string; url: string }[]> {
+type RandomSalt = {
+  name: string;
+  formula: string;
+  url: string;
+  cation: string;
+  anion: string;
+};
+
+const getRandomSalts = async (count: number): Promise<RandomSalt[]> => {
   const cations = await fetch('/cations.json').then(res => res.json());
   const anions = await fetch('/anions.json').then(res => res.json());
-  console.log(cations, anions);
   const salts = [];
   for (let i = 0; i < count; i++) {
     const cation = cations[Math.floor(Math.random() * cations.length)];
@@ -21,15 +28,15 @@ async function getRandomSalts(count: number): Promise<{ name: string; formula: s
     const name = `${cation.name} ${anion.name}`;
     const url = `/salt/${urlencoding.toLowerCase()}/analysis`;
 
-    salts.push({ name, formula, url });
+    salts.push({ name, formula, url, cation: cation.formula, anion: anion.formula });
   }
 
   return salts;
 }
 
-
 export default function Home() {
-  const [randomSalts, setRandomSalts] = useState<Array<{ name: string; formula: string; url: string }>>([]);
+
+  const [randomSalts, setRandomSalts] = useState<RandomSalt[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -41,7 +48,7 @@ export default function Home() {
     setIsLoading(true);
     setError(null);
     try {
-      const salts = await getRandomSalts(5);
+      const salts = await getRandomSalts(4);
       setRandomSalts(salts);
     } catch (err) {
       console.error('Error fetching random salts:', err);
@@ -54,31 +61,33 @@ export default function Home() {
   return (
     <Layout>
       <div className={styles.container}>
-        <h1 className={styles.title}>Salt Analyzer</h1>
+        <h1 className={styles.title}>Salts = Cation + Anion</h1>
+        <p className={styles.subtitle}>Create any salt you want and view it's analysis</p>
 
-        <Link href="/lab" className={styles.createButton}>
-          Create Your Salt
-        </Link>
+        <div className={styles.buttonContainer}>
+          <Link href="/lab" className={styles.createButton}>
+            Create Salt
+          </Link>
+        </div>
 
-        <h2 className={styles.subtitle}>Explore Random Salts:</h2>
+        <h2 className={styles.sectionTitle}>Check Analysis</h2>
         {isLoading ? (
           <p>Loading...</p>
         ) : error ? (
           <p className={styles.error}>{error}</p>
         ) : (
           <div className={styles.saltGrid}>
-            {randomSalts.map((salt) => (
+            {randomSalts.map((salt, index) => (
               <Link key={salt.formula} href={salt.url} className={styles.saltCard}>
-                <h3>{salt.name}</h3>
-                <p>{salt.formula}</p>
+                <div className={styles.saltBox} style={{ background: `linear-gradient(to bottom, ${getGradientColors()})` }}>
+                  <span className={styles.cation}>{salt.cation}</span>
+                  <span className={styles.anion}>{salt.anion}</span>
+                </div>
+                <p className={styles.formula}>{salt.formula}</p>
               </Link>
             ))}
           </div>
         )}
-
-        <button onClick={fetchRandomSalts} className={styles.refreshButton}>
-          Refresh Salts
-        </button>
       </div>
     </Layout>
   );

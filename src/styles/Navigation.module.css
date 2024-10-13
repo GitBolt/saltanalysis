@@ -1,0 +1,60 @@
+.navigation {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.096);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 70px;
+}
+
+.leftSection {
+    display: flex;
+    gap: 10px;
+}
+
+.navItem {
+    padding: 15px 12px;
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: #3477fd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.navItem:hover {
+    transform: translate(0, -2px);
+}
+
+.separator {
+    width: 1px;
+    height: 40px;
+    background-color: rgba(165, 165, 165, 0.2);
+    margin: 0 15px;
+}
+
+.rightSection {
+    font-size: 2rem;
+    color: white;
+}
+
+.boltLink {
+    color: #007AFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.boltLink:hover {
+    text-decoration: underline;
+}

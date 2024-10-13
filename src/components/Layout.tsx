@@ -11,14 +11,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div className={styles.container}>
       <Head>
         <title>Salt Analysis</title>
-        <meta name="description" content="Interactive Salt Analysis Website" />
+        <meta name="description" content="Get Practical Writeup for Analysis of any Salt" />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#1a1a2e" />
       </Head>
-      <Navigation />
       <main className={styles.main}>{children}</main>
-      <footer className={styles.footer}>
-        <p>© 2023 Salt Analysis. All rights reserved.</p>
-      </footer>
+      <Navigation />
     </div>
   );
 };

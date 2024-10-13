@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { calculateSaltFormula, removeCharge } from '@/utils/formula';
 import { Ion } from '@/types/ions';
 import { formulaToUrl } from '@/utils/encoders';
+import IonList from '@/components/IonList';
+import SaltResult from '@/components/SaltResult';
 
 export default function Combine() {
   const [anions, setAnions] = useState<Ion[]>([]);
@@ -29,7 +31,6 @@ export default function Combine() {
       setSelectedAnion(ion);
       if (selectedCation) {
         const saltFormula = calculateSaltFormula(selectedCation, ion);
-
         setSalt(saltFormula);
       }
     } else {
@@ -56,47 +57,27 @@ export default function Combine() {
       <div className={styles.combineContainer}>
         <h1 className={styles.title}>Combine Ions</h1>
         <div className={styles.ionListsContainer}>
-          <div className={styles.ionList}>
-            <input
-              type="text"
-              placeholder="Search cations..."
-              value={cationSearch}
-              onChange={(e) => setCationSearch(e.target.value)}
-              className={styles.searchInput}
-            />
-            <ul>
-              {filteredCations.map((ion) => (
-                <li key={ion.id} onClick={() => handleCombine(ion, false)} className={styles.ionButton}>
-                  {ion.formula}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className={styles.resultArea}>
-            {salt && (
-              <div className={styles.saltResult}>
-                <h2>Formed Salt:</h2>
-                <p className={styles.saltFormula} dangerouslySetInnerHTML={{ __html: salt }}></p>
-              </div>
-            )}
-          </div>
-          <div className={styles.ionList}>
-            <input
-              type="text"
-              placeholder="Search anions..."
-              value={anionSearch}
-              
-              onChange={(e) => setAnionSearch(e.target.value)}
-              className={styles.searchInput}
-            />
-            <ul>
-              {filteredAnions.map((ion) => (
-                <li key={ion.id} onClick={() => handleCombine(ion, true)} className={styles.ionButton}>
-                  {removeCharge(ion.formula)}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <IonList
+            title="Cations"
+            ions={filteredCations}
+            selectedIon={selectedCation}
+            onIonSelect={(ion) => handleCombine(ion, false)}
+            searchValue={cationSearch}
+            onSearchChange={(e) => setCationSearch(e.target.value)}
+          />
+          <SaltResult
+            selectedCation={selectedCation}
+            selectedAnion={selectedAnion}
+            salt={salt}
+          />
+          <IonList
+            title="Anions"
+            ions={filteredAnions}
+            selectedIon={selectedAnion}
+            onIonSelect={(ion) => handleCombine(ion, true)}
+            searchValue={anionSearch}
+            onSearchChange={(e) => setAnionSearch(e.target.value)}
+          />
         </div>
         {salt && (
           <Link href={`/salt/${formulaToUrl(selectedCation?.formula || '', selectedAnion?.formula || '')}/analysis`} className={styles.viewAnalysisButton}>

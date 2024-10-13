@@ -15,165 +15,82 @@
 }
 
 .title {
-  font-size: 3rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  animation: fadeInDown 0.5s ease-out;
+  font-size: 4rem;
+  text-align: left;
+  margin-bottom: -1.5rem;
+  color: white;
+  font-weight: 700;
 }
 
 .subtitle {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  animation: fadeInUp 0.5s ease-out;
+  font-size: 1.875rem;
+  color: rgb(196, 196, 213);
+  margin-bottom: 3rem;
+  text-align: left;
+  font-weight: 300;
 }
 
 .buttonContainer {
-  margin: 3rem 0;
-  animation: fadeIn 0.7s ease-out;
-}
-
-.createButton {
-  display: block;
-  width: 300px;
-  margin: 2rem auto;
-  padding: 1rem;
-  font-size: 1.5rem;
-  text-align: center;
-  background-color: #0070f3;
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.createButton:hover {
-  background-color: #0051a2;
-}
-
-.randomSaltsContainer {
-  width: 100%;
-  max-width: 1200px;
-  background-color: #ffffff;
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 8px 32px rgba(52, 152, 219, 0.1);
-  animation: fadeIn 0.7s ease-out;
-}
-
-.saltList {
-  list-style-type: none;
-  padding: 0;
-}
-
-.saltList li {
-  margin-bottom: 10px;
-}
-
-.saltList a {
-  color: #3498db;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.saltList a:hover {
-  color: #2980b9;
-}
-
-.saltItem {
-  background: #ffffff;
-  padding: 1.5rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease;
-  border: 1px solid rgba(52, 152, 219, 0.2);
-  width: calc(25% - 2rem);
-  min-width: 200px;
-}
-
-.saltItem:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-.saltItem h3 {
-  margin: 0 0 0.5rem 0;
-  color: #3498db;
-  font-size: 1.2rem;
-}
-
-.saltItem p {
-  margin: 0;
-  color: #2c3e50;
-  font-size: 1rem;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.combineButton {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #3498db;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  transition: background-color 0.2s, transform 0.2s;
-}
-
-.combineButton:hover {
-  background-color: #2980b9;
-  transform: translateY(-2px);
-}
-
-.saltGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
+  display: flex;
+  justify-content: flex-start;
   margin-bottom: 2rem;
 }
 
-.saltCard {
-  background-color: #f0f0f0;
-  border-radius: 8px;
-  padding: 1rem;
+.createButton {
+  display: inline-block;
+  width: 15rem;
+  padding: 0.6rem;
+  font-size: 2.25rem;
   text-align: center;
-  text-decoration: none;
-  color: #333;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.saltCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.refreshButton {
-  display: block;
-  margin: 0 auto;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  background-color: #4caf50;
+  background-color: #0084FF;
   color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  border-radius: 2rem;
+  text-decoration: none;
 }
 
-.refreshButton:hover {
-  background-color: #45a049;
+.sectionTitle {
+  font-size: 3.5rem;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.saltGrid {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.saltCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.saltBox {
+  width: 8rem;
+  height: 8rem; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cation, .anion {
+  font-size: 600;
+  font-size: 2.25rem;
+  font-weight: bold;
+  text-align: center;
+}
+.anion {
+  font-size: 1.75rem;
+}
+
+.formula {
+  font-size: 1.75rem;
+  margin: 0;
 }
