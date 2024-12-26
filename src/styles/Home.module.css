@@ -1,8 +1,23 @@
 .container {
-  max-width: 800px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 1rem;
   margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.leftSection {
+  flex: 1;
+  max-width: 800px;
+}
+
+.rightSection {
+  flex: 1;
+  max-width: 600px;
+  position: sticky;
+  top: 2rem;
+  height: calc(100vh - 8rem);
 }
 
 .main {
@@ -62,6 +77,29 @@
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
   margin-bottom: 5rem;
+}
+
+/* Flow preview styles */
+.flowPreview {
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+}
+
+.flowTitle {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.flowContainer {
+  flex: 1;
+  background: #161616;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(129, 129, 255, 0.2);
+  padding: 1rem;
 }
 
 .saltCard {
@@ -184,5 +222,18 @@
 
   .formula {
     font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .rightSection {
+    position: relative;
+    top: 0;
+    height: 500px;
+    max-width: 100%;
   }
 }

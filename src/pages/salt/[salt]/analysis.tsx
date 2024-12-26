@@ -7,7 +7,11 @@ import { urlToFormula } from '@/utils/encoders';
 import { Ion, Test } from '@/types/ions';
 import { useState } from 'react';
 import Layout from '@/components/Layout';
+import dynamic from 'next/dynamic';
 
+const SaltAnalysisFlow = dynamic(() => import('@/components/SaltAnalysisFlow'), {
+  ssr: false
+});
 
 interface AnalysisProps {
   anion: Ion;
@@ -16,6 +20,7 @@ interface AnalysisProps {
 
 const Analysis: React.FC<AnalysisProps> = ({ anion, cation }) => {
   const [isNotebookTheme, setIsNotebookTheme] = useState(false);
+  const [showFlow, setShowFlow] = useState(false);
 
   const renderTests = (tests: Test[]) => {
     let isConfirmatoryHeaderRendered = false;
@@ -141,6 +146,21 @@ const Analysis: React.FC<AnalysisProps> = ({ anion, cation }) => {
           <li>Keep the mouth of the test tube away from the face.</li>
         </ol>
       </div>
+
+      <div className={styles.buttonContainer}>
+        <button 
+          className={styles.flowButton}
+          onClick={() => setShowFlow(!showFlow)}
+        >
+          {showFlow ? 'Hide Flow Diagram' : 'View Flow Diagram'}
+        </button>
+      </div>
+
+      {showFlow && (
+        <div className={styles.flowWrapper}>
+          <SaltAnalysisFlow anion={anion} cation={cation} />
+        </div>
+      )}
     </div>
     </Layout>
   );

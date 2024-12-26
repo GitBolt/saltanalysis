@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from '@/styles/Combine.module.css';
 import { Ion } from '@/types/ions';
+import Link from 'next/link';
+import { formulaToUrl } from '@/utils/encoders';
 
 interface SaltResultProps {
   selectedCation: Ion | null;
@@ -13,6 +15,11 @@ const SaltResult: React.FC<SaltResultProps> = ({
   selectedAnion,
   salt,
 }) => {
+  const getFlowUrl = () => {
+    if (!selectedCation || !selectedAnion) return '';
+    return `/salt/${formulaToUrl(selectedCation.formula, selectedAnion.formula)}/flow`;
+  };
+
   return (
     <div className={styles.resultArea}>
       {salt && (
@@ -37,6 +44,22 @@ const SaltResult: React.FC<SaltResultProps> = ({
             <span className={styles.selectedIon}>Selected</span>
           </div>
         </>
+      )}
+      {salt && (
+        <div className={styles.buttonContainer}>
+          <Link 
+            href={`/salt/${formulaToUrl(selectedCation?.formula || '', selectedAnion?.formula || '')}/analysis`} 
+            className={styles.viewAnalysisButton}
+          >
+            View Analysis
+          </Link>
+          <Link 
+            href={getFlowUrl()} 
+            className={`${styles.viewAnalysisButton} ${styles.flowButton}`}
+          >
+            View Flow Diagram
+          </Link>
+        </div>
       )}
     </div>
   );

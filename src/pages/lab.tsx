@@ -84,13 +84,6 @@ export default function Combine() {
               selectedAnion={selectedAnion}
               salt={salt}
             />
-            {salt && (
-              <div className={styles.buttonContainer}>
-                <Link href={`/salt/${formulaToUrl(selectedCation?.formula || '', selectedAnion?.formula || '')}/analysis`} className={styles.viewAnalysisButton}>
-                  View Analysis
-                </Link>
-              </div>
-            )}
           </div>
           <IonList
             title="Anions"
