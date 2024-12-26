@@ -7,14 +7,18 @@ interface LayoutProps {
   description?: string;
   ogImage?: string;
   canonicalUrl?: string;
+  keywords?: string;
+  author?: string;
 }
 
 const Layout: React.FC<LayoutProps> = ({ 
   children, 
   title = "Salt Analysis - Get Practical Writeup for Any Salt",
-  description = "Get detailed, step-by-step practical writeups for the analysis of any salt.",
+  description = "Get detailed, step-by-step practical writeups for salt analysis. Learn about cations, anions, and their reactions in chemistry experiments.",
   ogImage = "https://saltanalysis.com/og.png",
-  canonicalUrl = "https://saltanalysis.com/"
+  canonicalUrl = "https://saltanalysis.com/",
+  keywords = "salt analysis, chemistry practical, qualitative analysis, cations, anions, chemical reactions, lab experiments, chemistry writeup",
+  author = "Aabis"
 }) => {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -22,6 +26,10 @@ const Layout: React.FC<LayoutProps> = ({
     "name": "Salt Analysis",
     "url": "https://saltanalysis.com",
     "description": description,
+    "author": {
+      "@type": "Person",
+      "name": author
+    },
     "potentialAction": {
       "@type": "SearchAction",
       "target": "https://saltanalysis.com/search?q={search_term_string}",
@@ -57,7 +65,15 @@ const Layout: React.FC<LayoutProps> = ({
 
         {/* Additional meta tags */}
         <meta name="robots" content="index, follow" />
-        <meta name="keywords" content="salt analysis, chemistry, practical writeup" />
+        <meta name="keywords" content={keywords} />
+        <meta name="author" content={author} />
+        <meta name="revisit-after" content="7 days" />
+        <meta name="language" content="English" />
+        
+        {/* Mobile meta tags */}
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
         {/* JSON-LD */}
         <script
