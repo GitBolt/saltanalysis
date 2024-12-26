@@ -4,6 +4,10 @@ export interface Ion {
     formula: string;
     charge: number;
     tests: Test[];
+    texture?: string;
+    odor?: string;
+    color?: string;
+    solubility?: string;
   }
   
 

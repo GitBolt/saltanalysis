@@ -4,6 +4,10 @@
     "name": "Sodium",
     "formula": "Na⁺",
     "charge": 1,
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Soluble in water",
     "tests": [
       {
         "experiment": "Flame test",
@@ -24,6 +28,10 @@
     "name": "Potassium",
     "formula": "K⁺",
     "charge": 1,
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Soluble in water",
     "tests": [
       {
         "experiment": "Flame test",
@@ -44,6 +52,10 @@
     "name": "Ammonium",
     "formula": "NH₄⁺",
     "charge": 1,
+    "odor": "Ammoniacal",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Soluble in water",
     "tests": [
       {
         "experiment": "Salt + NaOH solution",
@@ -69,6 +81,10 @@
     "name": "Magnesium",
     "formula": "Mg²⁺",
     "charge": 2,
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Slightly soluble in water",
     "tests": [
       {
         "experiment": "Salt solution + NaOH solution",
@@ -89,6 +105,10 @@
     "name": "Barium",
     "formula": "Ba²⁺",
     "charge": 2,
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Insoluble in water",
     "tests": [
       {
         "experiment": "Salt + NaOH solution",
@@ -124,12 +144,15 @@
       }
     ]
   },
-
   {
     "id": 7,
     "name": "Zinc",
     "formula": "Zn²⁺",
     "charge": 2,
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Soluble in water",
     "tests": [
       {
         "experiment": "Salt + NaOH solution",
@@ -146,7 +169,6 @@
         "observation": "No reaction",
         "inference": "Third group cation is absent"
       },
-
       {
         "experiment": "Original Salt + Dil. HCl + NH₄Cl solid + NH₄OH solution + H₂SO₄",
         "observation": "Dirty white ppt",
@@ -173,6 +195,10 @@
     "name": "Aluminum",
     "formula": "Al³⁺",
     "charge": 3,
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Insoluble in water",
     "tests": [
       {
         "experiment": "Salt solution + NaOH",
@@ -208,6 +234,10 @@
     "name": "Iron(II)",
     "formula": "Fe²⁺",
     "charge": 2,
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "Pale green",
+    "solubility": "Slightly soluble in water",
     "tests": [
       {
         "experiment": "Salt solution + NaOH solution",
@@ -228,6 +258,10 @@
     "name": "Iron(III)",
     "formula": "Fe³⁺",
     "charge": 3,
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "Reddish-brown",
+    "solubility": "Slightly soluble in water",
     "tests": [
       {
         "experiment": "Salt solution + NaOH solution",
@@ -248,6 +282,10 @@
     "name": "Copper(II)",
     "formula": "Cu²⁺",
     "charge": 2,
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "Blue",
+    "solubility": "Soluble in water",
     "tests": [
       {
         "experiment": "Salt solution + NaOH solution",
@@ -268,9 +306,13 @@
     "name": "Lead(II)",
     "formula": "Pb²⁺",
     "charge": 2,
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Insoluble in water",
     "tests": [
       {
-        "experiment": "Salt solution + diluteHCl",
+        "experiment": "Salt solution + dilute HCl",
         "observation": "White precipitate",
         "inference": "Pb²⁺ may be present"
       },
@@ -295,6 +337,10 @@
     "name": "Strontium",
     "formula": "Sr²⁺",
     "charge": 2,
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Slightly soluble in water",
     "tests": [
       {
         "experiment": "Salt + NaOH solution",
@@ -336,11 +382,16 @@
         "confirmatory": true
       }
     ]
-  },{
+  },
+  {
     "id": 14,
     "name": "Calcium",
     "formula": "Ca²⁺",
     "charge": 2,
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Slightly soluble in water",
     "tests": [
       {
         "experiment": "Salt + NaOH solution",

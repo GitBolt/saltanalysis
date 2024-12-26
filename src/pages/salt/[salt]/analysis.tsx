@@ -47,6 +47,18 @@ const Analysis: React.FC<AnalysisProps> = ({ anion, cation }) => {
     ));
   };
 
+  const getPreliminaryTestResults = () => {
+    // Combine properties from both anion and cation
+    const odor = anion.odor || cation.odor || 'Unknown';
+    const texture = anion.texture || cation.texture || 'Unknown';
+    const color = anion.color || cation.color || 'Unknown';
+    const solubility = anion.solubility || cation.solubility || 'Unknown';
+
+    return { odor, texture, color, solubility };
+  };
+
+  const preliminaryResults = getPreliminaryTestResults();
+
   return (
     <Layout>
     <div className={`${styles.notebook} ${isNotebookTheme ? styles.lightTheme : ''}`}>
@@ -73,11 +85,10 @@ const Analysis: React.FC<AnalysisProps> = ({ anion, cation }) => {
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Preliminary Test</h2>
         <ul className={styles.blueText}>
-          <i style={{fontWeight: 800, opacity: 0.5, marginLeft: '-2rem'}}>In Progress</i>
-          {/* <li>Odor: Odorless</li>
-          <li>Texture: Crystalline</li>
-          <li>Color: White</li>
-          <li>Solubility: Soluble in water</li> */}
+          <li>Odor: {preliminaryResults.odor}</li>
+          <li>Texture: {preliminaryResults.texture}</li>
+          <li>Color: {preliminaryResults.color}</li>
+          <li>Solubility: {preliminaryResults.solubility}</li>
         </ul>
       </div>
 

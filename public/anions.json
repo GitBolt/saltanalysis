@@ -4,6 +4,10 @@
       "name": "Chloride",
       "formula": "Cl⁻",
       "charge": -1,
+      "odor": "Odorless",
+      "texture": "Crystalline",
+      "color": "White",
+      "solubility": "Soluble in water",
       "tests": [
         {
           "experiment": "To dry salt, dilute H₂SO₄ is added",
@@ -29,6 +33,10 @@
       "name": "Bromide",
       "formula": "Br⁻",
       "charge": -1,
+      "odor": "Odorless",
+      "texture": "Crystalline",
+      "color": "White",
+      "solubility": "Soluble in water",
       "tests": [
         {
           "experiment": "Salt + dilute H₂SO₄",
@@ -54,6 +62,10 @@
       "name": "Iodide",
       "formula": "I⁻",
       "charge": -1,
+      "odor": "Odorless",
+      "texture": "Crystalline",
+      "color": "White",
+      "solubility": "Soluble in water",
       "tests": [
         {
           "experiment": "Salt + Conc H₂SO₄",
@@ -74,6 +86,10 @@
       "name": "Fluoride",
       "formula": "F⁻",
       "charge": -1,
+      "odor": "Odorless",
+      "texture": "Crystalline",
+      "color": "White",
+      "solubility": "Soluble in water",
       "tests": [
         {
           "experiment": "Salt + Conc H₂SO₄",
@@ -94,6 +110,10 @@
       "name": "Sulfate",
       "formula": "SO₄²⁻",
       "charge": -2,
+      "odor": "Odorless",
+      "texture": "Crystalline",
+      "color": "White",
+      "solubility": "Soluble in water",
       "tests": [
         {
           "experiment": "Salt + dilute H₂SO₄",
@@ -112,13 +132,17 @@
           "inference": "Presence of SO₄²⁻ is confirmed",
           "confirmatory": true
         }
-      ]
+      ] 
     },
     {
       "id": 6,
       "name": "Nitrate",
       "formula": "NO₃⁻",
       "charge": -1,
+      "odor": "Odorless",
+      "texture": "Crystalline",
+      "color": "White",
+      "solubility": "Soluble in water",
       "tests": [
         {
           "name": "Brown Ring Test",
@@ -134,6 +158,10 @@
       "name": "Carbonate",
       "formula": "CO₃²⁻",
       "charge": -2,
+      "odor": "Odorless",
+      "texture": "Crystalline",
+      "color": "White",
+      "solubility": "Soluble in water",
       "tests": [
         {
           "experiment": "Salt + Dilute HCl",
@@ -161,6 +189,10 @@
       "name": "Phosphate",
       "formula": "PO₄³⁻",
       "charge": -3,
+      "odor": "Odorless",
+      "texture": "Crystalline",
+      "color": "White",
+      "solubility": "Slightly soluble in water",
       "tests": [
         {
           "name": "Ammonium Molybdate Test",
@@ -176,6 +208,10 @@
       "name": "Hydroxide",
       "formula": "OH⁻",
       "charge": -1,
+      "odor": "Odorless",
+      "texture": "Crystalline",
+      "color": "White",
+      "solubility": "Soluble in water",
       "tests": [
         {
           "experiment": "Salt Solution + Universal Indicator",
@@ -196,6 +232,10 @@
       "name": "Acetate",
       "formula": "CH₃COO⁻",
       "charge": -1,
+      "odor": "Vinegar-like",
+      "texture": "Crystalline",
+      "color": "White",
+      "solubility": "Soluble in water",
       "tests": [
         {
           "experiment": "Salt + Dilute H₂SO₄",
@@ -204,7 +244,7 @@
         },
         {
           "experiment": "Salt + Conc. H₂SO₄",
-          "observation": "Vapours with vinger like smell evolve",
+          "observation": "Vapours with vinegar-like smell evolve",
           "inference": "CH₃COO⁻ may be present"
         },
         {
@@ -228,6 +268,10 @@
       "name": "Oxalate",
       "formula": "C₂O₄²⁻",
       "charge": -2,
+      "odor": "Odorless",
+      "texture": "Crystalline",
+      "color": "White",
+      "solubility": "Slightly soluble in water",
       "tests": [
         {
           "experiment": "Salt + dilute H₂SO₄",
