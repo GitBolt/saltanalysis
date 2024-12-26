@@ -3,11 +3,12 @@ import { useRouter } from 'next/router';
 import { GetServerSideProps } from 'next';
 import styles from '@/styles/Analysis.module.css';
 import { calculateSaltFormula } from '@/utils/formula';
-import { urlToFormula } from '@/utils/encoders';
+import { urlToFormula, formulaToUrl } from '@/utils/encoders';
 import { Ion, Test } from '@/types/ions';
 import { useState } from 'react';
 import Layout from '@/components/Layout';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 const SaltAnalysisFlow = dynamic(() => import('@/components/SaltAnalysisFlow'), {
   ssr: false
@@ -63,6 +64,10 @@ const Analysis: React.FC<AnalysisProps> = ({ anion, cation }) => {
   };
 
   const preliminaryResults = getPreliminaryTestResults();
+
+  const getFlowUrl = () => {
+    return `/salt/${formulaToUrl(cation.formula, anion.formula)}/flow`;
+  };
 
   return (
     <Layout>
@@ -147,18 +152,47 @@ const Analysis: React.FC<AnalysisProps> = ({ anion, cation }) => {
         </ol>
       </div>
 
-      <div className={styles.buttonContainer}>
-        <button 
-          className={styles.flowButton}
-          onClick={() => setShowFlow(!showFlow)}
-        >
-          {showFlow ? 'Hide Flow Diagram' : 'View Flow Diagram'}
-        </button>
-      </div>
-
       {showFlow && (
         <div className={styles.flowWrapper}>
+          <div className={styles.flowHeader}>
+            <button 
+              className={styles.flowButton}
+              onClick={() => setShowFlow(false)}
+            >
+              Hide Flow Diagram
+            </button>
+            <Link 
+              href={getFlowUrl()}
+              className={styles.fullscreenButton}
+            >
+              <span>Fullscreen</span>
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="20" 
+                height="20" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              >
+                <path d="M15 3h6v6M14 10l7-7M9 21H3v-6M10 14l-7 7"/>
+              </svg>
+            </Link>
+          </div>
           <SaltAnalysisFlow anion={anion} cation={cation} />
+        </div>
+      )}
+
+      {!showFlow && (
+        <div className={styles.buttonContainer}>
+          <button 
+            className={styles.flowButton}
+            onClick={() => setShowFlow(true)}
+          >
+            View Flow Diagram
+          </button>
         </div>
       )}
     </div>

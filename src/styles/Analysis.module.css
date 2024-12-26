@@ -290,3 +290,69 @@ input:checked + .slider:before {
 .lightTheme .flowButton:hover {
   background: #1a1aff;
 }
+
+.flowHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.fullscreenButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  text-decoration: none;
+}
+
+.fullscreenButton:hover {
+  background: #34495e;
+}
+
+.fullscreenButton svg {
+  transition: transform 0.2s ease;
+}
+
+.fullscreenButton:hover svg {
+  transform: scale(1.1);
+}
+
+/* Update existing styles */
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.flowButton {
+  background: #0084FF;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.flowButton:hover {
+  background: #0066CC;
+}
+
+/* Add these styles for the light theme */
+.lightTheme .fullscreenButton {
+  background: #2424ff;
+}
+
+.lightTheme .fullscreenButton:hover {
+  background: #1a1aff;
+}

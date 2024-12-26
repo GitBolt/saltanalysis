@@ -215,12 +215,14 @@ const SaltAnalysisFlow: React.FC<SaltAnalysisFlowProps> = ({ anion, cation }) =>
         source: 'salt',
         target: 'cation-analysis',
         type: 'smoothstep',
+        animated: true,
       },
       {
         id: 'salt-to-anion',
         source: 'salt',
         target: 'anion-analysis',
         type: 'smoothstep',
+        animated: true,
       }
     );
 
@@ -235,6 +237,7 @@ const SaltAnalysisFlow: React.FC<SaltAnalysisFlowProps> = ({ anion, cation }) =>
         source: 'cation-analysis',
         target: `cation-${index}`,
         type: 'smoothstep',
+        animated: true,
       });
     });
 
@@ -245,6 +248,7 @@ const SaltAnalysisFlow: React.FC<SaltAnalysisFlowProps> = ({ anion, cation }) =>
         source: 'cation-analysis',
         target: `cation-${lastCationTestIndex}`,
         type: 'smoothstep',
+        animated: true,
       });
 
       // Connect last preliminary test to confirmatory test
@@ -254,6 +258,7 @@ const SaltAnalysisFlow: React.FC<SaltAnalysisFlowProps> = ({ anion, cation }) =>
           source: `cation-${lastCationTestIndex}`,
           target: 'cation-confirmatory',
           type: 'smoothstep',
+          animated: true,
           style: { stroke: '#00b894' }
         });
       }
@@ -270,6 +275,7 @@ const SaltAnalysisFlow: React.FC<SaltAnalysisFlowProps> = ({ anion, cation }) =>
         source: 'anion-analysis',
         target: `anion-${index}`,
         type: 'smoothstep',
+        animated: true,
       });
     });
 
@@ -280,6 +286,7 @@ const SaltAnalysisFlow: React.FC<SaltAnalysisFlowProps> = ({ anion, cation }) =>
         source: 'anion-analysis',
         target: `anion-${lastAnionTestIndex}`,
         type: 'smoothstep',
+        animated: true,
       });
 
       // Connect last preliminary test to confirmatory test
@@ -289,6 +296,7 @@ const SaltAnalysisFlow: React.FC<SaltAnalysisFlowProps> = ({ anion, cation }) =>
           source: `anion-${lastAnionTestIndex}`,
           target: 'anion-confirmatory',
           type: 'smoothstep',
+          animated: true,
           style: { stroke: '#00b894' }
         });
       }
