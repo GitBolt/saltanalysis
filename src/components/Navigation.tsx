@@ -10,23 +10,26 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className={styles.navigation}>
-      <div className={styles.leftSection}>
-        <Link href="/" className={styles.navItem} onClick={() => handleNavClick('Home')}>
-          Home
-        </Link>
-        <Link href="/lab" className={styles.navItem} onClick={() => handleNavClick('Lab')}>
-          Lab
-        </Link>
+    <>
+      <nav className={styles.navigation}>
+        <div className={styles.leftSection}>
+          <Link href="/" className={styles.navItem} onClick={() => handleNavClick('Home')}>
+            Home
+          </Link>
+          <Link href="/lab" className={styles.navItem} onClick={() => handleNavClick('Lab')}>
+            Lab
+          </Link>
+        </div>
+      </nav>
+      <div className={styles.builtByContainer}>
+        <span>
+          Built by{' '}
+          <a href="https://twitter.com/0xBolt" target="_blank" rel="noopener noreferrer" className={styles.boltLink}>
+            Aabis
+          </a>
+        </span>
       </div>
-      <div className={styles.separator}></div>
-      <div className={styles.rightSection}>
-        Built by{' '}
-        <a href="https://twitter.com/0xBolt" target="_blank" rel="noopener noreferrer" className={styles.boltLink}>
-          Aabis
-        </a>
-      </div>
-    </nav>
+    </>
   );
 };
 
