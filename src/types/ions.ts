@@ -8,6 +8,7 @@ export interface Ion {
     odor?: string;
     color?: string;
     solubility?: string;
+    category: string;
   }
   
 

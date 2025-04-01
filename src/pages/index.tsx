@@ -79,8 +79,33 @@ export default function Home() {
     }
   };
 
+  const homepageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Salt Analysis - Home",
+    "description": "Create and analyze any salt with detailed step-by-step practical writeups",
+    "url": "https://saltanalysis.com",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": randomSalts.map((salt, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+          "@type": "ChemicalSubstance",
+          "name": salt.name,
+          "url": `https://saltanalysis.com${salt.url}`,
+          "molecularFormula": salt.formula
+        }
+      }))
+    }
+  };
+
   return (
     <Layout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageJsonLd) }}
+      />
       <div className={styles.container}>
         <div className={styles.leftSection}>
           <h1 className={styles.title}>Salts = Cation + Anion</h1>
@@ -94,18 +119,25 @@ export default function Home() {
 
           <h2 className={styles.sectionTitle}>Quick Analysis</h2>
           {isLoading ? (
-            <p>Loading...</p>
+            <p aria-label="Loading random salts">Loading...</p>
           ) : error ? (
-            <p className={styles.error}>{error}</p>
+            <p className={styles.error} role="alert">{error}</p>
           ) : (
-            <div className={styles.saltGrid}>
+            <div className={styles.saltGrid} role="list">
               {randomSalts.map((salt, index) => (
                 <Link
-                  key={salt.formula} href={salt.url}
+                  key={salt.formula} 
+                  href={salt.url}
                   className={styles.saltCard}
                   onClick={() => handleSaltClick(salt)}
+                  aria-label={`View analysis for ${salt.name} (${salt.formula})`}
                 >
-                  <div className={styles.saltBox} style={{ background: `linear-gradient(to bottom, ${getGradientColors()})` }}>
+                  <div 
+                    className={styles.saltBox} 
+                    style={{ background: `linear-gradient(to bottom, ${getGradientColors()})` }}
+                    role="img"
+                    aria-label={`Chemical formula: ${salt.cation} + ${salt.anion}`}
+                  >
                     <span className={styles.cation}>{salt.cation}</span>
                     <span className={styles.anion}>{salt.anion}</span>
                   </div>

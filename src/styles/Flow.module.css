@@ -35,6 +35,39 @@
   margin-bottom: 6rem;
 }
 
+.backButton {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  background: #8181ff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.backButton:hover {
+  background: #6b6bff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.backButton svg {
+  transition: transform 0.2s ease;
+}
+
+.backButton:hover svg {
+  transform: translateX(-2px);
+}
+
 @media (max-width: 768px) {
   .flowPage {
     padding: 0 1rem;
@@ -47,5 +80,12 @@
 
   .flowContainer {
     height: calc(100vh - 10rem);
+  }
+
+  .backButton {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
   }
 } 

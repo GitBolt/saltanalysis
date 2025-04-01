@@ -1,6 +1,5 @@
 import React from 'react';
-import { useRouter } from 'next/router';
-import { GetServerSideProps } from 'next';
+import { GetStaticProps, GetStaticPaths } from 'next';
 import styles from '@/styles/Analysis.module.css';
 import { calculateSaltFormula } from '@/utils/formula';
 import { urlToFormula, formulaToUrl } from '@/utils/encoders';
@@ -9,6 +8,7 @@ import { useState } from 'react';
 import Layout from '@/components/Layout';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import { getAllSalts, getSaltById } from '@/data/salts';
 
 const SaltAnalysisFlow = dynamic(() => import('@/components/SaltAnalysisFlow'), {
   ssr: false
@@ -17,9 +17,15 @@ const SaltAnalysisFlow = dynamic(() => import('@/components/SaltAnalysisFlow'), 
 interface AnalysisProps {
   anion: Ion;
   cation: Ion;
+  salt: {
+    id: string;
+    name: string;
+    formula: string;
+    description: string;
+  };
 }
 
-const Analysis: React.FC<AnalysisProps> = ({ anion, cation }) => {
+const Analysis: React.FC<AnalysisProps> = ({ anion, cation, salt }) => {
   const [isNotebookTheme, setIsNotebookTheme] = useState(false);
   const [showFlow, setShowFlow] = useState(false);
 
@@ -70,170 +76,183 @@ const Analysis: React.FC<AnalysisProps> = ({ anion, cation }) => {
   };
 
   return (
-    <Layout>
-    <div className={`${styles.notebook} ${isNotebookTheme ? styles.lightTheme : ''}`}>
-      <div className={styles.themeToggle}>
-        <label className={styles.switch}>
-          <input
-            type="checkbox"
-            checked={isNotebookTheme}
-            onChange={() => setIsNotebookTheme(!isNotebookTheme)}
-          />
-          <span className={styles.slider}></span>
-        </label>
-        <span>Notebook Theme</span>
-      </div>
-      
-      <h1 className={styles.experimentTitle}>Experiment No. N</h1>
-      <h2 className={styles.saltName}>Analysis of {calculateSaltFormula(cation, anion)}</h2>
-      
-      <div className={styles.section}>
-        <h2 className={styles.sectionTitle}>Aim</h2>
-        <p className={styles.blueText}>To determine the presence of anion and cation in the given salt</p>
-      </div>
+    <Layout
+      title={`${salt.name} Analysis - Salt Analysis Guide`}
+      description={salt.description}
+      canonicalUrl={`https://saltanalysis.com/salt/${salt.id}`}
+      keywords={`${salt.name}, salt analysis, chemistry practical, qualitative analysis, ${salt.formula}, chemical reactions, lab experiments`}
+      salt={{
+        name: salt.name,
+        formula: salt.formula,
+        description: salt.description,
+        cation: {
+          name: cation.name,
+          formula: cation.formula
+        },
+        anion: {
+          name: anion.name,
+          formula: anion.formula
+        }
+      }}
+    >
+      <div className={`${styles.notebook} ${isNotebookTheme ? styles.lightTheme : ''}`}>
+        <div className={styles.themeToggle}>
+          <label className={styles.switch}>
+            <input
+              type="checkbox"
+              checked={isNotebookTheme}
+              onChange={() => setIsNotebookTheme(!isNotebookTheme)}
+            />
+            <span className={styles.slider}></span>
+          </label>
+          <span>Notebook Theme</span>
+        </div>
+        
+        <h1 className={styles.experimentTitle}>Experiment No. N</h1>
+        <h2 className={styles.saltName}>Analysis of {salt.name} ({salt.formula})</h2>
+        
+        <div className={styles.section}>
+          <h2 className={styles.sectionTitle}>Aim</h2>
+          <p className={styles.blueText}>To determine the presence of anion and cation in the given salt</p>
+        </div>
 
-      <div className={styles.section}>
-        <h2 className={styles.sectionTitle}>Preliminary Test</h2>
-        <ul className={styles.blueText}>
-          <li>Odor: {preliminaryResults.odor}</li>
-          <li>Texture: {preliminaryResults.texture}</li>
-          <li>Color: {preliminaryResults.color}</li>
-          <li>Solubility: {preliminaryResults.solubility}</li>
-        </ul>
-      </div>
+        <div className={styles.section}>
+          <h2 className={styles.sectionTitle}>Preliminary Test</h2>
+          <ul className={styles.blueText}>
+            <li>Odor: {preliminaryResults.odor}</li>
+            <li>Texture: {preliminaryResults.texture}</li>
+            <li>Color: {preliminaryResults.color}</li>
+            <li>Solubility: {preliminaryResults.solubility}</li>
+          </ul>
+        </div>
 
-      <div className={styles.section}>
-        <h2 className={styles.sectionTitle}>Test of Anion</h2>
-        <table className={styles.testTable}>
-          <thead>
-            <tr>
-              <th>Experiment</th>
-              <th>Observation</th>
-              <th>Inference</th>
-            </tr>
-          </thead>
-          <tbody>
-            {renderTests(anion.tests)}
-          </tbody>
-        </table>
-      </div>
+        <div className={styles.section}>
+          <h2 className={styles.sectionTitle}>Test of Anion</h2>
+          <table className={styles.testTable}>
+            <thead>
+              <tr>
+                <th>Experiment</th>
+                <th>Observation</th>
+                <th>Inference</th>
+              </tr>
+            </thead>
+            <tbody>
+              {renderTests(anion.tests)}
+            </tbody>
+          </table>
+        </div>
 
-      <div className={styles.section}>
-        <h2 className={styles.sectionTitle}>Test of Cation</h2>
-        <table className={styles.testTable}>
-          <thead>
-            <tr>
-              <th>Experiment</th>
-              <th>Observation</th>
-              <th>Inference</th>
-            </tr>
-          </thead>
-          <tbody>
-            {renderTests(cation.tests)}
-          </tbody>
-        </table>
-      </div>
+        <div className={styles.section}>
+          <h2 className={styles.sectionTitle}>Test of Cation</h2>
+          <table className={styles.testTable}>
+            <thead>
+              <tr>
+                <th>Experiment</th>
+                <th>Observation</th>
+                <th>Inference</th>
+              </tr>
+            </thead>
+            <tbody>
+              {renderTests(cation.tests)}
+            </tbody>
+          </table>
+        </div>
 
-      <div className={styles.section}>
-        <h2 className={styles.sectionTitle}>Result</h2>
-        <p className={styles.blueText}>
-          The given salt contains {cation.formula} ions as cation and {anion.formula} ions as anion. 
-          The salt is {calculateSaltFormula(cation, anion)}.
-        </p>
+        <div className={styles.section}>
+          <h2 className={styles.sectionTitle}>Result</h2>
+          <p className={styles.blueText}>
+            The given salt contains {cation.formula} ions as cation and {anion.formula} ions as anion. 
+            The salt is {salt.formula}.
+          </p>
+        </div>
 
-      </div>
+        <div className={styles.section}>
+          <h2 className={styles.sectionTitle}>Precautions</h2>
+          <ol className={styles.blueText}>
+            <li>Handle the chemicals with care.</li>
+            <li>Don't use excess of chemicals.</li>
+            <li>Keep the mouth of the test tube away from the face.</li>
+          </ol>
+        </div>
 
-      <div className={styles.section}>
-        <h2 className={styles.sectionTitle}>Precautions</h2>
-        <ol className={styles.blueText}>
-          <li>Handle the chemicals with care.</li>
-          <li>Don't use excess of chemicals.</li>
-          <li>Keep the mouth of the test tube away from the face.</li>
-        </ol>
-      </div>
+        {showFlow && (
+          <div className={styles.flowWrapper}>
+            <div className={styles.flowHeader}>
+              <button 
+                className={styles.flowButton}
+                onClick={() => setShowFlow(false)}
+              >
+                Hide Flow Diagram
+              </button>
+              <Link 
+                href={getFlowUrl()}
+                className={styles.fullscreenButton}
+              >
+                <span>Fullscreen</span>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                >
+                  <path d="M15 3h6v6M14 10l7-7M9 21H3v-6M10 14l-7 7"/>
+                </svg>
+              </Link>
+            </div>
+            <SaltAnalysisFlow anion={anion} cation={cation} />
+          </div>
+        )}
 
-      {showFlow && (
-        <div className={styles.flowWrapper}>
-          <div className={styles.flowHeader}>
+        {!showFlow && (
+          <div className={styles.buttonContainer}>
             <button 
               className={styles.flowButton}
-              onClick={() => setShowFlow(false)}
+              onClick={() => setShowFlow(true)}
             >
-              Hide Flow Diagram
+              View Flow Diagram
             </button>
-            <Link 
-              href={getFlowUrl()}
-              className={styles.fullscreenButton}
-            >
-              <span>Fullscreen</span>
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="20" 
-                height="20" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-              >
-                <path d="M15 3h6v6M14 10l7-7M9 21H3v-6M10 14l-7 7"/>
-              </svg>
-            </Link>
           </div>
-          <SaltAnalysisFlow anion={anion} cation={cation} />
-        </div>
-      )}
-
-      {!showFlow && (
-        <div className={styles.buttonContainer}>
-          <button 
-            className={styles.flowButton}
-            onClick={() => setShowFlow(true)}
-          >
-            View Flow Diagram
-          </button>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
     </Layout>
   );
 };
 
+export const getStaticPaths: GetStaticPaths = async () => {
+  const salts = getAllSalts();
+  const paths = salts.map(salt => ({
+    params: { salt: salt.id }
+  }));
 
+  return {
+    paths,
+    fallback: false
+  };
+};
 
-export const getServerSideProps: GetServerSideProps = async ({ params, req }) => {
-  const salt = params?.salt as string;
-  const { cation: decodedCation, anion: decodedAnion } = urlToFormula(salt);
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const saltId = params?.salt as string;
+  const salt = getSaltById(saltId);
 
-  const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
-  const host = req.headers.host || 'localhost:3000';
-  const baseUrl = `${protocol}://${host}`;
-
-  console.log(decodedCation, decodedAnion);
-  const anionsResponse = await fetch(`${baseUrl}/anions.json`);
-  const cationsResponse = await fetch(`${baseUrl}/cations.json`);
-
-  const anionsData: Ion[] = await anionsResponse.json();
-  const cationsData: Ion[] = await cationsResponse.json();
-
-  const anion = anionsData.find(a => a.formula === decodedAnion);
-  const cation = cationsData.find(c => c.formula === decodedCation);
-
-  console.log(anion, cation);
-  if (!anion || !cation) {
+  if (!salt) {
     return {
-      notFound: true,
+      notFound: true
     };
   }
 
   return {
     props: {
-      anion,
-      cation,
+      salt,
+      anion: salt.anion,
+      cation: salt.cation
     },
+    revalidate: 3600 // Revalidate every hour
   };
 };
-
 
 export default Analysis;

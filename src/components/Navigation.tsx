@@ -11,7 +11,7 @@ const Navigation: React.FC = () => {
 
   return (
     <>
-      <nav className={styles.navigation}>
+      <nav className={styles.navigation} aria-label="Main navigation">
         <div className={styles.leftSection}>
           <Link href="/" className={styles.navItem} onClick={() => handleNavClick('Home')}>
             Home
@@ -24,7 +24,13 @@ const Navigation: React.FC = () => {
       <div className={styles.builtByContainer}>
         <span>
           Built by{' '}
-          <a href="https://twitter.com/0xBolt" target="_blank" rel="noopener noreferrer" className={styles.boltLink}>
+          <a 
+            href="https://twitter.com/0xBolt" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className={styles.boltLink}
+            aria-label="Visit Aabis's Twitter profile"
+          >
             Aabis
           </a>
         </span>

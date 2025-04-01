@@ -9,6 +9,22 @@ interface LayoutProps {
   canonicalUrl?: string;
   keywords?: string;
   author?: string;
+  salt?: {
+    name: string;
+    formula: string;
+    description: string;
+    cation?: {
+      name: string;
+      formula: string;
+    };
+    anion?: {
+      name: string;
+      formula: string;
+    };
+    publishedTime?: string;
+    modifiedTime?: string;
+    tags?: string[];
+  };
 }
 
 const Layout: React.FC<LayoutProps> = ({ 
@@ -18,9 +34,10 @@ const Layout: React.FC<LayoutProps> = ({
   ogImage = "https://saltanalysis.com/og.png",
   canonicalUrl = "https://saltanalysis.com/",
   keywords = "salt analysis, chemistry practical, qualitative analysis, cations, anions, chemical reactions, lab experiments, chemistry writeup",
-  author = "Aabis"
+  author = "Aabis",
+  salt
 }) => {
-  const jsonLd = {
+  const baseJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Salt Analysis",
@@ -37,6 +54,27 @@ const Layout: React.FC<LayoutProps> = ({
     }
   };
 
+  const saltJsonLd = salt ? {
+    "@context": "https://schema.org",
+    "@type": "ChemicalSubstance",
+    "name": salt.name,
+    "description": salt.description,
+    "molecularFormula": salt.formula,
+    "url": canonicalUrl,
+    "author": {
+      "@type": "Person",
+      "name": author
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "Salt Analysis",
+      "description": "Qualitative analysis of inorganic salts"
+    },
+    "keywords": salt.tags?.join(", ") || "",
+    "datePublished": salt.publishedTime || new Date().toISOString(),
+    "dateModified": salt.modifiedTime || new Date().toISOString()
+  } : null;
+
   return (
     <div>
       <Head>
@@ -45,13 +83,24 @@ const Layout: React.FC<LayoutProps> = ({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#1a1a2e" />
+        <html lang="en" />
 
         {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content={salt ? "article" : "website"} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
+        {salt && (
+          <>
+            <meta property="article:published_time" content={salt.publishedTime || new Date().toISOString()} />
+            <meta property="article:modified_time" content={salt.modifiedTime || new Date().toISOString()} />
+            <meta property="article:section" content="Chemistry" />
+            {salt.tags?.map(tag => (
+              <meta key={tag} property="article:tag" content={tag} />
+            ))}
+          </>
+        )}
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -78,8 +127,14 @@ const Layout: React.FC<LayoutProps> = ({
         {/* JSON-LD */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(baseJsonLd) }}
         />
+        {saltJsonLd && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(saltJsonLd) }}
+          />
+        )}
       </Head>
       <Navigation />
       {children}
