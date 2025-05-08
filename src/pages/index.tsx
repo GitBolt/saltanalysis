@@ -102,10 +102,12 @@ export default function Home() {
 
   return (
     <Layout>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageJsonLd) }}
-      />
+      {!isLoading && randomSalts.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageJsonLd) }}
+        />
+      )}
       <div className={styles.container}>
         <div className={styles.leftSection}>
           <h1 className={styles.title}>Salts = Cation + Anion</h1>

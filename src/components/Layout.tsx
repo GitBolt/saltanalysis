@@ -96,7 +96,7 @@ const Layout: React.FC<LayoutProps> = ({
             <meta property="article:published_time" content={salt.publishedTime || new Date().toISOString()} />
             <meta property="article:modified_time" content={salt.modifiedTime || new Date().toISOString()} />
             <meta property="article:section" content="Chemistry" />
-            {salt.tags?.map(tag => (
+            {salt.tags && salt.tags.map(tag => (
               <meta key={tag} property="article:tag" content={tag} />
             ))}
           </>
