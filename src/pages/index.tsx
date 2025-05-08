@@ -85,7 +85,7 @@ export default function Home() {
     "name": "Salt Analysis - Home",
     "description": "Create and analyze any salt with detailed step-by-step practical writeups",
     "url": "https://saltanalysis.com",
-    "mainEntity": {
+    "mainEntity": randomSalts.length > 0 ? {
       "@type": "ItemList",
       "itemListElement": randomSalts.map((salt, index) => ({
         "@type": "ListItem",
@@ -97,17 +97,15 @@ export default function Home() {
           "molecularFormula": salt.formula
         }
       }))
-    }
+    } : null
   };
 
   return (
     <Layout>
-      {!isLoading && randomSalts.length > 0 && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageJsonLd) }}
-        />
-      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageJsonLd) }}
+      />
       <div className={styles.container}>
         <div className={styles.leftSection}>
           <h1 className={styles.title}>Salts = Cation + Anion</h1>

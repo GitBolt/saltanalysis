@@ -83,7 +83,6 @@ const Layout: React.FC<LayoutProps> = ({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#1a1a2e" />
-        <html lang="en" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content={salt ? "article" : "website"} />
