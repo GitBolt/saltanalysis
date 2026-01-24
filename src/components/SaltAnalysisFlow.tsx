@@ -21,16 +21,18 @@ interface SaltAnalysisFlowProps {
 const SaltAnalysisFlow: React.FC<SaltAnalysisFlowProps> = ({ anion, cation }) => {
   const createNodes = (anion: Ion, cation: Ion): Node[] => {
     const nodes: Node[] = [];
-    const xCenter = 400;
-    const ySpacing = 180;
-    const xSpacing = 300;
+    const xCenter = 500;
+    const ySpacing = 250; // Increased for better vertical separation
+    const xSpacing = 500; // Increased for better horizontal separation
+    const nodeWidth = 250; // Account for node width + padding
+    const nodeGap = 50; // Gap between nodes
 
     // Salt name node
     nodes.push({
       id: 'salt',
       type: 'default',
-      data: { 
-        label: `Analysis of ${calculateSaltFormula(cation, anion)}` 
+      data: {
+        label: `Analysis of ${calculateSaltFormula(cation, anion)}`
       },
       position: { x: xCenter, y: 0 },
       className: styles.saltNode
@@ -40,8 +42,8 @@ const SaltAnalysisFlow: React.FC<SaltAnalysisFlowProps> = ({ anion, cation }) =>
     nodes.push({
       id: 'cation-analysis',
       type: 'default',
-      data: { 
-        label: `Cation Analysis: ${cation.name} [${cation.formula}]` 
+      data: {
+        label: `Cation Analysis: ${cation.name} [${cation.formula}]`
       },
       position: { x: xCenter - xSpacing, y: ySpacing },
       className: styles.analysisNode
@@ -50,8 +52,8 @@ const SaltAnalysisFlow: React.FC<SaltAnalysisFlowProps> = ({ anion, cation }) =>
     nodes.push({
       id: 'anion-analysis',
       type: 'default',
-      data: { 
-        label: `Anion Analysis: ${anion.name} [${anion.formula}]` 
+      data: {
+        label: `Anion Analysis: ${anion.name} [${anion.formula}]`
       },
       position: { x: xCenter + xSpacing, y: ySpacing },
       className: styles.analysisNode
@@ -59,72 +61,41 @@ const SaltAnalysisFlow: React.FC<SaltAnalysisFlowProps> = ({ anion, cation }) =>
 
     // Add cation tests
     const cationTests = cation.tests;
-    const hasOnlyConfirmatoryTest = cationTests.length === 1 && cationTests[0].confirmatory;
-    const lastCationTestIndex = hasOnlyConfirmatoryTest ? -1 : cationTests.findIndex(test => test.confirmatory) - 1;
-    
-    // Add preliminary tests in sequence
-    cationTests.slice(0, lastCationTestIndex).forEach((test, index) => {
-      const xOffset = -150 - (index * 300); // Each test moves further left
+    const cationPreliminaryTests = cationTests.filter(test => !test.confirmatory);
+    const cationConfirmatoryTest = cationTests.find(test => test.confirmatory);
+    const preliminaryCount = cationPreliminaryTests.length;
+
+    // Calculate total width needed and starting position for centered distribution
+    const totalWidthNeeded = preliminaryCount * nodeWidth + (preliminaryCount - 1) * nodeGap;
+    const cationStartX = xCenter - xSpacing - totalWidthNeeded / 2 + nodeWidth / 2;
+
+    // Add preliminary tests distributed evenly
+    cationPreliminaryTests.forEach((test, index) => {
       nodes.push({
         id: `cation-${index}`,
         type: 'default',
         data: {
           label: `${test.experiment}\n↓\n${test.observation}\n↓\n${test.inference}`
         },
-        position: { 
-          x: xCenter - xSpacing + xOffset,
-          y: ySpacing * 2 // All preliminary tests at exact same level
+        position: {
+          x: cationStartX + index * (nodeWidth + nodeGap),
+          y: ySpacing * 2
         },
         className: styles.testNode
       });
     });
 
-    // Last preliminary test should also be at the same level as siblings
-    if (lastCationTestIndex >= 0) {
-      const lastTest = cationTests[lastCationTestIndex];
-      const confirmTest = cationTests.find(test => test.confirmatory);
-      
-      // Last preliminary test - now at same level as other tests
-      nodes.push({
-        id: `cation-${lastCationTestIndex}`,
-        type: 'default',
-        data: {
-          label: `${lastTest.experiment}\n↓\n${lastTest.observation}\n↓\n${lastTest.inference}`
-        },
-        position: { 
-          x: xCenter - xSpacing,
-          y: ySpacing * 2 // Same level as other tests
-        },
-        className: styles.testNode
-      });
-
-      // Only confirmatory test goes below
-      if (confirmTest) {
-        nodes.push({
-          id: 'cation-confirmatory',
-          type: 'default',
-          data: {
-            label: `${confirmTest.name}\n${confirmTest.experiment}\n↓\n${confirmTest.observation}\n↓\n${confirmTest.inference}`
-          },
-          position: { 
-            x: xCenter - xSpacing,
-            y: ySpacing * 3 // Only confirmatory test goes one level below
-          },
-          className: styles.confirmatoryNode
-        });
-      }
-    } else if (hasOnlyConfirmatoryTest) {
-      // If there's only a confirmatory test, show it directly under analysis
-      const confirmTest = cationTests[0];
+    // Add confirmatory test centered below
+    if (cationConfirmatoryTest) {
       nodes.push({
         id: 'cation-confirmatory',
         type: 'default',
         data: {
-          label: `${confirmTest.name}\n${confirmTest.experiment}\n↓\n${confirmTest.observation}\n↓\n${confirmTest.inference}`
+          label: `${cationConfirmatoryTest.name || 'Confirmatory Test'}\n${cationConfirmatoryTest.experiment}\n↓\n${cationConfirmatoryTest.observation}\n↓\n${cationConfirmatoryTest.inference}`
         },
-        position: { 
+        position: {
           x: xCenter - xSpacing,
-          y: ySpacing * 2 // Position directly under analysis node
+          y: ySpacing * 3
         },
         className: styles.confirmatoryNode
       });
@@ -132,71 +103,41 @@ const SaltAnalysisFlow: React.FC<SaltAnalysisFlowProps> = ({ anion, cation }) =>
 
     // Add anion tests
     const anionTests = anion.tests;
-    const hasOnlyAnionConfirmatoryTest = anionTests.length === 1 && anionTests[0].confirmatory;
-    const lastAnionTestIndex = hasOnlyAnionConfirmatoryTest ? -1 : anionTests.findIndex(test => test.confirmatory) - 1;
-    
-    // Add preliminary tests in sequence
-    anionTests.slice(0, lastAnionTestIndex).forEach((test, index) => {
-      const xOffset = 150 + (index * 300); // Each test moves further right
+    const anionPreliminaryTests = anionTests.filter(test => !test.confirmatory);
+    const anionConfirmatoryTest = anionTests.find(test => test.confirmatory);
+    const anionPreliminaryCount = anionPreliminaryTests.length;
+
+    // Calculate starting position for anion preliminary tests
+    const anionTotalWidth = anionPreliminaryCount * nodeWidth + (anionPreliminaryCount - 1) * nodeGap;
+    const anionStartX = xCenter + xSpacing - anionTotalWidth / 2 + nodeWidth / 2;
+
+    // Add preliminary tests distributed evenly
+    anionPreliminaryTests.forEach((test, index) => {
       nodes.push({
         id: `anion-${index}`,
         type: 'default',
         data: {
           label: `${test.experiment}\n↓\n${test.observation}\n↓\n${test.inference}`
         },
-        position: { 
-          x: xCenter + xSpacing + xOffset,
-          y: ySpacing * 2 // All tests at same vertical level
+        position: {
+          x: anionStartX + index * (nodeWidth + nodeGap),
+          y: ySpacing * 2
         },
         className: styles.testNode
       });
     });
 
-    // Add last preliminary test and confirmatory test in sequence
-    if (lastAnionTestIndex >= 0) {
-      const lastTest = anionTests[lastAnionTestIndex];
-      const confirmTest = anionTests.find(test => test.confirmatory);
-      
-      // Last preliminary test
-      nodes.push({
-        id: `anion-${lastAnionTestIndex}`,
-        type: 'default',
-        data: {
-          label: `${lastTest.experiment}\n↓\n${lastTest.observation}\n↓\n${lastTest.inference}`
-        },
-        position: { 
-          x: xCenter + xSpacing + (lastAnionTestIndex % 2 ? 150 : -150),
-          y: ySpacing * (lastAnionTestIndex + 2)
-        },
-        className: styles.testNode
-      });
-
-      // Confirmatory test
-      if (confirmTest) {
-        nodes.push({
-          id: 'anion-confirmatory',
-          type: 'default',
-          data: {
-            label: `${confirmTest.name}\n${confirmTest.experiment}\n↓\n${confirmTest.observation}\n↓\n${confirmTest.inference}`
-          },
-          position: { 
-            x: xCenter + xSpacing + (lastAnionTestIndex % 2 ? 150 : -150),
-            y: ySpacing * (lastAnionTestIndex + 3)
-          },
-          className: styles.confirmatoryNode
-        });
-      }
-    } else if (hasOnlyAnionConfirmatoryTest) {
-      const confirmTest = anionTests[0];
+    // Add confirmatory test centered below
+    if (anionConfirmatoryTest) {
       nodes.push({
         id: 'anion-confirmatory',
         type: 'default',
         data: {
-          label: `${confirmTest.name}\n${confirmTest.experiment}\n↓\n${confirmTest.observation}\n↓\n${confirmTest.inference}`
+          label: `${anionConfirmatoryTest.name || 'Confirmatory Test'}\n${anionConfirmatoryTest.experiment}\n↓\n${anionConfirmatoryTest.observation}\n↓\n${anionConfirmatoryTest.inference}`
         },
-        position: { 
+        position: {
           x: xCenter + xSpacing,
-          y: ySpacing * 2
+          y: ySpacing * 3
         },
         className: styles.confirmatoryNode
       });
@@ -207,7 +148,7 @@ const SaltAnalysisFlow: React.FC<SaltAnalysisFlowProps> = ({ anion, cation }) =>
 
   const createEdges = (anion: Ion, cation: Ion): Edge[] => {
     const edges: Edge[] = [];
-    
+
     // Connect salt to analysis types
     edges.push(
       {
@@ -228,10 +169,11 @@ const SaltAnalysisFlow: React.FC<SaltAnalysisFlowProps> = ({ anion, cation }) =>
 
     // Connect cation tests
     const cationTests = cation.tests;
-    const lastCationTestIndex = cationTests.findIndex(test => test.confirmatory) - 1;
+    const cationPreliminaryTests = cationTests.filter(test => !test.confirmatory);
+    const hasCationConfirmatory = cationTests.some(test => test.confirmatory);
 
-    // Connect analysis to all preliminary tests except the last one
-    cationTests.slice(0, lastCationTestIndex).forEach((_, index) => {
+    // Connect analysis to all preliminary tests
+    cationPreliminaryTests.forEach((_, index) => {
       edges.push({
         id: `cation-analysis-to-${index}`,
         source: 'cation-analysis',
@@ -241,21 +183,23 @@ const SaltAnalysisFlow: React.FC<SaltAnalysisFlowProps> = ({ anion, cation }) =>
       });
     });
 
-    // Connect analysis to last preliminary test
-    if (lastCationTestIndex >= 0) {
-      edges.push({
-        id: `cation-analysis-to-last`,
-        source: 'cation-analysis',
-        target: `cation-${lastCationTestIndex}`,
-        type: 'smoothstep',
-        animated: true,
-      });
-
-      // Connect last preliminary test to confirmatory test
-      if (cationTests.find(test => test.confirmatory)) {
+    // Connect analysis to confirmatory test (or last preliminary test to confirmatory)
+    if (hasCationConfirmatory) {
+      if (cationPreliminaryTests.length > 0) {
+        // Connect last preliminary test to confirmatory
         edges.push({
           id: 'cation-last-to-confirmatory',
-          source: `cation-${lastCationTestIndex}`,
+          source: `cation-${cationPreliminaryTests.length - 1}`,
+          target: 'cation-confirmatory',
+          type: 'smoothstep',
+          animated: true,
+          style: { stroke: '#00b894' }
+        });
+      } else {
+        // Connect analysis directly to confirmatory if no preliminary tests
+        edges.push({
+          id: 'cation-analysis-to-confirmatory',
+          source: 'cation-analysis',
           target: 'cation-confirmatory',
           type: 'smoothstep',
           animated: true,
@@ -266,10 +210,11 @@ const SaltAnalysisFlow: React.FC<SaltAnalysisFlowProps> = ({ anion, cation }) =>
 
     // Connect anion tests
     const anionTests = anion.tests;
-    const lastAnionTestIndex = anionTests.findIndex(test => test.confirmatory) - 1;
+    const anionPreliminaryTests = anionTests.filter(test => !test.confirmatory);
+    const hasAnionConfirmatory = anionTests.some(test => test.confirmatory);
 
-    // Connect analysis to all preliminary tests except the last one
-    anionTests.slice(0, lastAnionTestIndex).forEach((_, index) => {
+    // Connect analysis to all preliminary tests
+    anionPreliminaryTests.forEach((_, index) => {
       edges.push({
         id: `anion-analysis-to-${index}`,
         source: 'anion-analysis',
@@ -279,21 +224,23 @@ const SaltAnalysisFlow: React.FC<SaltAnalysisFlowProps> = ({ anion, cation }) =>
       });
     });
 
-    // Connect analysis to last preliminary test
-    if (lastAnionTestIndex >= 0) {
-      edges.push({
-        id: `anion-analysis-to-last`,
-        source: 'anion-analysis',
-        target: `anion-${lastAnionTestIndex}`,
-        type: 'smoothstep',
-        animated: true,
-      });
-
-      // Connect last preliminary test to confirmatory test
-      if (anionTests.find(test => test.confirmatory)) {
+    // Connect to confirmatory test
+    if (hasAnionConfirmatory) {
+      if (anionPreliminaryTests.length > 0) {
+        // Connect last preliminary test to confirmatory
         edges.push({
           id: 'anion-last-to-confirmatory',
-          source: `anion-${lastAnionTestIndex}`,
+          source: `anion-${anionPreliminaryTests.length - 1}`,
+          target: 'anion-confirmatory',
+          type: 'smoothstep',
+          animated: true,
+          style: { stroke: '#00b894' }
+        });
+      } else {
+        // Connect analysis directly to confirmatory if no preliminary tests
+        edges.push({
+          id: 'anion-analysis-to-confirmatory',
+          source: 'anion-analysis',
           target: 'anion-confirmatory',
           type: 'smoothstep',
           animated: true,
@@ -328,7 +275,7 @@ const SaltAnalysisFlow: React.FC<SaltAnalysisFlowProps> = ({ anion, cation }) =>
       >
         <Background />
         <Controls className={styles.controls} position="bottom-right" />
-        </ReactFlow>
+      </ReactFlow>
     </div>
   );
 };

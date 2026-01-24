@@ -4,6 +4,7 @@
     "name": "Sodium",
     "formula": "Na⁺",
     "charge": 1,
+    "category": "Group V (Alkali Metals)",
     "odor": "Odorless",
     "texture": "Crystalline",
     "color": "White",
@@ -28,6 +29,7 @@
     "name": "Potassium",
     "formula": "K⁺",
     "charge": 1,
+    "category": "Group V (Alkali Metals)",
     "odor": "Odorless",
     "texture": "Crystalline",
     "color": "White",
@@ -52,6 +54,7 @@
     "name": "Ammonium",
     "formula": "NH₄⁺",
     "charge": 1,
+    "category": "Zero Group",
     "odor": "Ammoniacal",
     "texture": "Crystalline",
     "color": "White",
@@ -81,6 +84,7 @@
     "name": "Magnesium",
     "formula": "Mg²⁺",
     "charge": 2,
+    "category": "Group V",
     "odor": "Odorless",
     "texture": "Crystalline",
     "color": "White",
@@ -105,6 +109,7 @@
     "name": "Barium",
     "formula": "Ba²⁺",
     "charge": 2,
+    "category": "Group IV (Alkaline Earth)",
     "odor": "Odorless",
     "texture": "Crystalline",
     "color": "White",
@@ -133,12 +138,12 @@
       {
         "experiment": "Original solution + Dil. HCl + NH₄Cl + NH₄OH + (NH₄)₂CO₃",
         "observation": "White ppt is formed",
-        "inference": "Ba²⁺ may be present"
+        "inference": "Fourth group cation may be present"
       },
       {
-        "name": "",
+        "name": "Potassium Chromate Test",
         "experiment": "Dissolve the white ppt in dil. acetic acid and add potassium chromate",
-        "observation": "White ppt",
+        "observation": "Yellow ppt",
         "inference": "Ba²⁺ confirmed",
         "confirmatory": true
       }
@@ -149,6 +154,7 @@
     "name": "Zinc",
     "formula": "Zn²⁺",
     "charge": 2,
+    "category": "Group IV",
     "odor": "Odorless",
     "texture": "Crystalline",
     "color": "White",
@@ -195,6 +201,7 @@
     "name": "Aluminum",
     "formula": "Al³⁺",
     "charge": 3,
+    "category": "Group III",
     "odor": "Odorless",
     "texture": "Crystalline",
     "color": "White",
@@ -234,6 +241,7 @@
     "name": "Iron(II)",
     "formula": "Fe²⁺",
     "charge": 2,
+    "category": "Group III",
     "odor": "Odorless",
     "texture": "Crystalline",
     "color": "Pale green",
@@ -258,6 +266,7 @@
     "name": "Iron(III)",
     "formula": "Fe³⁺",
     "charge": 3,
+    "category": "Group III",
     "odor": "Odorless",
     "texture": "Crystalline",
     "color": "Reddish-brown",
@@ -282,6 +291,7 @@
     "name": "Copper(II)",
     "formula": "Cu²⁺",
     "charge": 2,
+    "category": "Group II",
     "odor": "Odorless",
     "texture": "Crystalline",
     "color": "Blue",
@@ -306,6 +316,7 @@
     "name": "Lead(II)",
     "formula": "Pb²⁺",
     "charge": 2,
+    "category": "Group I",
     "odor": "Odorless",
     "texture": "Crystalline",
     "color": "White",
@@ -337,6 +348,7 @@
     "name": "Strontium",
     "formula": "Sr²⁺",
     "charge": 2,
+    "category": "Group IV (Alkaline Earth)",
     "odor": "Odorless",
     "texture": "Crystalline",
     "color": "White",
@@ -365,17 +377,16 @@
       {
         "experiment": "Original solution + Dil. HCl + NH₄Cl + NH₄OH + (NH₄)₂CO₃",
         "observation": "White ppt is formed",
-        "inference": "Ba²⁺ may be present"
+        "inference": "Fourth group cation may be present"
       },
       {
-        "name": "",
+        "name": "Potassium Chromate Test",
         "experiment": "Dissolve the white ppt in dil. acetic acid and add potassium chromate",
         "observation": "No reaction",
-        "inference": "Ba²⁺ absent",
-        "confirmatory": true
+        "inference": "Ba²⁺ absent"
       },
       {
-        "name": "",
+        "name": "Ammonium Sulfate Test",
         "experiment": "Dissolve the white ppt in dil. acetic acid and add (NH₄)₂SO₄",
         "observation": "White ppt",
         "inference": "Sr²⁺ confirmed",
@@ -388,6 +399,7 @@
     "name": "Calcium",
     "formula": "Ca²⁺",
     "charge": 2,
+    "category": "Group IV (Alkaline Earth)",
     "odor": "Odorless",
     "texture": "Crystalline",
     "color": "White",
@@ -416,24 +428,22 @@
       {
         "experiment": "Original solution + Dil. HCl + NH₄Cl + NH₄OH + (NH₄)₂CO₃",
         "observation": "White ppt is formed",
-        "inference": "Ba²⁺ may be present"
+        "inference": "Fourth group cation may be present"
       },
       {
-        "name": "",
+        "name": "Potassium Chromate Test",
         "experiment": "Dissolve the white ppt in dil. acetic acid and add potassium chromate",
         "observation": "No reaction",
-        "inference": "Ba²⁺ absent",
-        "confirmatory": true
+        "inference": "Ba²⁺ absent"
       },
       {
-        "name": "",
+        "name": "Ammonium Sulfate Test",
         "experiment": "Dissolve the white ppt in dil. acetic acid and add (NH₄)₂SO₄",
         "observation": "No reaction",
-        "inference": "Sr²⁺ absent",
-        "confirmatory": true
+        "inference": "Sr²⁺ absent"
       },
       {
-        "name": "",
+        "name": "Ammonium Oxalate Test",
         "experiment": "Dissolve the white ppt in dil. acetic acid and add ammonium oxalate + a few drops of NH₄OH",
         "observation": "White ppt",
         "inference": "Ca²⁺ confirmed",
