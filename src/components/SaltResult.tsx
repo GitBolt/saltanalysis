@@ -3,6 +3,7 @@ import styles from '@/styles/Combine.module.css';
 import { Ion } from '@/types/ions';
 import Link from 'next/link';
 import { formulaToUrl } from '@/utils/encoders';
+import { trackEvent } from '@/utils/mixpanel';
 
 interface SaltResultProps {
   selectedCation: Ion | null;
@@ -50,12 +51,24 @@ const SaltResult: React.FC<SaltResultProps> = ({
           <Link 
             href={`/salt/${formulaToUrl(selectedCation?.formula || '', selectedAnion?.formula || '')}/analysis`} 
             className={styles.viewAnalysisButton}
+            onClick={() => trackEvent('Analysis Requested', {
+              source: 'lab_result',
+              formula: salt || undefined,
+              cation: selectedCation?.formula,
+              anion: selectedAnion?.formula,
+            })}
           >
             View Analysis
           </Link>
           <Link 
             href={getFlowUrl()} 
             className={`${styles.viewAnalysisButton} ${styles.flowButton}`}
+            onClick={() => trackEvent('Flow Diagram Opened', {
+              source: 'lab_result',
+              formula: salt || undefined,
+              cation: selectedCation?.formula,
+              anion: selectedAnion?.formula,
+            })}
           >
             View Flow Diagram
           </Link>

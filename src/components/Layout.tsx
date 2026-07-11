@@ -9,6 +9,7 @@ interface LayoutProps {
   canonicalUrl?: string;
   keywords?: string;
   author?: string;
+  robots?: string;
   salt?: {
     name: string;
     formula: string;
@@ -35,45 +36,61 @@ const Layout: React.FC<LayoutProps> = ({
   canonicalUrl = "https://saltanalysis.com/",
   keywords = "salt analysis, chemistry practical, qualitative analysis, cations, anions, chemical reactions, lab experiments, chemistry writeup",
   author = "Aabis",
+  robots = "index, follow",
   salt
 }) => {
-  const baseJsonLd = {
+  const isHomePage = canonicalUrl.replace(/\/$/, '') === 'https://saltanalysis.com';
+  const websiteJsonLd = isHomePage ? {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": "https://saltanalysis.com/#website",
     "name": "Salt Analysis",
+    "alternateName": "Salt Analysis Guide",
     "url": "https://saltanalysis.com",
-    "description": description,
-    "author": {
-      "@type": "Person",
-      "name": author
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://saltanalysis.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  };
+    "description": description
+  } : null;
 
   const saltJsonLd = salt ? {
     "@context": "https://schema.org",
-    "@type": "ChemicalSubstance",
-    "name": salt.name,
-    "description": salt.description,
-    "molecularFormula": salt.formula,
-    "url": canonicalUrl,
-    "author": {
-      "@type": "Person",
-      "name": author
-    },
-    "about": {
-      "@type": "Thing",
-      "name": "Salt Analysis",
-      "description": "Qualitative analysis of inorganic salts"
-    },
-    "keywords": salt.tags?.join(", ") || "",
-    "datePublished": salt.publishedTime || new Date().toISOString(),
-    "dateModified": salt.modifiedTime || new Date().toISOString()
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${canonicalUrl}#webpage`,
+        "url": canonicalUrl,
+        "name": title,
+        "description": description,
+        "about": { "@id": `${canonicalUrl}#salt` },
+        "isPartOf": { "@id": "https://saltanalysis.com/#website" }
+      },
+      {
+        "@type": "ChemicalSubstance",
+        "@id": `${canonicalUrl}#salt`,
+        "name": salt.name,
+        "description": salt.description,
+        "molecularFormula": salt.formula,
+        "url": canonicalUrl
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Salt Analysis",
+            "item": "https://saltanalysis.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": salt.name,
+            "item": canonicalUrl
+          }
+        ]
+      }
+    ]
   } : null;
+
+  const serializeJsonLd = (value: object) => JSON.stringify(value).replace(/</g, '\\u003c');
 
   return (
     <div>
@@ -90,11 +107,16 @@ const Layout: React.FC<LayoutProps> = ({
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={`${title} preview`} />
+        <meta property="og:site_name" content="Salt Analysis" />
+        <meta property="og:locale" content="en_IN" />
         {salt && (
           <>
-            <meta property="article:published_time" content={salt.publishedTime || new Date().toISOString()} />
-            <meta property="article:modified_time" content={salt.modifiedTime || new Date().toISOString()} />
             <meta property="article:section" content="Chemistry" />
+            {salt.publishedTime && <meta property="article:published_time" content={salt.publishedTime} />}
+            {salt.modifiedTime && <meta property="article:modified_time" content={salt.modifiedTime} />}
             {salt.tags && salt.tags.map(tag => (
               <meta key={tag} property="article:tag" content={tag} />
             ))}
@@ -112,11 +134,11 @@ const Layout: React.FC<LayoutProps> = ({
         <link rel="canonical" href={canonicalUrl} />
 
         {/* Additional meta tags */}
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content={robots} />
         <meta name="keywords" content={keywords} />
         <meta name="author" content={author} />
-        <meta name="revisit-after" content="7 days" />
         <meta name="language" content="English" />
+        <meta name="color-scheme" content="dark light" />
         
         {/* Mobile meta tags */}
         <meta name="format-detection" content="telephone=no" />
@@ -124,14 +146,16 @@ const Layout: React.FC<LayoutProps> = ({
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
         {/* JSON-LD */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(baseJsonLd) }}
-        />
+        {websiteJsonLd && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: serializeJsonLd(websiteJsonLd) }}
+          />
+        )}
         {saltJsonLd && (
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(saltJsonLd) }}
+            dangerouslySetInnerHTML={{ __html: serializeJsonLd(saltJsonLd) }}
           />
         )}
       </Head>

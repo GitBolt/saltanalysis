@@ -1,10 +1,12 @@
 import { GetServerSideProps } from 'next';
 import dynamic from 'next/dynamic';
-import { urlToFormula } from '@/utils/encoders';
+import { formulaToUrl, urlToFormula } from '@/utils/encoders';
 import { calculateSaltFormula } from '@/utils/formula';
 import styles from '@/styles/Flow.module.css';
 import Layout from '@/components/Layout';
 import { useRouter } from 'next/router';
+import { trackEvent } from '@/utils/mixpanel';
+import { getAllSalts } from '@/data/salts';
 
 const SaltAnalysisFlow = dynamic(() => import('@/components/SaltAnalysisFlow'), {
   ssr: false
@@ -19,10 +21,21 @@ const Flow: React.FC<FlowProps> = ({ anion, cation }) => {
   const router = useRouter();
 
   return (
-    <Layout>
+    <Layout
+      title={`${calculateSaltFormula(cation, anion)} Salt Analysis Flow | Salt Analysis`}
+      description={`Interactive cation and anion test flow for ${cation.name} ${anion.name}.`}
+      canonicalUrl={`https://saltanalysis.com/salt/${encodeURI(formulaToUrl(cation.formula, anion.formula))}/analysis`}
+      robots="noindex, follow"
+    >
       <button 
         className={styles.backButton}
-        onClick={() => router.back()}
+        onClick={() => {
+          trackEvent('Flow Diagram Closed', {
+            cation: cation.formula,
+            anion: anion.formula,
+          });
+          router.back();
+        }}
       >
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
@@ -53,22 +66,14 @@ const Flow: React.FC<FlowProps> = ({ anion, cation }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({ params, req }) => {
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const salt = params?.salt as string;
   const { cation: decodedCation, anion: decodedAnion } = urlToFormula(salt);
-
-  const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
-  const host = req.headers.host || 'localhost:3000';
-  const baseUrl = `${protocol}://${host}`;
-
-  const anionsResponse = await fetch(`${baseUrl}/anions.json`);
-  const cationsResponse = await fetch(`${baseUrl}/cations.json`);
-
-  const anionsData = await anionsResponse.json();
-  const cationsData = await cationsResponse.json();
-
-  const anion = anionsData.find((a: any) => a.formula === decodedAnion);
-  const cation = cationsData.find((c: any) => c.formula === decodedCation);
+  const matchedSalt = getAllSalts().find(({ id }) =>
+    id === formulaToUrl(decodedCation, decodedAnion)
+  );
+  const anion = matchedSalt?.anion;
+  const cation = matchedSalt?.cation;
 
   if (!anion || !cation) {
     return { notFound: true };
@@ -77,4 +82,4 @@ export const getServerSideProps: GetServerSideProps = async ({ params, req }) =>
   return { props: { anion, cation } };
 };
 
-export default Flow; 
+export default Flow;

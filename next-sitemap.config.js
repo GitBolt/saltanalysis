@@ -3,13 +3,11 @@ module.exports = {
   siteUrl: "https://saltanalysis.com",
   generateRobotsTxt: true,
   generateIndexSitemap: true,
+  autoLastmod: false,
   changefreq: 'weekly',
   priority: 0.7,
   exclude: ['/api/*'],
   robotsTxtOptions: {
-    additionalSitemaps: [
-      'https://saltanalysis.com/server-sitemap.xml'
-    ],
     policies: [
       {
         userAgent: '*',
@@ -34,14 +32,10 @@ module.exports = {
       changefreq = 'weekly';
     }
 
-    // Add lastmod date
-    const lastmod = new Date().toISOString();
-
     return {
-      loc: path,
+      loc: encodeURI(path),
       changefreq,
       priority,
-      lastmod,
       alternateRefs: config.alternateRefs ?? [],
     }
   },

@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import styles from '@/styles/Navigation.module.css';
-import mixpanel from 'mixpanel-browser';
+import { trackEvent } from '@/utils/mixpanel';
 
 const Navigation: React.FC = () => {
   const handleNavClick = (page: string) => {
-    mixpanel.track('Navigation Clicked', {
-      page,
+    trackEvent('Navigation Clicked', {
+      destination: page.toLowerCase(),
+      source_path: window.location.pathname,
     });
   };
 

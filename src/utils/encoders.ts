@@ -31,18 +31,28 @@ export const urlToFormula = (urlSafeFormula: string): { cation: string, anion: s
             .replace(/_([0-9])/g, (match, p1) => subscripts[`_${p1}`])
             .replace(/%2B/g, '+')
             .replace(/%2D/g, '-')
-            .replace(/\b[a-z]/g, (match) => match.toUpperCase());
+            .toLowerCase();
 
-        // Special cases
-        decoded = decoded.replace(/\b(N|S|C)o\b/g, (match) => match.toUpperCase());
-        decoded = decoded.replace(/\bNh\b/g, 'NH');
-        decoded = decoded.replace(/\bOh\b/g, 'OH');
-        decoded = decoded.replace(/\bPo\b/g, 'PO');
-        decoded = decoded.replace(/\bCoo\b/g, 'COO');
-        decoded = decoded.replace(/\bCh\b/g, 'CH');
+        // Formula URLs used to be lower-cased. Restore chemical symbol casing
+        // so older links such as `ca_2|co_3` still resolve correctly.
+        const twoLetterSymbols: Record<string, string> = {
+          nh: 'NH', mg: 'Mg', ba: 'Ba', zn: 'Zn', al: 'Al', fe: 'Fe',
+          cu: 'Cu', pb: 'Pb', sr: 'Sr', na: 'Na', cl: 'Cl', br: 'Br',
+          so: 'SO', no: 'NO', co: 'CO', po: 'PO', oh: 'OH', ch: 'CH'
+        };
 
-      
-        return decoded;
+        Object.entries(twoLetterSymbols).forEach(([lower, proper]) => {
+          decoded = decoded.replace(new RegExp(lower, 'g'), proper);
+        });
+
+        const singleLetterSymbols: Record<string, string> = {
+          a: 'A', b: 'B', c: 'C', f: 'F', h: 'H', i: 'I', k: 'K',
+          n: 'N', o: 'O', p: 'P', s: 'S',
+        };
+
+        decoded = decoded.replace(/[a-z]/g, (match) => singleLetterSymbols[match] || match);
+
+      return decoded;
     };
 
     const [cation, anion] = urlSafeFormula.split('|');

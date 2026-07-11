@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { Ion } from '@/types/ions';
 import { formulaToUrl } from '@/utils/encoders';
+import { calculateSaltFormula } from '@/utils/formula';
 
 // Function to read JSON file
 const readJsonFile = (filename: string): any => {
@@ -16,18 +17,21 @@ export const getAllSalts = () => {
   const cations = readJsonFile('cations.json') as Ion[];
   
   const salts = cations.flatMap(cation => 
-    anions.map(anion => ({
+    anions.map(anion => {
+      const formula = calculateSaltFormula(cation, anion);
+      return {
       id: formulaToUrl(cation.formula, anion.formula),
       cation,
       anion,
-      formula: `${cation.formula}${anion.formula}`,
+      formula,
       name: `${cation.name} ${anion.name}`,
-      description: `Analysis of ${cation.name} ${anion.name} (${cation.formula}${anion.formula})`,
+      description: `Qualitative salt analysis of ${cation.name} ${anion.name} (${formula}), including cation, anion and confirmatory tests.`,
       category: {
         cation: cation.category || 'Uncategorized',
         anion: anion.category || 'Uncategorized'
       }
-    }))
+      };
+    })
   );
 
   return salts;
@@ -54,4 +58,4 @@ export const getAllCategories = () => {
     cations: Array.from(new Set(cations.map(c => c.category || 'Uncategorized'))),
     anions: Array.from(new Set(anions.map(a => a.category || 'Uncategorized')))
   };
-}; 
+};

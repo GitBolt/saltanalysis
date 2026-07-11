@@ -1,306 +1,419 @@
 [
-    {
-      "id": 1,
-      "name": "Chloride",
-      "formula": "Cl⁻",
-      "charge": -1,
-      "category": "Halides",
-      "odor": "Odorless",
-      "texture": "Crystalline",
-      "color": "White",
-      "solubility": "Soluble in water",
-      "tests": [
-        {
-          "experiment": "To dry salt, dilute H₂SO₄ is added",
-          "observation": "No reaction",
-          "inference": "Dilute H₂SO₄ group is absent"
-        },
-        {
-          "experiment": "Salt + Conc H₂SO₄",
-          "observation": "Colorless gas with pungent smell evolves",
-          "inference": "Cl⁻ may be present"
-        },
-        {
-          "name": "Silver Nitrate Test",
-          "experiment": "Salt Solution + Dilute HNO₃ + AgNO₃ solution",
-          "observation": "White ppt soluble in NH₄OH",
-          "inference": "Presence of Cl⁻ anion is confirmed",
-          "confirmatory": true
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Bromide",
-      "formula": "Br⁻",
-      "charge": -1,
-      "category": "Halides",
-      "odor": "Odorless",
-      "texture": "Crystalline",
-      "color": "White",
-      "solubility": "Soluble in water",
-      "tests": [
-        {
-          "experiment": "Salt + dilute H₂SO₄",
-          "observation": "No reaction",
-          "inference": "Dilute H₂SO₄ group is absent"
-        },
-        {
-          "experiment": "Salt + Conc H₂SO₄",
-          "observation": "Reddish-brown fumes with pungent smell evolve",
-          "inference": "Br⁻ may be present"
-        },
-        {
-          "name": "Silver Nitrate Test",
-          "experiment": "Salt Solution + Dilute HNO₃ + AgNO₃ solution",
-          "observation": "Pale yellow ppt slightly soluble in NH₄OH",
-          "inference": "Presence of Br⁻ is confirmed",
-          "confirmatory": true
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Iodide",
-      "formula": "I⁻",
-      "charge": -1,
-      "category": "Halides",
-      "odor": "Odorless",
-      "texture": "Crystalline",
-      "color": "White",
-      "solubility": "Soluble in water",
-      "tests": [
-        {
-          "experiment": "Salt + Conc H₂SO₄",
-          "observation": "Violet vapors evolve",
-          "inference": "I⁻ may be present"
-        },
-        {
-          "name": "Silver Nitrate Test",
-          "experiment": "Salt Solution + Dilute HNO₃ + AgNO₃ solution",
-          "observation": "Yellow ppt insoluble in NH₄OH",
-          "inference": "Presence of I⁻ anion is confirmed",
-          "confirmatory": true
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "name": "Fluoride",
-      "formula": "F⁻",
-      "charge": -1,
-      "category": "Halides",
-      "odor": "Odorless",
-      "texture": "Crystalline",
-      "color": "White",
-      "solubility": "Soluble in water",
-      "tests": [
-        {
-          "experiment": "Salt + Conc H₂SO₄",
-          "observation": "Colorless gas evolves that etches glass",
-          "inference": "F⁻ may be present"
-        },
-        {
-          "name": "Calcium Chloride Test",
-          "experiment": "Salt Solution + CaCl₂ solution",
-          "observation": "White gelatinous ppt forms",
-          "inference": "Presence of F⁻ anion is confirmed",
-          "confirmatory": true
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "name": "Sulfate",
-      "formula": "SO₄²⁻",
-      "charge": -2,
-      "category": "Oxy-anions",
-      "odor": "Odorless",
-      "texture": "Crystalline",
-      "color": "White",
-      "solubility": "Soluble in water",
-      "tests": [
-        {
-          "experiment": "Salt + dilute H₂SO₄",
-          "observation": "No reaction",
-          "inference": "Dilute H₂SO₄ group is absent"
-        },
-        {
-          "experiment": "Salt + Conc H₂SO₄",
-          "observation": "No reaction",
-          "inference": "Conc H₂SO₄ group is absent"
-        },
-        {
-          "name": "Barium Chloride Test",
-          "experiment": "Salt solution + Dil HCl + BaCl₂ solution",
-          "observation": "White ppt insoluble in conc. HCl",
-          "inference": "Presence of SO₄²⁻ is confirmed",
-          "confirmatory": true
-        }
-      ] 
-    },
-    {
-      "id": 6,
-      "name": "Nitrate",
-      "formula": "NO₃⁻",
-      "charge": -1,
-      "category": "Oxy-anions",
-      "odor": "Odorless",
-      "texture": "Crystalline",
-      "color": "White",
-      "solubility": "Soluble in water",
-      "tests": [
-        {
-          "name": "Brown Ring Test",
-          "experiment": "Salt Solution + FeSO₄ + Conc H₂SO₄ (added carefully along the sides of the test tube)",
-          "observation": "Brown ring forms at the junction of two liquids",
-          "inference": "Presence of NO₃⁻ anion is confirmed",
-          "confirmatory": true
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "name": "Carbonate",
-      "formula": "CO₃²⁻",
-      "charge": -2,
-      "category": "Oxy-anions",
-      "odor": "Odorless",
-      "texture": "Crystalline",
-      "color": "White",
-      "solubility": "Soluble in water",
-      "tests": [
-        {
-          "experiment": "Salt + Dilute HCl",
-          "observation": "Colorless, odorless gas evolves with brisk effervescence",
-          "inference": "CO₃²⁻ may be present"
-        },
-        {
-          "name": "Lime Water Test",
-          "experiment": "Pass the evolved gas through lime water",
-          "observation": "Lime water turns milky",
-          "inference": "Presence of CO₃²⁻ is confirmed",
-          "confirmatory": true
-        },
-        {
-          "name": "Magnesium Sulphate Test",
-          "experiment": "Salt solution + MgSO₄ solution",
-          "observation": "White ppt is obtained",
-          "inference": "Presence of CO₃²⁻ is confirmed",
-          "confirmatory": true
-        }
-      ]
-    },
-    {
-      "id": 8,
-      "name": "Phosphate",
-      "formula": "PO₄³⁻",
-      "charge": -3,
-      "category": "Oxy-anions",
-      "odor": "Odorless",
-      "texture": "Crystalline",
-      "color": "White",
-      "solubility": "Slightly soluble in water",
-      "tests": [
-        {
-          "name": "Ammonium Molybdate Test",
-          "experiment": "Salt Solution + Conc HNO₃ + Ammonium molybdate, then heat",
-          "observation": "Canary yellow ppt forms",
-          "inference": "Presence of PO₄³⁻ anion is confirmed",
-          "confirmatory": true
-        }
-      ]
-    },
-    {
-      "id": 9,
-      "name": "Hydroxide",
-      "formula": "OH⁻",
-      "charge": -1,
-      "category": "Special",
-      "odor": "Odorless",
-      "texture": "Crystalline",
-      "color": "White",
-      "solubility": "Soluble in water",
-      "tests": [
-        {
-          "experiment": "Salt Solution + Universal Indicator",
-          "observation": "Solution turns blue or purple",
-          "inference": "OH⁻ may be present"
-        },
-        {
-          "name": "Phenolphthalein Test",
-          "experiment": "Salt Solution + Phenolphthalein indicator",
-          "observation": "Solution turns pink",
-          "inference": "Presence of OH⁻ anion is confirmed",
-          "confirmatory": true
-        }
-      ]
-    },
-    {
-      "id": 10,
-      "name": "Acetate",
-      "formula": "CH₃COO⁻",
-      "charge": -1,
-      "category": "Organic",
-      "odor": "Vinegar-like",
-      "texture": "Crystalline",
-      "color": "White",
-      "solubility": "Soluble in water",
-      "tests": [
-        {
-          "experiment": "Salt + Dilute H₂SO₄",
-          "observation": "No reaction",
-          "inference": "Dilute H₂SO₄ group is absent"
-        },
-        {
-          "experiment": "Salt + Conc. H₂SO₄",
-          "observation": "Vapours with vinegar-like smell evolve",
-          "inference": "CH₃COO⁻ may be present"
-        },
-        {
-          "name": "Oxalic Acid Test",
-          "experiment": "Take pinch of salt on palm and pinch of oxalic acid and 2-3 drops of water and make a paste",
-          "observation": "Strong vinegar-like smell is obtained",
-          "inference": "Presence of CH₃COO⁻ is confirmed",
-          "confirmatory": true
-        },
-        {
-          "name": "Ferric Chloride Test",
-          "experiment": "Salt Solution + FeCl₃ solution",
-          "observation": "Reddish-brown ppt is obtained",
-          "inference": "Presence of CH₃COO⁻ is confirmed",
-          "confirmatory": true
-        }
-      ]
-    },
-    {
-      "id": 11,
-      "name": "Oxalate",
-      "formula": "C₂O₄²⁻",
-      "charge": -2,
-      "category": "Organic",
-      "odor": "Odorless",
-      "texture": "Crystalline",
-      "color": "White",
-      "solubility": "Slightly soluble in water",
-      "tests": [
-        {
-          "experiment": "Salt + dilute H₂SO₄",
-          "observation": "No reaction",
-          "inference": "Dilute H₂SO₄ group is absent"
-        },
-        {
-          "experiment": "Salt + Conc H₂SO₄",
-          "observation": "Evolution of colorless gas",
-          "inference": "C₂O₄²⁻ may be present"
-        },
-        {
-          "name": "KMnO₄ Test",
-          "experiment": "Salt + Conc H₂SO₄ + KMnO₄ solution",
-          "observation": "KMnO₄ decolorizes",
-          "inference": "Presence of C₂O₄²⁻ anion is confirmed",
-          "confirmatory": true
-        }
-      ]
-    }
-  ]
+  {
+    "id": 1,
+    "name": "Chloride",
+    "formula": "Cl⁻",
+    "charge": -1,
+    "category": "Halides",
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Soluble in water",
+    "tests": [
+      {
+        "experiment": "Take 0.1 g of salt and add conc. H₂SO₄",
+        "observation": "A colourless gas is evolved which gives dense white fumes with ammonia",
+        "inference": "Cl⁻ may be present"
+      },
+      {
+        "name": "Concentrated H₂SO₄ and MnO₂ Test",
+        "experiment": "Take a pinch of MnO₂ in salt solution and add 3–4 drops of conc. H₂SO₄, then heat",
+        "observation": "Greenish yellow chlorine gas is evolved",
+        "inference": "Presence of Cl⁻ is indicated",
+        "confirmatory": true
+      },
+      {
+        "name": "Silver Nitrate Test",
+        "experiment": "Acidify 1 mL of sodium carbonate extract with dilute HNO₃ (or use water extract) and add AgNO₃ solution",
+        "observation": "Curdy white precipitate soluble in NH₄OH",
+        "inference": "Cl⁻ is confirmed",
+        "confirmatory": true
+      },
+      {
+        "name": "Chromyl Chloride Test",
+        "experiment": "Take a little salt with solid K₂Cr₂O₇, add conc. H₂SO₄, heat. Pass the evolved gas through sodium hydroxide solution, divide into two parts. Acidify one part with acetic acid and add lead acetate solution",
+        "observation": "The sodium hydroxide solution becomes yellow; adding acetic acid and lead acetate gives yellow precipitate of lead chromate",
+        "inference": "Cl⁻ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Bromide",
+    "formula": "Br⁻",
+    "charge": -1,
+    "category": "Halides",
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Soluble in water",
+    "tests": [
+      {
+        "experiment": "Take 0.1 g of salt in a test tube and add conc. H₂SO₄ (or add MnO₂ if needed) and warm",
+        "observation": "Reddish brown fumes of bromine are evolved",
+        "inference": "Br⁻ may be present"
+      },
+      {
+        "name": "Layer Test",
+        "experiment": "Take 1 mL of neutralized extract, add CCl₄/CHCl₃ (or other suitable organic solvent), then add chlorine water dropwise and shake vigorously",
+        "observation": "Orange-brown colouration appears in the organic layer",
+        "inference": "Br⁻ is confirmed",
+        "confirmatory": true
+      },
+      {
+        "name": "Silver Nitrate Test",
+        "experiment": "Acidify sodium carbonate extract with dilute HNO₃ (or use water extract) and add AgNO₃",
+        "observation": "Pale yellow precipitate",
+        "inference": "Br⁻ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Iodide",
+    "formula": "I⁻",
+    "charge": -1,
+    "category": "Halides",
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Soluble in water",
+    "tests": [
+      {
+        "experiment": "Take 0.1 g of salt in a test tube and add conc. H₂SO₄",
+        "observation": "Deep violet vapour with a pungent odour is evolved",
+        "inference": "I⁻ may be present"
+      },
+      {
+        "name": "Layer Test",
+        "experiment": "Take test solution or extract, add CHCl₃/CCl₄ and chlorine water dropwise, then shake vigorously",
+        "observation": "Violet colouration appears in the organic layer",
+        "inference": "I⁻ is confirmed",
+        "confirmatory": true
+      },
+      {
+        "name": "Silver Nitrate Test",
+        "experiment": "Acidify sodium carbonate extract with dilute HNO₃ and add AgNO₃",
+        "observation": "Yellow precipitate is obtained, insoluble in excess NH₄OH",
+        "inference": "I⁻ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Fluoride",
+    "formula": "F⁻",
+    "charge": -1,
+    "category": "Additional (Outside Syllabus)",
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Soluble in water",
+    "tests": [
+      {
+        "experiment": "Take the salt and treat with concentrated H₂SO₄",
+        "observation": "Colourless gas evolves and it etches glass",
+        "inference": "F⁻ may be present"
+      },
+      {
+        "name": "Calcium Chloride Test",
+        "experiment": "Treat salt solution with calcium chloride solution",
+        "observation": "White gelatinous precipitate forms",
+        "inference": "Presence of F⁻ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Sulfate",
+    "formula": "SO₄²⁻",
+    "charge": -2,
+    "category": "Oxy-anions",
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Soluble in water",
+    "tests": [
+      {
+        "experiment": "If no earlier anion test is positive, acidify the extract with dilute HCl and add BaCl₂ solution",
+        "observation": "White precipitate of barium sulphate, insoluble in conc. HCl or conc. HNO₃ is obtained",
+        "inference": "SO₄²⁻ may be present",
+        "confirmatory": true
+      },
+      {
+        "name": "Lead Acetate Test",
+        "experiment": "Acidify the solution with acetic acid and add lead acetate solution",
+        "observation": "White precipitate appears",
+        "inference": "Presence of SO₄²⁻ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Nitrate",
+    "formula": "NO₃⁻",
+    "charge": -1,
+    "category": "Oxy-anions",
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Soluble in water",
+    "tests": [
+      {
+        "name": "Preliminary Test",
+        "experiment": "Add conc. H₂SO₄ to the solution and boil with a few copper turnings/chips",
+        "observation": "On heating, brown fumes (NO₂) are evolved in excess and the solution becomes blue",
+        "inference": "NO₃⁻ may be present"
+      },
+      {
+        "name": "Brown Ring Test",
+        "experiment": "Take 1 mL of salt solution, add 2 mL conc. H₂SO₄, cool, then add freshly prepared ferrous sulphate solution along the sides",
+        "observation": "Brown ring is formed at the junction of the two solutions",
+        "inference": "NO₃⁻ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Carbonate",
+    "formula": "CO₃²⁻",
+    "charge": -2,
+    "category": "Oxy-anions",
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Soluble in water",
+    "tests": [
+      {
+        "experiment": "Take 0.1 g of salt, add 1–2 mL of dilute H₂SO₄",
+        "observation": "Colourless odourless gas is evolved with brisk effervescence; lime water turns milky",
+        "inference": "CO₃²⁻ may be present"
+      },
+      {
+        "name": "Lime Water Test",
+        "experiment": "Pass the gas through lime water",
+        "observation": "Lime water turns milky; milkiness disappears on excess gas",
+        "inference": "CO₃²⁻ is confirmed",
+        "confirmatory": true
+      },
+      {
+        "name": "Sodium Nitroprusside Test",
+        "experiment": "Take 1 mL water extract or sodium carbonate extract, make it alkaline with dilute NH₄OH, then add a drop of sodium nitroprusside",
+        "observation": "Purple or violet colouration is produced",
+        "inference": "CO₃²⁻ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Sulphide",
+    "formula": "S²⁻",
+    "charge": -2,
+    "category": "Oxy-anions",
+    "odor": "Odor of rotten eggs",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Soluble in water",
+    "tests": [
+      {
+        "experiment": "Warm the salt with dilute H₂SO₄",
+        "observation": "Colourless gas with smell of rotten eggs is evolved",
+        "inference": "S²⁻ may be present"
+      },
+      {
+        "name": "Lead Acetate Test",
+        "experiment": "Pass gas through filter paper dipped in lead acetate solution",
+        "observation": "Paper turns black",
+        "inference": "S²⁻ is confirmed",
+        "confirmatory": true
+      },
+      {
+        "name": "Sodium Nitroprusside Test",
+        "experiment": "Make solution alkaline with NH₄OH (or sodium carbonate extract) and add sodium nitroprusside solution",
+        "observation": "Purple/violet colouration is produced",
+        "inference": "S²⁻ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Sulphite",
+    "formula": "SO₃²⁻",
+    "charge": -2,
+    "category": "Oxy-anions",
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Soluble in water",
+    "tests": [
+      {
+        "experiment": "Warm 1 mL of water extract or sodium carbonate extract with dilute H₂SO₄",
+        "observation": "Colourless gas with pungent smell of burning sulphur is evolved",
+        "inference": "SO₃²⁻ may be present"
+      },
+      {
+        "name": "Barium Chloride Test",
+        "experiment": "Add barium chloride to water extract or sodium carbonate extract",
+        "observation": "White precipitate dissolves on adding dilute HCl and SO₂ is evolved",
+        "inference": "SO₃²⁻ is confirmed",
+        "confirmatory": true
+      },
+      {
+        "name": "KMnO₄ Decolourisation Test",
+        "experiment": "Add dilute H₂SO₄ to the barium sulphite precipitate and then very dilute KMnO₄ solution",
+        "observation": "Colour of potassium permanganate solution is discharged",
+        "inference": "SO₃²⁻ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Phosphate",
+    "formula": "PO₄³⁻",
+    "charge": -3,
+    "category": "Oxy-anions",
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Slightly soluble in water",
+    "tests": [
+      {
+        "name": "Ammonium Molybdate Test",
+        "experiment": "Acidify with conc. HNO₃ and add ammonium molybdate solution, boil",
+        "observation": "Canary yellow precipitate is formed",
+        "inference": "PO₄³⁻ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Nitrite",
+    "formula": "NO₂⁻",
+    "charge": -1,
+    "category": "Oxy-anions",
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Soluble in water",
+    "tests": [
+      {
+        "experiment": "Warm the solid salt with dilute H₂SO₄",
+        "observation": "Brown fumes of NO₂ are evolved",
+        "inference": "NO₂⁻ may be present"
+      },
+      {
+        "name": "Potassium Iodide Starch Test",
+        "experiment": "Take evolved gas and add KI + starch solution acidified with acetic acid",
+        "observation": "Blue colour appears",
+        "inference": "NO₂⁻ is confirmed",
+        "confirmatory": true
+      },
+      {
+        "name": "Sulphanilic Acid / 1-Naphthylamine Test",
+        "experiment": "Acidify 1 mL of water extract with acetic acid and add sulphanilic acid solution followed by 1-naphthylamine reagent",
+        "observation": "Red colour is formed",
+        "inference": "NO₂⁻ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Hydroxide",
+    "formula": "OH⁻",
+    "charge": -1,
+    "category": "Additional (Outside Syllabus)",
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Soluble in water",
+    "tests": [
+      {
+        "experiment": "Universal Indicator",
+        "observation": "Solution turns blue or purple",
+        "inference": "OH⁻ may be present"
+      },
+      {
+        "name": "Phenolphthalein Test",
+        "experiment": "Add phenolphthalein indicator to salt solution",
+        "observation": "Solution turns pink",
+        "inference": "OH⁻ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Acetate",
+    "formula": "CH₃COO⁻",
+    "charge": -1,
+    "category": "Organic",
+    "odor": "Vinegar-like",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Soluble in water",
+    "tests": [
+      {
+        "experiment": "Take 0.1 g salt + dilute H₂SO₄",
+        "observation": "Colourless vapours with vinegar-like smell evolve",
+        "inference": "CH₃COO⁻ may be present"
+      },
+      {
+        "name": "Ester Test",
+        "experiment": "Take 0.1 g salt in a test tube with ethanol and a little conc. H₂SO₄, then heat",
+        "observation": "Fruity odour of ethyl acetate is developed",
+        "inference": "CH₃COO⁻ is confirmed",
+        "confirmatory": true
+      },
+      {
+        "name": "Ferric Chloride Test",
+        "experiment": "Add neutral ferric chloride solution to the salt solution",
+        "observation": "Deep red colour appears; on heating it disappears and a brown-red precipitate forms",
+        "inference": "CH₃COO⁻ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Oxalate",
+    "formula": "C₂O₄²⁻",
+    "charge": -2,
+    "category": "Organic",
+    "odor": "Odorless",
+    "texture": "Crystalline",
+    "color": "White",
+    "solubility": "Slightly soluble in water",
+    "tests": [
+      {
+        "experiment": "Take 0.1 g salt and add conc. H₂SO₄",
+        "observation": "Colourless gases are evolved. On testing further, CO₂ and CO are evolved",
+        "inference": "C₂O₄²⁻ may be present"
+      },
+      {
+        "name": "Calcium Chloride Test",
+        "experiment": "Acidify extract with acetic acid and add calcium chloride",
+        "observation": "White precipitate of calcium oxalate is obtained",
+        "inference": "C₂O₄²⁻ is confirmed",
+        "confirmatory": true
+      },
+      {
+        "name": "KMnO₄ Test",
+        "experiment": "Filter and add dilute H₂SO₄ to the precipitate, then dilute KMnO₄ and warm",
+        "observation": "KMnO₄ pink colour is discharged",
+        "inference": "C₂O₄²⁻ is confirmed",
+        "confirmatory": true
+      }
+    ]
+  }
+]

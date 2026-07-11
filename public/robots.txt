@@ -8,4 +8,3 @@ Host: https://saltanalysis.com
 
 # Sitemaps
 Sitemap: https://saltanalysis.com/sitemap.xml
-Sitemap: https://saltanalysis.com/server-sitemap.xml

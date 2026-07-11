@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { calculateSaltFormula } from '@/utils/formula';
 import { formulaToUrl } from '@/utils/encoders';
 import { getGradientColors } from '@/utils/gradients';
-import mixpanel from 'mixpanel-browser';
+import { trackEvent } from '@/utils/mixpanel';
 import dynamic from 'next/dynamic';
 
 const SaltAnalysisFlow = dynamic(() => import('@/components/SaltAnalysisFlow'), {
@@ -58,10 +58,14 @@ export default function Home() {
     fetchRandomSalts();
   }, []);
 
-  const handleSaltClick = (salt: RandomSalt) => {
-    mixpanel.track('Salt Clicked', {
+  const handleSaltClick = (salt: RandomSalt, position: number) => {
+    trackEvent('Salt Selected', {
       formula: salt.formula,
-      name: salt.name,
+      salt_name: salt.name,
+      cation: salt.cation,
+      anion: salt.anion,
+      source: 'home_quick_analysis',
+      position,
     });
   };
 
@@ -112,7 +116,11 @@ export default function Home() {
           <p className={styles.subtitle}>Create any salt you want and view it's analysis</p>
 
           <div className={styles.buttonContainer}>
-            <Link href="/lab" className={styles.createButton}>
+            <Link
+              href="/lab"
+              className={styles.createButton}
+              onClick={() => trackEvent('Lab Opened', { source: 'home_primary_action' })}
+            >
               Create Salt
             </Link>
           </div>
@@ -129,7 +137,7 @@ export default function Home() {
                   key={salt.formula} 
                   href={salt.url}
                   className={styles.saltCard}
-                  onClick={() => handleSaltClick(salt)}
+                  onClick={() => handleSaltClick(salt, index + 1)}
                   aria-label={`View analysis for ${salt.name} (${salt.formula})`}
                 >
                   <div 

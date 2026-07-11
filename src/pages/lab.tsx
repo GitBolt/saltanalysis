@@ -7,7 +7,7 @@ import { Ion } from '@/types/ions';
 import { formulaToUrl } from '@/utils/encoders';
 import IonList from '@/components/IonList';
 import SaltResult from '@/components/SaltResult';
-import mixpanel from 'mixpanel-browser';
+import { trackEvent } from '@/utils/mixpanel';
 
 export default function Combine() {
   const [anions, setAnions] = useState<Ion[]>([]);
@@ -28,12 +28,20 @@ export default function Combine() {
   }, []);
 
   const handleCombine = (ion: Ion, isAnion: boolean) => {
+    trackEvent('Ion Selected', {
+      ion_type: isAnion ? 'anion' : 'cation',
+      ion_name: ion.name,
+      formula: ion.formula,
+      category: ion.category,
+      search_active: Boolean(isAnion ? anionSearch : cationSearch),
+    });
+
     if (isAnion) {
       setSelectedAnion(ion);
       if (selectedCation) {
         const saltFormula = calculateSaltFormula(selectedCation, ion);
         setSalt(saltFormula);
-        mixpanel.track('Salt Created', {
+        trackEvent('Salt Created', {
           cation: selectedCation.formula,
           anion: ion.formula,
           formula: saltFormula,
@@ -44,7 +52,7 @@ export default function Combine() {
       if (selectedAnion) {
         const saltFormula = calculateSaltFormula(ion, selectedAnion);
         setSalt(saltFormula);
-        mixpanel.track('Salt Created', {
+        trackEvent('Salt Created', {
           cation: ion.formula,
           anion: selectedAnion.formula,
           formula: saltFormula,
@@ -64,7 +72,12 @@ export default function Combine() {
   );
 
   return (
-    <Layout>
+    <Layout
+      title="Create a Salt and View Its Analysis | Salt Analysis"
+      description="Select a cation and anion to generate a salt, then open its CBSE chemistry practical analysis and test flow."
+      canonicalUrl="https://saltanalysis.com/lab"
+      keywords="create salt, cation anion combination, salt analysis practical, CBSE chemistry practical"
+    >
       <div className={styles.labContainer}>
         <h1 className={styles.title}>Create Salt To View Analysis</h1>
         <p className={styles.subtitle}>Click on the anion and cation to create a salt</p>

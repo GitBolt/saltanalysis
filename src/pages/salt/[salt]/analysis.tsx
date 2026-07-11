@@ -9,6 +9,7 @@ import Layout from '@/components/Layout';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { getAllSalts, getSaltById } from '@/data/salts';
+import { trackEvent } from '@/utils/mixpanel';
 
 const SaltAnalysisFlow = dynamic(() => import('@/components/SaltAnalysisFlow'), {
   ssr: false
@@ -75,11 +76,21 @@ const Analysis: React.FC<AnalysisProps> = ({ anion, cation, salt }) => {
     return `/salt/${formulaToUrl(cation.formula, anion.formula)}/flow`;
   };
 
+  const trackSaltAction = (event: string, properties = {}) => {
+    trackEvent(event, {
+      salt_name: salt.name,
+      formula: salt.formula,
+      cation: cation.formula,
+      anion: anion.formula,
+      ...properties,
+    });
+  };
+
   return (
     <Layout
-      title={`${salt.name} Analysis - Salt Analysis Guide`}
-      description={salt.description}
-      canonicalUrl={`https://saltanalysis.com/salt/${salt.id}`}
+      title={`${salt.name} (${salt.formula}) Salt Analysis | CBSE Practical`}
+      description={`Step-by-step qualitative analysis of ${salt.name} (${salt.formula}), including preliminary, cation, anion and confirmatory tests for CBSE chemistry practicals.`}
+      canonicalUrl={`https://saltanalysis.com/salt/${encodeURI(salt.id)}/analysis`}
       keywords={`${salt.name}, salt analysis, chemistry practical, qualitative analysis, ${salt.formula}, chemical reactions, lab experiments`}
       salt={{
         name: salt.name,
@@ -101,7 +112,11 @@ const Analysis: React.FC<AnalysisProps> = ({ anion, cation, salt }) => {
             <input
               type="checkbox"
               checked={isNotebookTheme}
-              onChange={() => setIsNotebookTheme(!isNotebookTheme)}
+              onChange={() => {
+                const enabled = !isNotebookTheme;
+                setIsNotebookTheme(enabled);
+                trackSaltAction('Theme Changed', { theme: enabled ? 'notebook' : 'dark' });
+              }}
             />
             <span className={styles.slider}></span>
           </label>
@@ -180,13 +195,17 @@ const Analysis: React.FC<AnalysisProps> = ({ anion, cation, salt }) => {
             <div className={styles.flowHeader}>
               <button 
                 className={styles.flowButton}
-                onClick={() => setShowFlow(false)}
+                onClick={() => {
+                  setShowFlow(false);
+                  trackSaltAction('Flow Diagram Hidden', { source: 'analysis_page' });
+                }}
               >
                 Hide Flow Diagram
               </button>
               <Link 
                 href={getFlowUrl()}
                 className={styles.fullscreenButton}
+                onClick={() => trackSaltAction('Flow Diagram Opened', { source: 'analysis_fullscreen' })}
               >
                 <span>Fullscreen</span>
                 <svg 
@@ -212,7 +231,10 @@ const Analysis: React.FC<AnalysisProps> = ({ anion, cation, salt }) => {
           <div className={styles.buttonContainer}>
             <button 
               className={styles.flowButton}
-              onClick={() => setShowFlow(true)}
+              onClick={() => {
+                setShowFlow(true);
+                trackSaltAction('Flow Diagram Opened', { source: 'analysis_inline' });
+              }}
             >
               View Flow Diagram
             </button>

@@ -9,6 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     initMixpanel();
+    if (router.isReady) trackPageView(router.asPath);
 
     const handleRouteChange = (url: string) => {
       trackPageView(url);
@@ -18,7 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange);
     };
-  }, [router.events]);
+  }, [router.asPath, router.events, router.isReady]);
 
   return <Component {...pageProps} />;
 }

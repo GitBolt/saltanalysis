@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Layout from '@/components/Layout';
 import { getSaltsByCategory, getAllCategories } from '@/data/salts';
 import styles from '@/styles/Category.module.css';
+import { trackEvent } from '@/utils/mixpanel';
 
 interface CategoryPageProps {
   category: string;
@@ -20,7 +21,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, salts }) => {
     <Layout
       title={`${category} Salts - Salt Analysis Guide`}
       description={`Browse and analyze ${category} salts with detailed step-by-step practical writeups. Learn about cations, anions, and their reactions in chemistry experiments.`}
-      canonicalUrl={`https://saltanalysis.com/category/anion/${category}`}
+      canonicalUrl={`https://saltanalysis.com/category/anion/${encodeURIComponent(category)}`}
       keywords={`${category} salts, salt analysis, chemistry practical, qualitative analysis, anions, chemical reactions, lab experiments`}
     >
       <div className={styles.container}>
@@ -34,8 +35,14 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, salts }) => {
           {salts.map(salt => (
             <Link 
               key={salt.id} 
-              href={`/salt/${salt.id}`}
+              href={`/salt/${salt.id}/analysis`}
               className={styles.saltCard}
+              onClick={() => trackEvent('Salt Selected', {
+                salt_name: salt.name,
+                formula: salt.formula,
+                source: 'anion_category',
+                category,
+              })}
             >
               <h2 className={styles.saltName}>{salt.name}</h2>
               <p className={styles.saltFormula}>{salt.formula}</p>
@@ -84,4 +91,4 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-export default CategoryPage; 
+export default CategoryPage;
