@@ -238,9 +238,9 @@ const zincCation: Test[] = [
 
 const bariumCation: Test[] = [
   row(
-    "Groups I–IV reagents (dil. HCl, H₂S / acid, NH₄Cl + NH₄OH, H₂S / alkaline) give no ppt",
-    "No precipitate in Groups I–IV",
-    "Groups I–IV cations are absent"
+    "Groups I-IV reagents (dil. HCl, H₂S / acid, NH₄Cl + NH₄OH, H₂S / alkaline) give no ppt",
+    "No precipitate in Groups I-IV",
+    "Groups I-IV cations are absent"
   ),
   row(
     "To the ammoniacal solution add (NH₄)₂CO₃",
@@ -263,7 +263,7 @@ const bariumCation: Test[] = [
 
 const strontiumCation: Test[] = [
   row(
-    "Groups I–IV reagents give no ppt. Then add (NH₄)₂CO₃ in ammoniacal medium",
+    "Groups I-IV reagents give no ppt. Then add (NH₄)₂CO₃ in ammoniacal medium",
     "White ppt of SrCO₃",
     "Group V may be present"
   ),
@@ -283,7 +283,7 @@ const strontiumCation: Test[] = [
 
 const calciumCation: Test[] = [
   row(
-    "Groups I–IV absent. Add (NH₄)₂CO₃ in ammoniacal medium",
+    "Groups I-IV absent. Add (NH₄)₂CO₃ in ammoniacal medium",
     "White ppt of CaCO₃",
     "Group V may be present"
   ),
@@ -303,7 +303,7 @@ const calciumCation: Test[] = [
 
 const magnesiumCation: Test[] = [
   row(
-    "Groups I–V reagents give no ppt. Add Na₂HPO₄ and scratch the walls",
+    "Groups I-V reagents give no ppt. Add Na₂HPO₄ and scratch the walls",
     "White crystalline ppt of MgNH₄PO₄",
     "Group VI (Mg²⁺) is confirmed",
     { name: "Disodium hydrogen phosphate", confirmatory: true }
@@ -385,9 +385,9 @@ const WRITEUP_LIST: WriteupInput[] = [
       { cation: "Pb²⁺", anion: "Cl⁻" },
     ],
     faqs: [
-      { q: "Is NH₄Cl odourless?", a: "No. Ammonium chloride has an ammoniacal smell. The site previously inherited “odourless” from chloride — that was wrong." },
+      { q: "Is NH₄Cl odourless?", a: "No. It smells of ammonia." },
       { q: "What is the confirmatory test for chloride?", a: "AgNO₃ gives a curdy white ppt of AgCl, soluble in NH₄OH. Chromyl chloride is a second confirmatory." },
-      { q: "Which group is NH₄⁺?", a: "Group 0. Test it with NaOH / Nessler first and stop; do not run Groups I–VI." },
+      { q: "Which group is NH₄⁺?", a: "Group 0. Test it with NaOH / Nessler first and stop; do not run Groups I-VI." },
     ],
     viva: [
       { q: "Why does NH₄Cl sublime on dry heating?", a: "It dissociates to NH₃ and HCl which recombine on the cooler parts of the tube as a white sublimate." },
@@ -400,7 +400,7 @@ const WRITEUP_LIST: WriteupInput[] = [
       { q: "How is NH₄Cl used in Group III?", a: "NH₄Cl suppresses [OH⁻] by common-ion effect so only Group III hydroxides ppt, not Mg(OH)₂." },
     ],
     hindi: {
-      title: "अमोनियम क्लोराइड (NH₄Cl) — हिन्दी में",
+      title: "अमोनियम क्लोराइड (NH₄Cl) (हिन्दी में)",
       paragraphs: [
         "नमक: अमोनियम क्लोराइड। अम्लीय मूलक: क्लोराइड (Cl⁻)। क्षारीय मूलक: अमोनियम (NH₄⁺)।",
         "गंध अमोनिया जैसी होती है, गंधहीन नहीं। शुष्क ऊष्मा पर नमक उर्ध्वपातित हो जाता है।",
@@ -434,13 +434,13 @@ const WRITEUP_LIST: WriteupInput[] = [
       { cation: "NH₄⁺", anion: "Cl⁻" },
     ],
     faqs: [
-      { q: "Does lead acetate smell?", a: "Yes — vinegar-like (acetic acid) odour. That comes from the acetate, not from lead." },
+      { q: "Does lead acetate smell?", a: "Yes. Vinegar smell from acetic acid, not from lead." },
       { q: "Which group is Pb²⁺?", a: "Group I. Dilute HCl gives white PbCl₂, soluble in hot water." },
       { q: "Confirmatory tests for lead?", a: "Yellow PbI₂ with KI (golden spangles) and yellow PbCrO₄ with chromate." },
     ],
     viva: [
       { q: "Why is lead placed in Group I?", a: "PbCl₂ is insoluble in cold dilute HCl." },
-      { q: "Why is the ppt dissolved in hot water?", a: "PbCl₂ is appreciably soluble in hot water; AgCl is not — this separates lead from silver." },
+      { q: "Why is the ppt dissolved in hot water?", a: "PbCl₂ dissolves in hot water. AgCl does not. That is how you separate lead from silver." },
       { q: "What are golden spangles?", a: "Shining yellow crystals of PbI₂ that appear on cooling the hot solution." },
       { q: "Why vinegar smell with dilute acid?", a: "Acetate + H⁺ → acetic acid, which is volatile and smells of vinegar." },
       { q: "Why is the ester test done with conc. H₂SO₄?", a: "Conc. H₂SO₄ is a dehydrating catalyst for esterification." },
@@ -449,7 +449,7 @@ const WRITEUP_LIST: WriteupInput[] = [
       { q: "Why not pass H₂S in acid for this salt after Group I is positive?", a: "Once Pb²⁺ is confirmed, later groups are not run." },
     ],
     hindi: {
-      title: "लेड एसीटेट — हिन्दी में",
+      title: "लेड एसीटेट (हिन्दी में)",
       paragraphs: [
         "नमक: लेड एसीटेट। अम्लीय मूलक: एसीटेट (सिरके जैसी गंध)। क्षारीय मूलक: लेड, वर्ग I।",
         "तनु HCl से सफेद PbCl₂, गर्म जल में घुल जाता है। KI से पीला PbI₂ (सुनहरे स्पैंगल्स)।",
@@ -479,9 +479,9 @@ const WRITEUP_LIST: WriteupInput[] = [
       { cation: "NH₄⁺", anion: "SO₄²⁻" },
     ],
     faqs: [
-      { q: "Do you run cation Groups I–VI for ammonium carbonate?", a: "No. Confirm NH₄⁺ (Group 0) and stop." },
+      { q: "Do you run cation Groups I-VI for ammonium carbonate?", a: "No. Confirm NH₄⁺ (Group 0) and stop." },
       { q: "Why does lime water go milky then clear?", a: "CaCO₃ ppt forms, then excess CO₂ converts it to soluble Ca(HCO₃)₂." },
-      { q: "Is sodium nitroprusside a carbonate test?", a: "No — that is a sulphide test. Carbonate is lime water." },
+      { q: "Is sodium nitroprusside a carbonate test?", a: "No. Nitroprusside is for sulphide. Carbonate is lime water." },
     ],
     viva: [
       { q: "Why brisk effervescence with dilute acid?", a: "Carbonate + acid → CO₂." },
@@ -494,10 +494,10 @@ const WRITEUP_LIST: WriteupInput[] = [
       { q: "Can sulphite give lime water milky?", a: "SO₂ also turns lime water milky (CaSO₃). Smell and KMnO₄ distinguish it." },
     ],
     hindi: {
-      title: "अमोनियम कार्बोनेट — हिन्दी में",
+      title: "अमोनियम कार्बोनेट (हिन्दी में)",
       paragraphs: [
         "नमक: अमोनियम कार्बोनेट। तनु अम्ल से तेज़ बुदबुदाहट (CO₂), चूने का पानी दूधिया।",
-        "क्षारीय मूलक अमोनियम है — NaOH + नैस्लर। वर्ग I–VI आगे नहीं चलाते।",
+        "क्षारीय मूलक अमोनियम है। NaOH और नैस्लर। वर्ग I-VI आगे नहीं चलाते।",
         "यह नमक जल में घुलनशील है, कैल्शियम कार्बोनेट (चाक) नहीं।",
       ],
     },
@@ -507,7 +507,7 @@ const WRITEUP_LIST: WriteupInput[] = [
     cation: "NH₄⁺",
     anion: "SO₄²⁻",
     prelims: [
-      row("Physical examination", "White crystalline solid; ammoniacal smell", "Ammonium salt — not odourless"),
+      row("Physical examination", "White crystalline solid; ammoniacal smell", "Ammonium salt, not odourless"),
       row("Solubility", "Soluble in water", "Unlike BaSO₄ / PbSO₄"),
       row("Dry heating", "May give NH₃; residue can leave sulphate", "Ammonium sulphate"),
       row("Dilute H₂SO₄", "No CO₂ / H₂S / SO₂", "Not carbonate / sulphide / sulphite"),
@@ -535,7 +535,7 @@ const WRITEUP_LIST: WriteupInput[] = [
       { q: "Why no brown ring?", a: "The anion is sulphate, not nitrate." },
       { q: "Why Group 0 before sulphate tests?", a: "Anion tests can be done on soda extract; ammonium is still tested on the original salt with NaOH." },
       { q: "Why scratch not needed here unlike Mg?", a: "Sulphate ppt with BaCl₂ comes at once; MgNH₄PO₄ is slow and needs scratching." },
-      { q: "Is (NH₄)₂SO₄ used in Group IV?", a: "No — that is (NH₄)₂S / H₂S in ammoniacal medium. Do not confuse." },
+      { q: "Is (NH₄)₂SO₄ used in Group IV?", a: "No. Group IV uses (NH₄)₂S / H₂S in ammoniacal medium. Different salt." },
       { q: "Why white ppt with lead acetate?", a: "PbSO₄ is insoluble." },
     ],
     precautions: commonPrecautions,
@@ -566,7 +566,7 @@ const WRITEUP_LIST: WriteupInput[] = [
     faqs: [
       { q: "What is the correct formula?", a: "Al₂(SO₄)₃. Parentheses only around polyatomic SO₄ because its subscript is 3." },
       { q: "Which group is Al³⁺?", a: "Group III. NH₄Cl + NH₄OH gives a white gelatinous ppt. Blue lake is confirmatory." },
-      { q: "Search query “aluminium sulphate salt analysis class 12”?", a: "This page. White salt, Group III + sulphate (BaCl₂)." },
+      { q: "What does aluminium sulphate look like?", a: "White. Group III cation, sulphate anion (BaCl₂)." },
     ],
     viva: [
       { q: "Why is NH₄Cl added before NH₄OH in Group III?", a: "Common-ion effect lowers [OH⁻] so Mg(OH)₂ does not ppt; only Al / Fe hydroxides do." },
@@ -575,11 +575,11 @@ const WRITEUP_LIST: WriteupInput[] = [
       { q: "What is the blue lake test?", a: "Al(OH)₃ adsorbs blue litmus and floats as a blue lake." },
       { q: "How is Al³⁺ distinguished from Zn²⁺?", a: "Zn is Group IV (white ZnS with H₂S / NH₄OH). Al ppt appears in Group III before that." },
       { q: "Why BaCl₂ for the anion?", a: "Sulphate gives acid-insoluble BaSO₄." },
-      { q: "Is this the same as potash alum?", a: "Potash alum is K₂SO₄·Al₂(SO₄)₃·24H₂O. This page is the simple sulphate Al₂(SO₄)₃." },
-      { q: "Why is the salt white, not coloured?", a: "Al³⁺ has no d–d colour; unlike Cu²⁺ / Fe³⁺ / Ni²⁺." },
+      { q: "Is this the same as potash alum?", a: "Potash alum is K₂SO₄·Al₂(SO₄)₃·24H₂O. This writeup is the simple sulphate Al₂(SO₄)₃." },
+      { q: "Why is the salt white, not coloured?", a: "Al³⁺ has no d-d colour; unlike Cu²⁺ / Fe³⁺ / Ni²⁺." },
     ],
     hindi: {
-      title: "ऐलुमिनियम सल्फेट — हिन्दी में",
+      title: "ऐलुमिनियम सल्फेट (हिन्दी में)",
       paragraphs: [
         "सूत्र Al₂(SO₄)₃ है, (Al)₂(SO₄)₃ नहीं। नमक सफेद और गंधहीन है।",
         "क्षारीय मूलक वर्ग III: NH₄Cl + NH₄OH से सफेद जिलेटिनी अवक्षेप, ब्लू लेक परीक्षण।",
@@ -594,7 +594,7 @@ const WRITEUP_LIST: WriteupInput[] = [
     prelims: [
       row("Physical examination", "White crystalline solid; odourless", "Not acetate / ammonium"),
       row("Solubility", "Soluble in water", "All nitrates are soluble"),
-      row("Dry heating", "Decrepitates (crackling); brown fumes of NO₂; yellow residue of PbO", "Lead nitrate — characteristic"),
+      row("Dry heating", "Decrepitates (crackling); brown fumes of NO₂; yellow residue of PbO", "Lead nitrate (typical dry heating)"),
       row("Flame test", "No apple-green / brick-red / crimson", "Not Ba / Ca / Sr"),
       row("Dilute H₂SO₄", "No CO₂", "Not carbonate"),
       row("Conc. H₂SO₄", "Brown fumes of NO₂, stronger with copper turnings", "NO₃⁻ may be present"),
@@ -614,7 +614,7 @@ const WRITEUP_LIST: WriteupInput[] = [
     faqs: [
       { q: "What happens on heating lead nitrate?", a: "Crackling, brown NO₂, yellow PbO residue. 2Pb(NO₃)₂ → 2PbO + 4NO₂ + O₂." },
       { q: "Confirmatory test for nitrate?", a: "Brown ring with FeSO₄ and conc. H₂SO₄." },
-      { q: "Group of Pb²⁺?", a: "Group I — white PbCl₂ with dilute HCl, soluble in hot water." },
+      { q: "Group of Pb²⁺?", a: "Group I. White PbCl₂ with dilute HCl, soluble in hot water." },
     ],
     viva: [
       { q: "Why does lead nitrate crackle?", a: "Trapped water / crystals burst on heating (decrepitation), together with decomposition." },
@@ -627,11 +627,11 @@ const WRITEUP_LIST: WriteupInput[] = [
       { q: "Why is Pb(NO₃)₂ soluble unlike PbCl₂?", a: "Nitrates of all metals are soluble." },
     ],
     hindi: {
-      title: "लेड नाइट्रेट — हिन्दी में",
+      title: "लेड नाइट्रेट (हिन्दी में)",
       paragraphs: [
         "शुष्क ऊष्मा: चटचटाहट, भूरे NO₂ धुएँ, पीला PbO अवशेष। यह पहचान बहुत महत्वपूर्ण है।",
         "अम्लीय मूलक नाइट्रेट: ब्राउन रिंग परीक्षण। क्षारीय मूलक लेड: वर्ग I, KI से पीला अवक्षेप।",
-        "गूगल पर “lead nitrate salt analysis” इसी प्रयोग के लिए खोजा जाता है।",
+        "शुष्क ऊष्मा पर भूरे धुएँ और पीला अवशेष नाइट्रेट की पहचान है।",
       ],
     },
     precautions: commonPrecautions,
@@ -645,7 +645,7 @@ const WRITEUP_LIST: WriteupInput[] = [
       row("Dry heating", "Water of crystallisation lost; white residue", "Not a nitrate"),
       row("Dilute / conc. H₂SO₄", "No characteristic gas", "Not CO₃²⁻ / Cl⁻ / Br⁻ / I⁻ / NO₃⁻"),
       row("Flame test", "No characteristic colour", "Not Ba / Ca / Sr / Cu"),
-      row("Action of NaOH on a drop of solution", "White ppt soluble in excess", "Zn²⁺ or Al³⁺ possible — groups decide"),
+      row("Action of NaOH on a drop of solution", "White ppt soluble in excess", "Zn²⁺ or Al³⁺ possible; groups decide"),
     ],
     anionTests: sulphateAnion,
     cationTests: zincCation,
@@ -661,7 +661,7 @@ const WRITEUP_LIST: WriteupInput[] = [
     ],
     faqs: [
       { q: "Colour of ZnS?", a: "White. Black would be CuS / PbS / NiS." },
-      { q: "Group of Zn²⁺?", a: "Group IV — H₂S in ammoniacal medium." },
+      { q: "Group of Zn²⁺?", a: "Group IV. H₂S in ammoniacal medium." },
       { q: "Why does Zn(OH)₂ dissolve in excess NaOH?", a: "Amphoteric; forms zincate." },
     ],
     viva: [
@@ -670,9 +670,9 @@ const WRITEUP_LIST: WriteupInput[] = [
       { q: "How is Zn distinguished from Al?", a: "Al ppts in Group III before H₂S; Zn does not." },
       { q: "Why bluish-white ferrocyanide ppt?", a: "Zinc ferrocyanide is bluish-white; copper’s is chocolate-brown." },
       { q: "Why BaCl₂ here?", a: "Anion is sulphate." },
-      { q: "Why white salt?", a: "Zn²⁺ is d¹⁰ — no d–d colour." },
+      { q: "Why white salt?", a: "Zn²⁺ is d¹⁰, so no d-d colour." },
       { q: "Why heat with excess NaOH?", a: "Dissolution of Zn(OH)₂ is clearer on warming." },
-      { q: "Is ZnS soluble in HCl?", a: "Yes — unlike CuS. Used when dissolving Group IV ppt." },
+      { q: "Is ZnS soluble in HCl?", a: "Yes. CuS is not. Used when dissolving the Group IV ppt." },
     ],
     precautions: commonPrecautions,
   },
@@ -700,19 +700,19 @@ const WRITEUP_LIST: WriteupInput[] = [
       { cation: "Sr²⁺", anion: "Cl⁻" },
     ],
     faqs: [
-      { q: "Is the formula Ba(Cl)₂?", a: "No. Cl is monoatomic, so BaCl₂ — never Ba(Cl)₂." },
+      { q: "Is the formula Ba(Cl)₂?", a: "No. Cl is monoatomic, so write BaCl₂, not Ba(Cl)₂." },
       { q: "Flame colour of barium?", a: "Apple-green." },
-      { q: "Group of Ba²⁺?", a: "Group V. (NH₄)₂CO₃ after Groups I–IV are absent." },
+      { q: "Group of Ba²⁺?", a: "Group V. (NH₄)₂CO₃ after Groups I-IV are absent." },
     ],
     viva: [
       { q: "Why apple-green flame?", a: "Characteristic atomic emission of barium." },
       { q: "Why is the wire cleaned with conc. HCl?", a: "To convert the salt to volatile chloride and remove traces of previous salts." },
-      { q: "Why Group V after I–IV are absent?", a: "Otherwise carbonates of earlier groups would also ppt with (NH₄)₂CO₃." },
-      { q: "Why acetic acid before K₂CrO₄?", a: "BaCrO₄ ppts in acetic acid; SrCrO₄ does so less readily — a distinction from strontium." },
+      { q: "Why Group V after I-IV are absent?", a: "Otherwise carbonates of earlier groups would also ppt with (NH₄)₂CO₃." },
+      { q: "Why acetic acid before K₂CrO₄?", a: "BaCrO₄ ppts in acetic acid. SrCrO₄ does that less readily, which helps tell Ba from Sr." },
       { q: "Why AgNO₃ for the anion?", a: "Cl⁻ gives curdy white AgCl soluble in NH₄OH." },
-      { q: "Why is BaCl₂ used as a reagent for sulphate?", a: "Because BaSO₄ is extremely insoluble — that is this cation plus SO₄²⁻." },
+      { q: "Why is BaCl₂ used as a reagent for sulphate?", a: "Because BaSO₄ is extremely insoluble. Same cation plus sulphate." },
       { q: "Why no Nessler?", a: "Cation is Ba²⁺, not NH₄⁺." },
-      { q: "Why dilute H₂SO₄ can confuse?", a: "It precipitates BaSO₄ from a soluble barium salt — that is not a carbonate test." },
+      { q: "Why dilute H₂SO₄ can confuse?", a: "It precipitates BaSO₄ from a soluble barium salt. That is not a carbonate test." },
     ],
     precautions: commonPrecautions,
   },
@@ -740,9 +740,9 @@ const WRITEUP_LIST: WriteupInput[] = [
       { cation: "Ba²⁺", anion: "NO₃⁻" },
     ],
     faqs: [
-      { q: "Brown ring plus Group III?", a: "Yes — nitrate anion and aluminium cation." },
+      { q: "Brown ring plus Group III?", a: "Yes. Nitrate anion and aluminium cation." },
       { q: "Lake test?", a: "Blue lake with litmus + NH₄OH confirms Al³⁺." },
-      { q: "Formula?", a: "Al(NO₃)₃ — parentheses around polyatomic nitrate." },
+      { q: "Formula?", a: "Al(NO₃)₃. Parentheses around the polyatomic nitrate." },
     ],
     viva: [
       { q: "Why brown ring?", a: "Nitroso-ferrous sulphate at the junction with conc. H₂SO₄." },
@@ -760,7 +760,7 @@ const WRITEUP_LIST: WriteupInput[] = [
     cation: "Cu²⁺",
     anion: "SO₄²⁻",
     prelims: [
-      row("Physical examination", "Blue crystalline solid (blue vitriol); odourless", "Cu²⁺ present — not a white salt"),
+      row("Physical examination", "Blue crystalline solid (blue vitriol); odourless", "Cu²⁺ present, not a white salt"),
       row("Solubility", "Soluble in water giving a blue solution", "Hydrated Cu²⁺ ions"),
       row("Dry heating", "Water lost; residue white anhydrous CuSO₄, then black CuO on strong heating", "Hydrated copper sulphate"),
       row("Flame test", "Bluish-green flame", "Copper indicated"),
@@ -782,15 +782,15 @@ const WRITEUP_LIST: WriteupInput[] = [
     ],
     faqs: [
       { q: "Is copper sulphate white?", a: "No. Hydrated CuSO₄·5H₂O is blue. Anhydrous is white; the practical salt in the bottle is blue." },
-      { q: "Deep blue with ammonia?", a: "Excess NH₄OH gives tetraamminecopper(II). This is the trust test for this page." },
-      { q: "Group of Cu²⁺?", a: "Group II — black CuS with H₂S in dilute HCl." },
+      { q: "Deep blue with ammonia?", a: "Excess NH₄OH gives tetraamminecopper(II), deep blue." },
+      { q: "Group of Cu²⁺?", a: "Group II. Black CuS with H₂S in dilute HCl." },
     ],
     viva: [
       { q: "Why is the salt blue?", a: "[Cu(H₂O)₆]²⁺ absorbs in the orange-red and appears blue." },
       { q: "Why black ppt with H₂S?", a: "CuS is very insoluble and black." },
       { q: "Why H₂S in acidic medium?", a: "Group II sulphides ppt even at low [S²⁻]; ZnS would not." },
       { q: "Why deep blue with excess NH₃?", a: "Formation of [Cu(NH₃)₄]²⁺." },
-      { q: "Why chocolate-brown ferrocyanide?", a: "Copper ferrocyanide; zinc’s is bluish-white — a distinction." },
+      { q: "Why chocolate-brown ferrocyanide?", a: "Copper ferrocyanide. Zinc ferrocyanide is bluish-white." },
       { q: "Why BaCl₂?", a: "Sulphate anion." },
       { q: "What is blue vitriol?", a: "CuSO₄·5H₂O." },
       { q: "Why does anhydrous CuSO₄ turn white?", a: "Loss of water of crystallisation; used as a test for water." },
@@ -806,7 +806,7 @@ const WRITEUP_LIST: WriteupInput[] = [
       row("Dry heating", "Water of crystallisation lost", "Hydrated sulphate"),
       row("Flame test", "No characteristic colour", "Not Ba / Ca / Sr"),
       row("Dilute / conc. H₂SO₄", "No characteristic gas", "Not CO₃²⁻ / halide / nitrate"),
-      row("Groups I–V", "No ppt with the group reagents", "Proceed to Group VI"),
+      row("Groups I-V", "No ppt with the group reagents", "Proceed to Group VI"),
     ],
     anionTests: sulphateAnion,
     cationTests: magnesiumCation,
@@ -820,9 +820,9 @@ const WRITEUP_LIST: WriteupInput[] = [
       { cation: "NH₄⁺", anion: "SO₄²⁻" },
     ],
     faqs: [
-      { q: "Group of Mg²⁺?", a: "Group VI — the leftover cation. Na₂HPO₄ gives MgNH₄PO₄. Magneson gives a blue lake." },
+      { q: "Group of Mg²⁺?", a: "Group VI, the leftover cation. Na₂HPO₄ gives MgNH₄PO₄. Magneson gives a blue lake." },
       { q: "Why no ppt in Group V?", a: "MgCO₃ is kept in solution by ammonium salts; it does not ppt with (NH₄)₂CO₃ under Group V conditions." },
-      { q: "BaCl₂?", a: "Yes — sulphate." },
+      { q: "BaCl₂?", a: "Yes. Sulphate." },
     ],
     viva: [
       { q: "Why scratch the walls?", a: "MgNH₄PO₄ is slow to crystallise; scratching starts precipitation." },
@@ -869,7 +869,7 @@ const WRITEUP_LIST: WriteupInput[] = [
       { q: "Why might original solution be made in hot water?", a: "Cold water does not dissolve enough PbCl₂." },
       { q: "Why yellow with chromate?", a: "PbCrO₄." },
       { q: "Why not Group II after this?", a: "Lead is already confirmed in Group I (though Pb²⁺ can also ppt as PbS later if missed)." },
-      { q: "Is the formula Pb(Cl)₂?", a: "No — PbCl₂." },
+      { q: "Is the formula Pb(Cl)₂?", a: "No. Write PbCl₂." },
     ],
     precautions: commonPrecautions,
   },
@@ -937,13 +937,13 @@ const WRITEUP_LIST: WriteupInput[] = [
     ],
     faqs: [
       { q: "Barium nitrate salt analysis?", a: "Apple-green flame + brown ring. Group V barium, nitrate anion." },
-      { q: "Why not BaCl₂ tests only?", a: "There is no chloride here — skip AgNO₃ / chromyl chloride." },
+      { q: "Why not BaCl₂ tests only?", a: "There is no chloride here. Skip AgNO₃ / chromyl chloride." },
       { q: "Formula?", a: "Ba(NO₃)₂." },
     ],
     viva: [
       { q: "Why apple-green and brown ring together?", a: "Cation Ba²⁺, anion NO₃⁻." },
       { q: "Why brown fumes on heating?", a: "Decomposition of nitrate to NO₂." },
-      { q: "Why BaSO₄ with dilute H₂SO₄?", a: "Barium salts + sulphate ions ppt BaSO₄ — not a carbonate test." },
+      { q: "Why BaSO₄ with dilute H₂SO₄?", a: "Barium salts + sulphate ions ppt BaSO₄. Not a carbonate test." },
       { q: "Why K₂CrO₄?", a: "Confirmatory for barium in Group V." },
       { q: "Why freshly prepared FeSO₄?", a: "Brown ring fails with oxidised ferrous sulphate." },
       { q: "Flame wire?", a: "Conc. HCl, non-luminous flame, clean nichrome / platinum." },
@@ -976,7 +976,7 @@ const WRITEUP_LIST: WriteupInput[] = [
       { cation: "Ba²⁺", anion: "Cl⁻" },
     ],
     faqs: [
-      { q: "Why chalky and insoluble?", a: "Group II carbonates are water-insoluble. Ammonium carbonate is soluble — different salt." },
+      { q: "Why chalky and insoluble?", a: "Group II carbonates are water-insoluble. Ammonium carbonate is soluble. Different salt." },
       { q: "Flame?", a: "Brick-red." },
       { q: "Lime water?", a: "CO₂ from the carbonate turns it milky." },
     ],
@@ -988,7 +988,7 @@ const WRITEUP_LIST: WriteupInput[] = [
       { q: "How from Sr / Ba?", a: "Flame colours and (NH₄)₂SO₄ / K₂CrO₄ distinctions." },
       { q: "What is the residue after heating?", a: "CaO; it turns moist red litmus blue." },
       { q: "Why milkiness disappears with excess CO₂?", a: "Bicarbonate formation." },
-      { q: "Is this a Group V salt?", a: "Yes — Ca²⁺ is Group V; the anion is carbonate so dilute-acid test comes first." },
+      { q: "Is this a Group V salt?", a: "Yes. Ca²⁺ is Group V. The anion is carbonate, so do the dilute-acid test first." },
     ],
     precautions: commonPrecautions,
   },
@@ -1018,7 +1018,7 @@ const WRITEUP_LIST: WriteupInput[] = [
     faqs: [
       { q: "School file experiment?", a: "ZnCl₂ is a common assigned salt: Group IV zinc + chloride confirmatory." },
       { q: "White ZnS?", a: "Yes. Black would be copper / lead / nickel sulphide." },
-      { q: "Formula Zn(Cl)₂?", a: "No — ZnCl₂." },
+      { q: "Formula Zn(Cl)₂?", a: "No. Write ZnCl₂." },
     ],
     viva: [
       { q: "Why Group IV?", a: "ZnS ppts with H₂S in ammoniacal medium." },
@@ -1069,7 +1069,7 @@ const WRITEUP_LIST: WriteupInput[] = [
       { q: "Why not lime water as the main anion test?", a: "CO₂ from oxalate + conc. H₂SO₄ is mixed with CO; dilute acid does not give brisk carbonate-like CO₂." },
       { q: "Why Group 0 first?", a: "Always, for any ammonium salt." },
       { q: "Difference from ammonium carbonate?", a: "Carbonate: dilute acid, lime water. Oxalate: conc. H₂SO₄, CaCl₂, KMnO₄." },
-      { q: "Why is the salt used as a Group V reagent?", a: "(NH₄)₂C₂O₄ ppts Ca²⁺ as oxalate — here it is the unknown itself." },
+      { q: "Why is the salt used as a Group V reagent?", a: "(NH₄)₂C₂O₄ ppts Ca²⁺ as oxalate. Here it is the unknown itself." },
     ],
     precautions: commonPrecautions,
   },
@@ -1100,7 +1100,7 @@ const WRITEUP_LIST: WriteupInput[] = [
     ],
     faqs: [
       { q: "Why reddish-brown fumes?", a: "Conc. H₂SO₄ liberates Br₂ from bromides. Chlorides give colourless HCl; iodides give violet I₂." },
-      { q: "School file salt?", a: "BaBr₂ is commonly assigned even if it is rare on Google." },
+      { q: "School file salt?", a: "BaBr₂ shows up in school practical files even if it is uncommon in search." },
       { q: "Flame + halide?", a: "Apple-green barium, pale-yellow AgBr." },
     ],
     viva: [
@@ -1111,7 +1111,7 @@ const WRITEUP_LIST: WriteupInput[] = [
       { q: "Why K₂CrO₄?", a: "Group V confirmatory for Ba²⁺." },
       { q: "Why not chromyl chloride?", a: "That test is for chlorides, not bromides." },
       { q: "Why not brown ring?", a: "Anion is bromide, not nitrate." },
-      { q: "Formula Ba(Br)₂?", a: "No — BaBr₂." },
+      { q: "Formula Ba(Br)₂?", a: "No. Write BaBr₂." },
     ],
     precautions: commonPrecautions,
   },

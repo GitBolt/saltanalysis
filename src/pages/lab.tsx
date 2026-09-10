@@ -82,7 +82,7 @@ export default function Combine() {
   return (
     <Layout
       title="Create a Salt and View Its Analysis | Salt Analysis"
-      description="Search by salt name (lead acetate, NH4Cl) or pick a cation and anion to open the CBSE chemistry practical writeup."
+      description="Search by salt name (lead acetate, NH4Cl) or pick a cation and anion."
       canonicalUrl="https://saltanalysis.com/lab"
       keywords="create salt, lead acetate, ammonium chloride, cation anion combination, salt analysis practical, CBSE chemistry practical"
     >

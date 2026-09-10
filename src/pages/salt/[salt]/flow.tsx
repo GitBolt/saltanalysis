@@ -24,7 +24,7 @@ const Flow: React.FC<FlowProps> = ({ anion, cation, formula }) => {
   return (
     <Layout
       title={`${formula} Salt Analysis Flow | Salt Analysis`}
-      description={`Interactive cation and anion test flow for ${cation.name} ${anion.name}.`}
+      description={`Test flow for ${cation.name} ${anion.name}.`}
       canonicalUrl={`https://saltanalysis.com/salt/${encodeURI(formulaToUrl(cation.formula, anion.formula))}/analysis`}
       robots="noindex, follow"
     >

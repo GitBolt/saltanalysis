@@ -40,7 +40,7 @@ const buildSalt = (cation: Ion, anion: Ion): SaltSummary => {
     anion,
     formula,
     name,
-    description: `Qualitative salt analysis of ${name} (${formula}) for CBSE / ISC Class 12 chemistry practicals, including preliminary, cation, anion and confirmatory tests.`,
+    description: `Salt analysis of ${name} (${formula}) for Class 12 chemistry practicals.`,
     category: {
       cation: cation.category || "Uncategorized",
       anion: anion.category || "Uncategorized",

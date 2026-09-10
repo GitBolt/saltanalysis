@@ -51,7 +51,7 @@ export default function Home({ salts }: { salts: HomeSalt[] }) {
     "@type": "WebPage",
     name: "CBSE Class 12 Salt Analysis",
     description:
-      "Free CBSE and ISC Class 12 salt analysis writeups with observation tables, confirmatory tests, equations, viva and flowcharts.",
+      "Class 12 salt analysis tables for CBSE and ISC practicals.",
     url: "https://saltanalysis.com",
     mainEntity: {
       "@type": "ItemList",
@@ -70,8 +70,8 @@ export default function Home({ salts }: { salts: HomeSalt[] }) {
 
   return (
     <Layout
-      title="CBSE Class 12 Salt Analysis — writeups for every salt"
-      description="Free CBSE and ISC Class 12 qualitative salt analysis writeups. Observation tables, confirmatory tests, equations, viva and print-ready flowcharts for ammonium chloride, alum, copper sulphate and more."
+      title="CBSE Class 12 Salt Analysis | Practical Writeups"
+      description="Class 12 salt analysis writeups: observation tables, confirmatory tests, equations, viva, and a flowchart you can print. NH4Cl, alum, copper sulphate, lead nitrate."
       canonicalUrl="https://saltanalysis.com/"
       keywords="salt analysis, class 12, CBSE practical, ISC, qualitative analysis, ammonium chloride, aluminium sulphate, lead nitrate, copper sulphate"
     >
@@ -83,8 +83,8 @@ export default function Home({ salts }: { salts: HomeSalt[] }) {
         <div className={styles.leftSection}>
           <h1 className={styles.title}>CBSE Class 12 Salt Analysis</h1>
           <p className={styles.subtitle}>
-            Writeups for every salt — CBSE, ISC and other boards. Observation
-            tables, confirmatory tests and a flowchart you can print.
+            Observation tables for the practical file. Make any salt, print the
+            writeup. CBSE, ISC, and other boards.
           </p>
 
           <div className={styles.buttonContainer}>

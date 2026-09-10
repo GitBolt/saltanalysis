@@ -30,7 +30,7 @@ const VIVA: Array<{ q: string; a: string }> = [
   { q: "Why does lead nitrate give brown fumes on heating?", a: "2Pb(NO₃)₂ → 2PbO + 4NO₂ + O₂. The residue is yellow PbO." },
   { q: "Flame colour of Ba, Sr, Ca, Cu, Na?", a: "Ba apple-green, Sr crimson, Ca brick-red, Cu bluish-green, Na persistent yellow." },
   { q: "Why is the flame wire moistened with conc. HCl?", a: "Chlorides are more volatile in the flame and traces of previous salts are removed." },
-  { q: "Why Group V after I–IV are absent?", a: "(NH₄)₂CO₃ would also ppt carbonates of earlier groups if they were still in solution." },
+  { q: "Why Group V after I-IV are absent?", a: "(NH₄)₂CO₃ would also ppt carbonates of earlier groups if they were still in solution." },
   { q: "How is Ba distinguished from Sr and Ca?", a: "Apple-green flame; yellow BaCrO₄ in acetic acid. Sr crimson + SrSO₄; Ca brick-red + oxalate." },
   { q: "Why is Mg not precipitated in Group V?", a: "Ammonium salts keep MgCO₃ in solution. Mg is Group VI with Na₂HPO₄." },
   { q: "Why scratch the test tube for magnesium?", a: "MgNH₄PO₄ crystallises slowly; scratching starts precipitation." },
@@ -57,8 +57,8 @@ export default function VivaPage() {
       <div className={styles.page}>
         <h1>Salt analysis viva (Class 12)</h1>
         <p className={styles.lead}>
-          Forty questions examiners actually ask. Pair this with a printed writeup
-          from a <Link href="/how-to-do-salt-analysis">common salt page</Link>.
+          40 questions for the chemistry practical. Print a{" "}
+          <Link href="/how-to-do-salt-analysis">salt writeup</Link> with this.
         </p>
         <ol className={styles.viva}>
           {VIVA.map((item) => (

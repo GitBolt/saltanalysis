@@ -18,7 +18,7 @@ const GROUPS = [
   ["III", "Al³⁺, Fe³⁺", "NH₄Cl + NH₄OH. White gelatinous Al(OH)₃ or reddish-brown Fe(OH)₃."],
   ["IV", "Zn²⁺, Ni²⁺, Co²⁺, Mn²⁺", "H₂S in ammoniacal medium. ZnS is white."],
   ["V", "Ba²⁺, Sr²⁺, Ca²⁺", "(NH₄)₂CO₃. Then flame + chromate / sulphate / oxalate."],
-  ["VI", "Mg²⁺", "Na₂HPO₄ after I–V are absent. Scratch the tube."],
+  ["VI", "Mg²⁺", "Na₂HPO₄ after I-V are absent. Scratch the tube."],
 ];
 
 const ANIONS = [
@@ -30,23 +30,21 @@ const ANIONS = [
 export default function HowTo({ salts }: { salts: SaltLink[] }) {
   return (
     <Layout
-      title="How to Do Salt Analysis | Class 12 CBSE, ISC Practical"
-      description="CBSE and ISC Class 12 qualitative analysis scheme: Groups 0–VI, anion tests, and print-ready writeups for the salts schools actually assign."
+      title="How to Do Salt Analysis | Class 12 CBSE Practical"
+      description="Class 12 qualitative analysis: Groups 0-VI, anion tests, and writeups for the common salts."
       canonicalUrl="https://saltanalysis.com/how-to-do-salt-analysis"
       keywords="how to do salt analysis, salt analysis class 12, CBSE practical, ISC, qualitative analysis groups, viva"
     >
       <div className={styles.page}>
         <h1>How to do salt analysis</h1>
         <p className={styles.lead}>
-          CBSE, ISC and other state boards. Identify one anion (acidic radical)
-          and one cation (basic radical). Write Experiment / Observation / Inference
-          tables. Print from any salt page.
+          Find the anion and the cation. Write Experiment, Observation, Inference.
+          Print the page for your file. Works for CBSE, ISC, and other boards.
         </p>
 
         <h2 id="common-salts">Common salts</h2>
         <p>
-          These 18 cover school files, Google queries and the salts students
-          actually open. Start here; do not invent 200 extra thin pages.
+          The salts that usually come in the practical. Open one and copy the table.
         </p>
         <ul className={styles.saltList}>
           {salts.map((salt) => (
@@ -118,9 +116,8 @@ export default function HowTo({ salts }: { salts: SaltLink[] }) {
           <li>Result, precautions, viva.</li>
         </ol>
         <p>
-          Need questions for the examiner? See the{" "}
-          <Link href="/viva">viva page</Link> or the{" "}
-          <Link href="/quiz">10-question unknown-salt quiz</Link>.
+          Viva: <Link href="/viva">40 questions</Link>. Quick practice:{" "}
+          <Link href="/quiz">10-question quiz</Link>.
         </p>
       </div>
     </Layout>

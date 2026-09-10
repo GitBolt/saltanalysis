@@ -1,12 +1,9 @@
 # Salt Analysis
 
-Free CBSE / ISC Class 12 qualitative inorganic salt analysis writeups.
-Site: https://saltanalysis.com
-Guide: https://saltanalysis.com/how-to-do-salt-analysis
-Viva: https://saltanalysis.com/viva
-Lab: https://saltanalysis.com/lab
+Class 12 CBSE / ISC qualitative salt analysis writeups.
+https://saltanalysis.com
 
-Copper sulphate is blue. Ammonium chloride is ammoniacal. Formulae do not wrap monoatomic ions in parentheses (BaCl2, not Ba(Cl)2).
+Copper sulphate is blue. Ammonium chloride smells of ammonia. Write BaCl2, not Ba(Cl)2.
 
 ## Common salts
 

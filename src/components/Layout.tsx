@@ -31,8 +31,8 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ 
   children, 
-  title = "Salt Analysis - Get Practical Writeup for Any Salt",
-  description = "Get detailed, step-by-step practical writeups for salt analysis. Learn about cations, anions, and their reactions in chemistry experiments.",
+  title = "Salt Analysis | Class 12 Practical Writeups",
+  description = "Salt analysis writeups for Class 12 chemistry practicals. Observation tables, confirmatory tests, and a flowchart.",
   ogImage = "https://saltanalysis.com/og.png",
   canonicalUrl = "https://saltanalysis.com/",
   keywords = "salt analysis, chemistry practical, qualitative analysis, cations, anions, chemical reactions, lab experiments, chemistry writeup",

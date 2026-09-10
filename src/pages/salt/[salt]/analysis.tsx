@@ -137,7 +137,7 @@ const Analysis: React.FC<AnalysisProps> = ({
   return (
     <Layout
       title={title}
-      description={`Step-by-step CBSE / ISC Class 12 qualitative analysis of ${salt.name} (${salt.formula}): preliminary tests, anion and cation tables, confirmatory tests, equations and viva.`}
+      description={`Qualitative analysis of ${salt.name} (${salt.formula}). Preliminary tests, anion and cation tables, confirmatory tests, equations, viva.`}
       canonicalUrl={`https://saltanalysis.com/salt/${encodeURI(salt.id)}/analysis`}
       keywords={`${salt.name}, ${salt.formula}, salt analysis, class 12, CBSE practical, ISC, qualitative analysis, ${cation.name}, ${anion.name}`}
       faqs={faqs}
@@ -186,7 +186,7 @@ const Analysis: React.FC<AnalysisProps> = ({
         <h1 className={styles.experimentTitle}>
           Analysis of {salt.name} ({salt.formula})
         </h1>
-        <p className={styles.saltName}>Class 12 CBSE / ISC Chemistry Practical</p>
+        <p className={styles.saltName}>Class 12 Chemistry Practical</p>
 
         <div className={`${styles.buttonContainer} ${styles.noPrint}`}>
           <button

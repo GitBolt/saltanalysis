@@ -76,15 +76,15 @@ export default function QuizPage() {
   return (
     <Layout
       title="Unknown Salt Quiz | Class 12 Salt Analysis"
-      description="Ten-question Class 12 salt analysis quiz teachers can assign in Google Classroom: colour, groups, confirmatory tests."
+      description="Class 12 salt analysis quiz: colour, groups, confirmatory tests. 10 questions."
       canonicalUrl="https://saltanalysis.com/quiz"
       keywords="salt analysis quiz, class 12 chemistry practical quiz, unknown salt"
     >
       <div className={styles.page}>
-        <h1>Unknown-salt quiz</h1>
+        <h1>Unknown salt quiz</h1>
         <p className={styles.lead}>
-          Ten questions. Assign this link in Google Classroom. Then open a{" "}
-          <Link href="/how-to-do-salt-analysis">print-ready writeup</Link>.
+          10 questions. Share this in class. Then open a{" "}
+          <Link href="/how-to-do-salt-analysis">salt writeup</Link>.
         </p>
         <ol className={styles.quiz}>
           {QUESTIONS.map((item, index) => (

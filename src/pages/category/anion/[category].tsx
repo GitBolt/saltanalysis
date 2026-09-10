@@ -20,15 +20,14 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, salts }) => {
   return (
     <Layout
       title={`${category} Salts - Salt Analysis Guide`}
-      description={`Browse and analyze ${category} salts with detailed step-by-step practical writeups. Learn about cations, anions, and their reactions in chemistry experiments.`}
+      description={`${category} salts: observation tables and confirmatory tests for Class 12 practicals.`}
       canonicalUrl={`https://saltanalysis.com/category/anion/${encodeURIComponent(category)}`}
       keywords={`${category} salts, salt analysis, chemistry practical, qualitative analysis, anions, chemical reactions, lab experiments`}
     >
       <div className={styles.container}>
         <h1 className={styles.title}>{category} Salts</h1>
         <p className={styles.description}>
-          Browse through our collection of {category} salts and their detailed analysis procedures.
-          Each salt page includes step-by-step instructions, observations, and inferences.
+          {category} salts. Open a salt for the observation table.
         </p>
 
         <div className={styles.saltGrid}>
