@@ -60,6 +60,31 @@ const QUESTIONS = [
     options: ["Group II (acidic H₂S)", "Group III", "Group IV (alkaline H₂S)", "Group VI"],
     answer: 2,
   },
+  {
+    q: "Nessler’s reagent confirms?",
+    options: ["Al³⁺", "NH₄⁺", "Mg²⁺", "Na⁺"],
+    answer: 1,
+  },
+  {
+    q: "Chromyl chloride test is for?",
+    options: ["Bromide", "Iodide", "Chloride", "Nitrate"],
+    answer: 2,
+  },
+  {
+    q: "Golden spangles on cooling are?",
+    options: ["PbCl₂", "PbI₂", "AgCl", "BaSO₄"],
+    answer: 1,
+  },
+  {
+    q: "Group V reagent is?",
+    options: ["NH₄OH", "H₂S in acid", "(NH₄)₂CO₃", "Na₂HPO₄"],
+    answer: 2,
+  },
+  {
+    q: "Anhydrous copper sulphate is?",
+    options: ["Blue", "Green", "White", "Black"],
+    answer: 2,
+  },
 ];
 
 export default function QuizPage() {
@@ -76,14 +101,25 @@ export default function QuizPage() {
   return (
     <Layout
       title="Unknown Salt Quiz | Class 12 Salt Analysis"
-      description="Class 12 salt analysis quiz: colour, groups, confirmatory tests. 10 questions."
+      description="Class 12 salt analysis quiz: colour, groups, confirmatory tests. 15 questions for the practical."
       canonicalUrl="https://saltanalysis.com/quiz"
       keywords="salt analysis quiz, class 12 chemistry practical quiz, unknown salt"
+      extraJsonLd={{
+        "@context": "https://schema.org",
+        "@type": "LearningResource",
+        name: "Unknown salt quiz",
+        educationalLevel: "CBSE Class 12",
+        educationalUse: "practice",
+        learningResourceType: "Quiz",
+        isAccessibleForFree: true,
+        inLanguage: "en-IN",
+        url: "https://saltanalysis.com/quiz",
+      }}
     >
       <div className={styles.page}>
         <h1>Unknown salt quiz</h1>
         <p className={styles.lead}>
-          10 questions. Share this in class. Then open a{" "}
+          15 questions. Share this in class. Then open a{" "}
           <Link href="/how-to-do-salt-analysis">salt writeup</Link>.
         </p>
         <ol className={styles.quiz}>

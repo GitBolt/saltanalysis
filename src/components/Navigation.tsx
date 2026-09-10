@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import styles from "@/styles/Navigation.module.css";
 import { trackEvent } from "@/utils/mixpanel";
 
@@ -10,11 +11,18 @@ const LINKS = [
 ];
 
 const Navigation: React.FC = () => {
+  const router = useRouter();
+
   const handleNavClick = (page: string) => {
     trackEvent("Navigation Clicked", {
       destination: page.toLowerCase(),
       source_path: window.location.pathname,
     });
+  };
+
+  const isActive = (href: string) => {
+    if (href === "/") return router.pathname === "/";
+    return router.pathname === href || router.asPath.startsWith(href);
   };
 
   return (
@@ -25,7 +33,7 @@ const Navigation: React.FC = () => {
             <Link
               key={link.href}
               href={link.href}
-              className={styles.navItem}
+              className={`${styles.navItem} ${isActive(link.href) ? styles.active : ""}`}
               onClick={() => handleNavClick(link.event)}
             >
               {link.label}

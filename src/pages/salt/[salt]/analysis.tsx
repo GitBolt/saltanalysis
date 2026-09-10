@@ -14,6 +14,7 @@ import {
 import { getWriteup } from "@/data/writeups";
 import { getSaltPrelims } from "@/utils/prelims";
 import { trackEvent } from "@/utils/mixpanel";
+import { CONTENT_UPDATED, getFeaturedSalt } from "@/data/featured";
 
 const SaltAnalysisFlow = dynamic(() => import("@/components/SaltAnalysisFlow"), {
   ssr: false,
@@ -133,13 +134,14 @@ const Analysis: React.FC<AnalysisProps> = ({
   ];
 
   const title = `${salt.name} (${salt.formula}) Salt Analysis | Class 12 CBSE Practical`;
+  const featured = getFeaturedSalt(cation.formula, anion.formula);
 
   return (
     <Layout
       title={title}
       description={`Qualitative analysis of ${salt.name} (${salt.formula}). Preliminary tests, anion and cation tables, confirmatory tests, equations, viva.`}
       canonicalUrl={`https://saltanalysis.com/salt/${encodeURI(salt.id)}/analysis`}
-      keywords={`${salt.name}, ${salt.formula}, salt analysis, class 12, CBSE practical, ISC, qualitative analysis, ${cation.name}, ${anion.name}`}
+      keywords={`${salt.name}, ${salt.formula}, salt analysis, class 12, CBSE practical, ISC, qualitative analysis, ${cation.name}, ${anion.name}${featured ? `, ${featured.aliases.join(", ")}` : ""}`}
       faqs={faqs}
       salt={{
         name: salt.name,
@@ -153,6 +155,8 @@ const Analysis: React.FC<AnalysisProps> = ({
           name: anion.name,
           formula: anion.formula,
         },
+        aliases: featured?.aliases,
+        modifiedTime: `${CONTENT_UPDATED}T00:00:00+05:30`,
         tags: [
           "salt analysis",
           "CBSE practical",
@@ -187,6 +191,13 @@ const Analysis: React.FC<AnalysisProps> = ({
           Analysis of {salt.name} ({salt.formula})
         </h1>
         <p className={styles.saltName}>Class 12 Chemistry Practical</p>
+        <p className={`${styles.moreLinks} ${styles.noPrint}`}>
+          <Link href="/how-to-do-salt-analysis">How to do salt analysis</Link>
+          {" · "}
+          <Link href="/viva">Viva</Link>
+          {" · "}
+          <Link href="/quiz">Quiz</Link>
+        </p>
 
         <div className={`${styles.buttonContainer} ${styles.noPrint}`}>
           <button

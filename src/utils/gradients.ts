@@ -1,8 +1,8 @@
 const GRADIENTS = [
-  "#A7A9EF, #5B5DE5",
-  "#E99D82, #D76A5C",
-  "#EFA7D2, #D04C86",
-  "#6AEB6E, #088F45",
+  "#B8BAF4, #6E70E8",
+  "#E8B4A4, #D98A78",
+  "#F0B8DA, #D86BA0",
+  "#8AE08A, #3EAE68",
 ];
 
 let usedGradients: string[] = [];

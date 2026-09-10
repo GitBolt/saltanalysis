@@ -120,6 +120,8 @@ export const FEATURED_SALTS: FeaturedSalt[] = [
 
 export const HOMEPAGE_SALT_COUNT = 12;
 
+export const CONTENT_UPDATED = "2026-09-10";
+
 export const featuredId = (salt: Pick<FeaturedSalt, "cation" | "anion">): string =>
   formulaToUrl(salt.cation, salt.anion);
 

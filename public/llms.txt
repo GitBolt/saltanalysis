@@ -5,23 +5,30 @@ https://saltanalysis.com
 
 Copper sulphate is blue. Ammonium chloride smells of ammonia. Write BaCl2, not Ba(Cl)2.
 
+## Guides
+
+- How to do salt analysis: https://saltanalysis.com/how-to-do-salt-analysis
+- Viva questions: https://saltanalysis.com/viva
+- Unknown salt quiz: https://saltanalysis.com/quiz
+- Create a salt: https://saltanalysis.com/lab
+
 ## Common salts
 
-- Ammonium Chloride (NH4Cl): https://saltanalysis.com/salt/nh_4|cl/analysis
-- Lead Acetate (Pb(CH3COO)2): https://saltanalysis.com/salt/pb|ch_3coo/analysis
-- Ammonium Carbonate ((NH4)2CO3): https://saltanalysis.com/salt/nh_4|co_3/analysis
-- Ammonium Sulphate ((NH4)2SO4): https://saltanalysis.com/salt/nh_4|so_4/analysis
-- Aluminium Sulphate (Al2(SO4)3): https://saltanalysis.com/salt/al|so_4/analysis
-- Lead Nitrate (Pb(NO3)2): https://saltanalysis.com/salt/pb|no_3/analysis
-- Zinc Sulphate (ZnSO4): https://saltanalysis.com/salt/zn|so_4/analysis
-- Barium Chloride (BaCl2): https://saltanalysis.com/salt/ba|cl/analysis
-- Aluminium Nitrate (Al(NO3)3): https://saltanalysis.com/salt/al|no_3/analysis
-- Copper Sulphate (CuSO4): https://saltanalysis.com/salt/cu|so_4/analysis
-- Magnesium Sulphate (MgSO4): https://saltanalysis.com/salt/mg|so_4/analysis
-- Lead Chloride (PbCl2): https://saltanalysis.com/salt/pb|cl/analysis
-- Strontium Chloride (SrCl2): https://saltanalysis.com/salt/sr|cl/analysis
-- Barium Nitrate (Ba(NO3)2): https://saltanalysis.com/salt/ba|no_3/analysis
-- Calcium Carbonate (CaCO3): https://saltanalysis.com/salt/ca|co_3/analysis
-- Zinc Chloride (ZnCl2): https://saltanalysis.com/salt/zn|cl/analysis
-- Ammonium Oxalate ((NH4)2C2O4): https://saltanalysis.com/salt/nh_4|c_2o_4/analysis
-- Barium Bromide (BaBr2): https://saltanalysis.com/salt/ba|br/analysis
+- Ammonium Chloride (NH4Cl): https://saltanalysis.com/salt/nh_4%7Ccl/analysis
+- Lead Acetate (Pb(CH3COO)2): https://saltanalysis.com/salt/pb%7Cch_3coo/analysis
+- Ammonium Carbonate ((NH4)2CO3): https://saltanalysis.com/salt/nh_4%7Cco_3/analysis
+- Ammonium Sulphate ((NH4)2SO4): https://saltanalysis.com/salt/nh_4%7Cso_4/analysis
+- Aluminium Sulphate (Al2(SO4)3): https://saltanalysis.com/salt/al%7Cso_4/analysis
+- Lead Nitrate (Pb(NO3)2): https://saltanalysis.com/salt/pb%7Cno_3/analysis
+- Zinc Sulphate (ZnSO4): https://saltanalysis.com/salt/zn%7Cso_4/analysis
+- Barium Chloride (BaCl2): https://saltanalysis.com/salt/ba%7Ccl/analysis
+- Aluminium Nitrate (Al(NO3)3): https://saltanalysis.com/salt/al%7Cno_3/analysis
+- Copper Sulphate (CuSO4): https://saltanalysis.com/salt/cu%7Cso_4/analysis
+- Magnesium Sulphate (MgSO4): https://saltanalysis.com/salt/mg%7Cso_4/analysis
+- Lead Chloride (PbCl2): https://saltanalysis.com/salt/pb%7Ccl/analysis
+- Strontium Chloride (SrCl2): https://saltanalysis.com/salt/sr%7Ccl/analysis
+- Barium Nitrate (Ba(NO3)2): https://saltanalysis.com/salt/ba%7Cno_3/analysis
+- Calcium Carbonate (CaCO3): https://saltanalysis.com/salt/ca%7Cco_3/analysis
+- Zinc Chloride (ZnCl2): https://saltanalysis.com/salt/zn%7Ccl/analysis
+- Ammonium Oxalate ((NH4)2C2O4): https://saltanalysis.com/salt/nh_4%7Cc_2o_4/analysis
+- Barium Bromide (BaBr2): https://saltanalysis.com/salt/ba%7Cbr/analysis

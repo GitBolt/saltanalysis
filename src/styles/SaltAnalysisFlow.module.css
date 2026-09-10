@@ -1,106 +1,98 @@
-.flowContainer {
-    width: 100%;
-    height: 700px;
-    background: #161616;
+.chart {
+  width: 100%;
+  padding: 0.15rem 0.1rem 0.4rem;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.5;
 }
 
-.saltNode {
-    background: #1a1a1a;
-    color: white;
-    border: 2px solid #0084FF;
-    border-radius: 8px;
-    padding: 15px;
-    text-align: center;
-    font-size: 16px;
-    width: 300px;
-    font-weight: bold;
-    box-shadow: 0 0 10px rgba(0, 132, 255, 0.2);
+.saltHead {
+  max-width: 22rem;
+  margin: 0 auto;
+  padding: 0.8rem 1rem;
+  text-align: center;
+  font-size: 1.08rem;
+  font-weight: 650;
+  background: var(--glass-strong);
+  border: 1px solid var(--hairline);
+  border-radius: 18px;
+  box-shadow: var(--spec);
 }
 
-.analysisNode {
-    background: #1a1a1a;
-    color: white;
-    border: 2px solid #8181ff;
-    border-radius: 8px;
-    padding: 12px;
-    text-align: center;
-    font-size: 14px;
-    width: 250px;
-    box-shadow: 0 0 10px rgba(129, 129, 255, 0.2);
+.arrow {
+  text-align: center;
+  color: rgba(142, 184, 255, 0.7);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0.1rem 0;
 }
 
-.testNode {
-    background: #1a1a1a;
-    color: white;
-    border: 2px solid #636e72;
-    border-radius: 8px;
-    padding: 10px;
-    text-align: center;
-    font-size: 12px;
-    width: 200px;
-    white-space: pre-wrap;
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  align-items: start;
 }
 
-.confirmatoryNode {
-    background: #1a1a1a;
-    color: white;
-    border: 2px solid #0084FF;
-    border-radius: 8px;
-    padding: 10px;
-    text-align: center;
-    font-size: 12px;
-    width: 220px;
-    white-space: pre-wrap;
-    box-shadow: 0 0 15px rgba(0, 132, 255, 0.3);
+.column {
+  min-width: 0;
 }
 
-
-.flowContainer :global(.react-flow__handle) {
-    background: #8181ff;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
+.branch {
+  padding: 0.7rem 0.8rem;
+  text-align: center;
+  font-weight: 650;
+  background: var(--glass);
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  box-shadow: var(--spec);
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(129, 129, 255, 0.7);
-    }
-    
-    70% {
-        transform: scale(1.1);
-        box-shadow: 0 0 0 10px rgba(129, 129, 255, 0);
-    }
-    
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(129, 129, 255, 0);
-    }
+.card {
+  padding: 0.85rem 0.9rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  box-shadow: var(--spec);
 }
 
-.flowContainer :global(.react-flow__edge-path) {
-    stroke: #8181ff;
-    stroke-width: 2;
+.confirmatory {
+  border-color: rgba(160, 200, 255, 0.28);
+  background: rgba(10, 132, 255, 0.14);
 }
 
-.flowContainer :global(.react-flow__controls) {
-    background: #1a1a1a;
-    border-radius: 8px;
-    padding: 4px;
+.badge {
+  margin: 0 0 0.35rem;
+  color: #b7d0ff;
+  font-size: 0.75rem;
+  font-weight: 650;
 }
 
-.flowContainer :global(.react-flow__controls-button) {
-    background: #1a1a1a;
-    border: 1px solid #8181ff;
-    color: white !important;
+.testName {
+  margin: 0 0 0.5rem;
+  font-size: 0.96rem;
+  font-weight: 650;
 }
 
-
-.controls > button > svg {
-    filter: invert(100%) brightness(100%);
+.card p {
+  margin: 0 0 0.6rem;
+  color: var(--ink);
 }
-.controls>button:hover {
-    background-color: #8181ff;
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+.card span {
+  display: block;
+  margin-bottom: 0.12rem;
+  color: var(--mute);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+@media (max-width: 720px) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
 }

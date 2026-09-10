@@ -52,7 +52,18 @@ export default function VivaPage() {
       description="40 Class 12 salt analysis viva questions and answers: Nessler, AgNO₃, lime water, brown ring, Group III, flame tests and precautions."
       canonicalUrl="https://saltanalysis.com/viva"
       keywords="salt analysis viva, class 12 viva, CBSE chemistry practical viva, Nessler, brown ring, lime water"
-      faqs={VIVA.slice(0, 8)}
+      faqs={VIVA.slice(0, 12)}
+      extraJsonLd={{
+        "@context": "https://schema.org",
+        "@type": "LearningResource",
+        name: "Salt analysis viva questions",
+        educationalLevel: "CBSE Class 12",
+        educationalUse: "practice",
+        learningResourceType: "Quiz",
+        isAccessibleForFree: true,
+        inLanguage: "en-IN",
+        url: "https://saltanalysis.com/viva",
+      }}
     >
       <div className={styles.page}>
         <h1>Salt analysis viva (Class 12)</h1>

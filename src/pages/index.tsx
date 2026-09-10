@@ -53,6 +53,8 @@ export default function Home({ salts }: { salts: HomeSalt[] }) {
     description:
       "Class 12 salt analysis tables for CBSE and ISC practicals.",
     url: "https://saltanalysis.com",
+    inLanguage: "en-IN",
+    isAccessibleForFree: true,
     mainEntity: {
       "@type": "ItemList",
       itemListElement: salts.map((salt, index) => ({
@@ -74,11 +76,8 @@ export default function Home({ salts }: { salts: HomeSalt[] }) {
       description="Class 12 salt analysis writeups: observation tables, confirmatory tests, equations, viva, and a flowchart you can print. NH4Cl, alum, copper sulphate, lead nitrate."
       canonicalUrl="https://saltanalysis.com/"
       keywords="salt analysis, class 12, CBSE practical, ISC, qualitative analysis, ammonium chloride, aluminium sulphate, lead nitrate, copper sulphate"
+      extraJsonLd={homepageJsonLd}
     >
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageJsonLd) }}
-      />
       <div className={styles.container}>
         <div className={styles.leftSection}>
           <h1 className={styles.title}>CBSE Class 12 Salt Analysis</h1>

@@ -3,6 +3,18 @@ User-agent: *
 Allow: /
 Disallow: /api/*
 
+# GPTBot
+User-agent: GPTBot
+Allow: /
+
+# Google-Extended
+User-agent: Google-Extended
+Allow: /
+
+# ClaudeBot
+User-agent: ClaudeBot
+Allow: /
+
 # Host
 Host: https://saltanalysis.com
 

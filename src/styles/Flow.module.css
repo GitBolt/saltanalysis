@@ -3,7 +3,6 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #161616;
   padding: 0 2rem;
 }
 
@@ -18,54 +17,50 @@
 
 .saltName {
   text-align: center;
-  padding: 1rem;
-  margin: 2rem 0;
-  font-size: 2rem;
-  color: white;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 1rem;
+  padding: 0.9rem 1rem;
+  margin: 1.5rem 0 1rem;
+  font-size: 1.6rem;
+  font-weight: 650;
+  color: var(--ink);
+  background: var(--glass);
+  border: 1px solid var(--hairline);
+  border-radius: 18px;
+  box-shadow: var(--spec);
 }
 
 .flowContainer {
   flex: 1;
   width: 100%;
   height: calc(100vh - 12rem);
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 1rem;
+  background: var(--glass);
+  backdrop-filter: blur(var(--blur)) saturate(170%);
+  -webkit-backdrop-filter: blur(var(--blur)) saturate(170%);
+  border: 1px solid var(--hairline);
+  border-radius: 24px;
   margin-bottom: 6rem;
+  overflow: auto;
+  padding: 1rem;
+  box-shadow: var(--spec);
 }
 
 .backButton {
   position: fixed;
-  top: 2rem;
-  left: 2rem;
-  background: #8181ff;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
+  top: 1.5rem;
+  left: 1.5rem;
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: var(--ink);
+  border: 1px solid var(--hairline);
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  box-shadow: var(--spec);
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.backButton:hover {
-  background: #6b6bff;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.backButton svg {
-  transition: transform 0.2s ease;
-}
-
-.backButton:hover svg {
-  transform: translateX(-2px);
 }
 
 @media (max-width: 768px) {
@@ -74,7 +69,7 @@
   }
 
   .saltName {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     margin: 1rem 0;
   }
 
@@ -85,7 +80,5 @@
   .backButton {
     top: 1rem;
     left: 1rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
   }
-} 
+}

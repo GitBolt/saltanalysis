@@ -19,8 +19,8 @@ interface CategoryPageProps {
 const CategoryPage: React.FC<CategoryPageProps> = ({ category, salts }) => {
   return (
     <Layout
-      title={`${category} Salts - Salt Analysis Guide`}
-      description={`${category} salts: observation tables and confirmatory tests for Class 12 practicals.`}
+      title={`${category} Cation Salts | Class 12 Salt Analysis`}
+      description={`${category} cations in Class 12 qualitative analysis. Open a salt for the observation table, confirmatory tests, and equations.`}
       canonicalUrl={`https://saltanalysis.com/category/cation/${encodeURIComponent(category)}`}
       keywords={`${category} salts, salt analysis, chemistry practical, qualitative analysis, cations, chemical reactions, lab experiments`}
     >

@@ -1,25 +1,55 @@
+:root {
+  --ink: #eef2f7;
+  --mute: #9aa8b8;
+  --glass: rgba(255, 255, 255, 0.07);
+  --glass-strong: rgba(255, 255, 255, 0.12);
+  --hairline: rgba(255, 255, 255, 0.11);
+  --tint: rgba(10, 132, 255, 0.62);
+  --blur: 32px;
+  --spec: inset 0 1px 0 rgba(255, 255, 255, 0.38),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+}
+
+html {
+  background: #10141b;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(1100px 640px at 82% 0%, rgba(88, 148, 255, 0.22), transparent 58%),
+    radial-gradient(800px 520px at 8% 88%, rgba(124, 92, 255, 0.14), transparent 52%),
+    radial-gradient(700px 400px at 50% 40%, rgba(255, 255, 255, 0.04), transparent 60%),
+    #10141b;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
-  color: #3498db;
+  color: #8eb8ff;
   text-decoration: none;
-  transition: color 0.2s ease;
 }
 
+a:hover {
+  color: #c4daff;
+}
 
 * {
   box-sizing: border-box;
 }
 
-body {
-  background-color: #161616;
-  color: white;
+@media (prefers-reduced-transparency: reduce) {
+  body {
+    background: #12161d;
+  }
 }
 
 @media print {

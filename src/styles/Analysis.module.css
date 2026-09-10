@@ -47,14 +47,16 @@
 /* Notebook like design stuff */
 .notebook {
   max-width: 800px;
-  margin: 0 auto;
-  border-radius: 2rem;
+  margin: 1.25rem auto 7.5rem;
+  border-radius: 24px;
   padding: 20px;
-  border: 1px solid #444;
-  background-color: #1a1a1a;
-  color: #8181ff;
+  border: 1px solid var(--hairline);
+  background: var(--glass);
+  backdrop-filter: blur(var(--blur)) saturate(170%);
+  -webkit-backdrop-filter: blur(var(--blur)) saturate(170%);
+  box-shadow: var(--spec);
+  color: #b7c7ff;
   position: relative;
-  transition: all 0.3s ease;
   margin-bottom: 7.5rem;
 }
 
@@ -189,6 +191,10 @@ input:checked + .slider:before {
   padding: 30px 20px 20px;
   color: #2424ff;
   font-family: 'Courier New', monospace;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-color: #d8d8d8;
 }
 
 .lightTheme .experimentTitle,
@@ -279,7 +285,6 @@ input:checked + .slider:before {
 .flowWrapper {
   margin: 2rem -20px;
   border-radius: 8px;
-  overflow: hidden;
 }
 
 /* Add these styles for the light theme */
@@ -409,6 +414,21 @@ input:checked + .slider:before {
 
 .relatedList a {
   color: #9db7ff;
+}
+
+.moreLinks {
+  text-align: center;
+  margin: -0.35rem 0 1.25rem;
+  color: var(--mute);
+  font-size: 0.92rem;
+}
+
+.moreLinks a {
+  color: #9db7ff;
+}
+
+.lightTheme .moreLinks a {
+  color: #2424ff;
 }
 
 .lightTheme .relatedList a {

@@ -89,7 +89,8 @@ export default function Combine() {
       <div className={styles.labContainer}>
         <h1 className={styles.title}>Create Salt To View Analysis</h1>
         <p className={styles.subtitle}>
-          Search by salt name, or click a cation and an anion.
+          Search by salt name, or click a cation and an anion. Method:{" "}
+          <Link href="/how-to-do-salt-analysis">how to do salt analysis</Link>.
         </p>
         <label className={styles.saltSearchLabel} htmlFor="salt-search">
           Search by salt name
