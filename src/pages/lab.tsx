@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react';
-import Layout from '@/components/Layout';
-import styles from '@/styles/Combine.module.css';
-import Link from 'next/link';
-import { calculateSaltFormula } from '@/utils/formula';
-import { Ion } from '@/types/ions';
-import { formulaToUrl } from '@/utils/encoders';
-import IonList from '@/components/IonList';
-import SaltResult from '@/components/SaltResult';
-import { trackEvent } from '@/utils/mixpanel';
+import { useEffect, useMemo, useState } from "react";
+import Layout from "@/components/Layout";
+import styles from "@/styles/Combine.module.css";
+import Link from "next/link";
+import { calculateSaltFormula } from "@/utils/formula";
+import { Ion } from "@/types/ions";
+import IonList from "@/components/IonList";
+import SaltResult from "@/components/SaltResult";
+import { searchSalts } from "@/utils/searchSalts";
+import { trackEvent } from "@/utils/mixpanel";
 
 export default function Combine() {
   const [anions, setAnions] = useState<Ion[]>([]);
@@ -15,21 +15,22 @@ export default function Combine() {
   const [selectedAnion, setSelectedAnion] = useState<Ion | null>(null);
   const [selectedCation, setSelectedCation] = useState<Ion | null>(null);
   const [salt, setSalt] = useState<string | null>(null);
-  const [anionSearch, setAnionSearch] = useState('');
-  const [cationSearch, setCationSearch] = useState('');
+  const [anionSearch, setAnionSearch] = useState("");
+  const [cationSearch, setCationSearch] = useState("");
+  const [saltSearch, setSaltSearch] = useState("");
 
   useEffect(() => {
-    fetch('/anions.json')
-      .then(response => response.json())
-      .then(data => setAnions(data));
-    fetch('/cations.json')
-      .then(response => response.json())
-      .then(data => setCations(data));
+    fetch("/anions.json")
+      .then((response) => response.json())
+      .then((data) => setAnions(data));
+    fetch("/cations.json")
+      .then((response) => response.json())
+      .then((data) => setCations(data));
   }, []);
 
   const handleCombine = (ion: Ion, isAnion: boolean) => {
-    trackEvent('Ion Selected', {
-      ion_type: isAnion ? 'anion' : 'cation',
+    trackEvent("Ion Selected", {
+      ion_type: isAnion ? "anion" : "cation",
       ion_name: ion.name,
       formula: ion.formula,
       category: ion.category,
@@ -41,7 +42,7 @@ export default function Combine() {
       if (selectedCation) {
         const saltFormula = calculateSaltFormula(selectedCation, ion);
         setSalt(saltFormula);
-        trackEvent('Salt Created', {
+        trackEvent("Salt Created", {
           cation: selectedCation.formula,
           anion: ion.formula,
           formula: saltFormula,
@@ -52,7 +53,7 @@ export default function Combine() {
       if (selectedAnion) {
         const saltFormula = calculateSaltFormula(ion, selectedAnion);
         setSalt(saltFormula);
-        trackEvent('Salt Created', {
+        trackEvent("Salt Created", {
           cation: ion.formula,
           anion: selectedAnion.formula,
           formula: saltFormula,
@@ -61,26 +62,66 @@ export default function Combine() {
     }
   };
 
-  const filteredAnions = anions.filter(ion => 
-    ion.name.toLowerCase().includes(anionSearch.toLowerCase()) ||
-    ion.formula.toLowerCase().includes(anionSearch.toLowerCase())
+  const saltHits = useMemo(
+    () => searchSalts(saltSearch, cations, anions),
+    [saltSearch, cations, anions]
   );
 
-  const filteredCations = cations.filter(ion => 
-    ion.name.toLowerCase().includes(cationSearch.toLowerCase()) ||
-    ion.formula.toLowerCase().includes(cationSearch.toLowerCase())
+  const filteredAnions = anions.filter(
+    (ion) =>
+      ion.name.toLowerCase().includes(anionSearch.toLowerCase()) ||
+      ion.formula.toLowerCase().includes(anionSearch.toLowerCase())
+  );
+
+  const filteredCations = cations.filter(
+    (ion) =>
+      ion.name.toLowerCase().includes(cationSearch.toLowerCase()) ||
+      ion.formula.toLowerCase().includes(cationSearch.toLowerCase())
   );
 
   return (
     <Layout
       title="Create a Salt and View Its Analysis | Salt Analysis"
-      description="Select a cation and anion to generate a salt, then open its CBSE chemistry practical analysis and test flow."
+      description="Search by salt name (lead acetate, NH4Cl) or pick a cation and anion to open the CBSE chemistry practical writeup."
       canonicalUrl="https://saltanalysis.com/lab"
-      keywords="create salt, cation anion combination, salt analysis practical, CBSE chemistry practical"
+      keywords="create salt, lead acetate, ammonium chloride, cation anion combination, salt analysis practical, CBSE chemistry practical"
     >
       <div className={styles.labContainer}>
         <h1 className={styles.title}>Create Salt To View Analysis</h1>
-        <p className={styles.subtitle}>Click on the anion and cation to create a salt</p>
+        <p className={styles.subtitle}>
+          Search by salt name, or click a cation and an anion.
+        </p>
+        <label className={styles.saltSearchLabel} htmlFor="salt-search">
+          Search by salt name
+        </label>
+        <input
+          id="salt-search"
+          type="search"
+          value={saltSearch}
+          onChange={(event) => setSaltSearch(event.target.value)}
+          placeholder="lead acetate, NH4Cl, alum, copper sulphate…"
+          className={styles.saltSearchInput}
+        />
+        {saltHits.length > 0 && (
+          <ul className={styles.saltHits}>
+            {saltHits.map((hit) => (
+              <li key={hit.id}>
+                <Link
+                  href={hit.url}
+                  onClick={() =>
+                    trackEvent("Salt Selected", {
+                      source: "lab_salt_search",
+                      formula: hit.formula,
+                      salt_name: hit.name,
+                    })
+                  }
+                >
+                  {hit.name} ({hit.formula})
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
         <div className={styles.ionListsContainer}>
           <IonList
             title="Cations"

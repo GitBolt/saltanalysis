@@ -55,7 +55,7 @@
   color: #8181ff;
   position: relative;
   transition: all 0.3s ease;
-  margin-bottom: 6rem;
+  margin-bottom: 7.5rem;
 }
 
 .experimentTitle {
@@ -355,4 +355,119 @@ input:checked + .slider:before {
 
 .lightTheme .fullscreenButton:hover {
   background: #1a1aff;
+}
+
+.subHeading {
+  font-size: 1rem;
+  margin: 0.75rem 0 0.4rem;
+  color: #ffffff;
+}
+
+.lightTheme .subHeading {
+  color: #000;
+}
+
+.printButton {
+  background: #2c3e50;
+  color: white;
+  border: none;
+  padding: 0.85rem 1.6rem;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+.lightTheme .printButton {
+  background: #2424ff;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+  flex-wrap: wrap;
+}
+
+.vivaList {
+  padding-left: 1.2rem;
+}
+
+.vivaQ {
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.lightTheme .vivaQ {
+  color: #000;
+}
+
+.relatedList {
+  padding-left: 1.2rem;
+}
+
+.relatedList a {
+  color: #9db7ff;
+}
+
+.lightTheme .relatedList a {
+  color: #2424ff;
+}
+
+.hindiBlock {
+  margin: 1.5rem 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid #555;
+  border-radius: 8px;
+}
+
+.hindiBlock summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.blueUnderline {
+  text-decoration: underline;
+}
+
+.confirmatoryTest {
+  font-weight: 600;
+}
+
+@media print {
+  .noPrint {
+    display: none !important;
+  }
+
+  .notebook,
+  .lightTheme {
+    background: #fff !important;
+    background-image: none !important;
+    color: #000 !important;
+    border: none;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .experimentTitle,
+  .sectionTitle,
+  .saltName,
+  .testTable th,
+  .vivaQ,
+  .subHeading,
+  .blueText {
+    color: #000 !important;
+  }
+
+  .testTable th,
+  .testTable td {
+    border-color: #000 !important;
+  }
+
+  .notebook {
+    margin-bottom: 0;
+  }
 }

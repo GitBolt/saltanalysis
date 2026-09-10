@@ -10,33 +10,44 @@
     background: rgba(255, 255, 255, 0.069);
     backdrop-filter: blur(5px);
     border-radius: 20px;
-    padding: 8px 16px;
+    padding: 8px 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: auto;
-    max-width: none;
-    height: 60px;
+    max-width: calc(100vw - 16px);
+    height: auto;
+    min-height: 52px;
 }
 
 .leftSection {
     display: flex;
-    gap: 8px;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .navItem {
-    padding: 10px 15px;
+    padding: 8px 10px;
     text-align: center;
     color: white;
-    font-size: 1rem;
+    font-size: 0.85rem;
     font-weight: 600;
     background-color: #3477fd;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-decoration: none;
     transition: all 0.2s ease-in-out;
+    white-space: nowrap;
 }
 
 .navItem:hover {
     transform: translate(0, -2px) scale(1.05);
+}
+
+@media print {
+    .navigation,
+    .builtByContainer {
+        display: none !important;
+    }
 }
 
 .boltLink {
@@ -68,7 +79,8 @@
         bottom: 30px;
         padding: 10px 20px;
         border-radius: 25px;
-        height: 70px;
+        height: auto;
+        min-height: 70px;
     }
 
     .leftSection {

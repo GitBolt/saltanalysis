@@ -24,6 +24,12 @@ module.exports = {
     if (path === '/') {
       priority = 1.0;
       changefreq = 'daily';
+    } else if (path === '/how-to-do-salt-analysis' || path === '/viva' || path === '/lab') {
+      priority = 0.95;
+      changefreq = 'weekly';
+    } else if (path === '/quiz') {
+      priority = 0.8;
+      changefreq = 'monthly';
     } else if (path.startsWith('/salt/')) {
       priority = 0.9;
       changefreq = 'monthly';

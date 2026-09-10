@@ -198,14 +198,7 @@
       {
         "name": "Lime Water Test",
         "experiment": "Pass the gas through lime water",
-        "observation": "Lime water turns milky; milkiness disappears on excess gas",
-        "inference": "CO₃²⁻ is confirmed",
-        "confirmatory": true
-      },
-      {
-        "name": "Sodium Nitroprusside Test",
-        "experiment": "Take 1 mL water extract or sodium carbonate extract, make it alkaline with dilute NH₄OH, then add a drop of sodium nitroprusside",
-        "observation": "Purple or violet colouration is produced",
+        "observation": "Lime water turns milky; milkiness disappears on passing excess gas (soluble calcium bicarbonate)",
         "inference": "CO₃²⁻ is confirmed",
         "confirmatory": true
       }

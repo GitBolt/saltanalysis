@@ -91,8 +91,15 @@
     "solubility": "Slightly soluble in water",
     "tests": [
       {
-        "experiment": "If group-V is absent, add disodium hydrogen phosphate solution and scratch the inner walls with a glass rod",
+        "experiment": "If Group V is absent, add disodium hydrogen phosphate solution and scratch the inner walls with a glass rod",
         "observation": "A white crystalline precipitate of magnesium ammonium phosphate is formed",
+        "inference": "Mg²⁺ may be present",
+        "confirmatory": true
+      },
+      {
+        "name": "Magneson Test",
+        "experiment": "To the alkaline solution add a drop of Magneson I reagent (p-nitrobenzeneazoresorcinol)",
+        "observation": "A blue precipitate / blue lake is formed",
         "inference": "Mg²⁺ is confirmed",
         "confirmatory": true
       }
@@ -130,9 +137,16 @@
         "inference": "Group V cation may be present"
       },
       {
+        "name": "Flame Test",
+        "experiment": "Moisten the salt with conc. HCl and introduce it into a non-luminous flame on a platinum / nichrome wire",
+        "observation": "Apple-green flame",
+        "inference": "Ba²⁺ is confirmed",
+        "confirmatory": true
+      },
+      {
         "name": "Potassium Chromate Test",
         "experiment": "Dissolve the white precipitate in dilute acetic acid and add potassium chromate",
-        "observation": "Yellow precipitate",
+        "observation": "Yellow precipitate of barium chromate",
         "inference": "Ba²⁺ is confirmed",
         "confirmatory": true
       }
@@ -275,9 +289,16 @@
         "inference": "Group-II cation may be present"
       },
       {
+        "name": "Ammonium Hydroxide Test",
+        "experiment": "To the original solution (or the filtrate after dissolving the black ppt in dilute HNO₃) add NH₄OH dropwise, then in excess",
+        "observation": "Pale blue precipitate of Cu(OH)₂ dissolves in excess NH₄OH giving a deep blue tetraamminecopper(II) solution",
+        "inference": "Cu²⁺ is confirmed",
+        "confirmatory": true
+      },
+      {
         "name": "Potassium Ferrocyanide Test",
-        "experiment": "Dissolve the black precipitate in dilute nitric acid, boil the filtrate and then add potassium ferrocyanide",
-        "observation": "Chocolate brown precipitate",
+        "experiment": "Acidify the solution with acetic acid and add potassium ferrocyanide",
+        "observation": "Chocolate-brown precipitate of copper ferrocyanide",
         "inference": "Presence of Cu²⁺ is confirmed",
         "confirmatory": true
       }
@@ -354,9 +375,16 @@
         "inference": "Group V cation may be present"
       },
       {
+        "name": "Flame Test",
+        "experiment": "Moisten the salt with conc. HCl and introduce it into a non-luminous flame",
+        "observation": "Crimson-red flame",
+        "inference": "Sr²⁺ is confirmed",
+        "confirmatory": true
+      },
+      {
         "name": "Ammonium Sulphate Test",
         "experiment": "Dissolve white precipitate in dilute acetic acid and add ammonium sulphate solution",
-        "observation": "White precipitate",
+        "observation": "White precipitate of strontium sulphate",
         "inference": "Sr²⁺ is confirmed",
         "confirmatory": true
       }
@@ -394,9 +422,16 @@
         "inference": "Group V cation may be present"
       },
       {
+        "name": "Flame Test",
+        "experiment": "Moisten the salt with conc. HCl and introduce it into a non-luminous flame",
+        "observation": "Brick-red flame",
+        "inference": "Ca²⁺ is confirmed",
+        "confirmatory": true
+      },
+      {
         "name": "Ammonium Oxalate Test",
         "experiment": "Dissolve white precipitate in dilute acetic acid and add ammonium oxalate solution",
-        "observation": "White precipitate",
+        "observation": "White precipitate of calcium oxalate",
         "inference": "Ca²⁺ is confirmed",
         "confirmatory": true
       }

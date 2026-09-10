@@ -21,3 +21,11 @@ body {
   background-color: #161616;
   color: white;
 }
+
+@media print {
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+}

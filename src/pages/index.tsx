@@ -1,169 +1,147 @@
-import Link from 'next/link';
-import Layout from '@/components/Layout';
-import styles from '@/styles/Home.module.css';
-import { useState, useEffect } from 'react';
-import { calculateSaltFormula } from '@/utils/formula';
-import { formulaToUrl } from '@/utils/encoders';
-import { getGradientColors } from '@/utils/gradients';
-import { trackEvent } from '@/utils/mixpanel';
-import dynamic from 'next/dynamic';
+import Link from "next/link";
+import { GetStaticProps } from "next";
+import Layout from "@/components/Layout";
+import styles from "@/styles/Home.module.css";
+import { getGradientByIndex } from "@/utils/gradients";
+import { trackEvent } from "@/utils/mixpanel";
+import dynamic from "next/dynamic";
+import { getHomepageSalts, SaltSummary } from "@/data/salts";
+import { Ion } from "@/types/ions";
 
-const SaltAnalysisFlow = dynamic(() => import('@/components/SaltAnalysisFlow'), {
-  ssr: false
+const SaltAnalysisFlow = dynamic(() => import("@/components/SaltAnalysisFlow"), {
+  ssr: false,
 });
 
-type RandomSalt = {
+type HomeSalt = {
   name: string;
   formula: string;
   url: string;
   cation: string;
   anion: string;
-  fullCation: any; // for flow diagram
-  fullAnion: any; // for flow diagram
+  fullCation: Ion;
+  fullAnion: Ion;
 };
 
-const getRandomSalts = async (count: number): Promise<RandomSalt[]> => {
-  const cations = await fetch('/cations.json').then(res => res.json());
-  const anions = await fetch('/anions.json').then(res => res.json());
-  const salts = [];
-  for (let i = 0; i < count; i++) {
-    const cation = cations[Math.floor(Math.random() * cations.length)];
-    const anion = anions[Math.floor(Math.random() * anions.length)];
+const toHomeSalt = (salt: SaltSummary): HomeSalt => ({
+  name: salt.name,
+  formula: salt.formula,
+  url: `/salt/${salt.id}/analysis`,
+  cation: salt.cation.formula,
+  anion: salt.anion.formula,
+  fullCation: salt.cation,
+  fullAnion: salt.anion,
+});
 
-    const formula = calculateSaltFormula(cation, anion);
-    const urlencoding = formulaToUrl(cation.formula, anion.formula);
-    const name = `${cation.name} ${anion.name}`;
-    const url = `/salt/${urlencoding.toLowerCase()}/analysis`;
+export default function Home({ salts }: { salts: HomeSalt[] }) {
+  const preview = salts[0];
 
-    salts.push({ 
-      name, 
-      formula, 
-      url, 
-      cation: cation.formula, 
-      anion: anion.formula,
-      fullCation: cation,
-      fullAnion: anion
-    });
-  }
-
-  return salts;
-}
-
-export default function Home() {
-  const [randomSalts, setRandomSalts] = useState<RandomSalt[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    fetchRandomSalts();
-  }, []);
-
-  const handleSaltClick = (salt: RandomSalt, position: number) => {
-    trackEvent('Salt Selected', {
+  const handleSaltClick = (salt: HomeSalt, position: number) => {
+    trackEvent("Salt Selected", {
       formula: salt.formula,
       salt_name: salt.name,
       cation: salt.cation,
       anion: salt.anion,
-      source: 'home_quick_analysis',
+      source: "home_quick_analysis",
       position,
     });
-  };
-
-  const fetchRandomSalts = async () => {
-    setIsLoading(true);
-    setError(null);
-    try {
-      const salts = await getRandomSalts(4);
-      setRandomSalts(salts);
-    } catch (err) {
-      console.error('Error fetching random salts:', err);
-      setError('Failed to fetch random salts. Please try again.');
-    } finally {
-      setIsLoading(false);
-    }
   };
 
   const homepageJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Salt Analysis - Home",
-    "description": "Create and analyze any salt with detailed step-by-step practical writeups",
-    "url": "https://saltanalysis.com",
-    "mainEntity": randomSalts.length > 0 ? {
+    name: "CBSE Class 12 Salt Analysis",
+    description:
+      "Free CBSE and ISC Class 12 salt analysis writeups with observation tables, confirmatory tests, equations, viva and flowcharts.",
+    url: "https://saltanalysis.com",
+    mainEntity: {
       "@type": "ItemList",
-      "itemListElement": randomSalts.map((salt, index) => ({
+      itemListElement: salts.map((salt, index) => ({
         "@type": "ListItem",
-        "position": index + 1,
-        "item": {
+        position: index + 1,
+        item: {
           "@type": "ChemicalSubstance",
-          "name": salt.name,
-          "url": `https://saltanalysis.com${salt.url}`,
-          "molecularFormula": salt.formula
-        }
-      }))
-    } : null
+          name: salt.name,
+          url: `https://saltanalysis.com${salt.url}`,
+          molecularFormula: salt.formula,
+        },
+      })),
+    },
   };
 
   return (
-    <Layout>
+    <Layout
+      title="CBSE Class 12 Salt Analysis — writeups for every salt"
+      description="Free CBSE and ISC Class 12 qualitative salt analysis writeups. Observation tables, confirmatory tests, equations, viva and print-ready flowcharts for ammonium chloride, alum, copper sulphate and more."
+      canonicalUrl="https://saltanalysis.com/"
+      keywords="salt analysis, class 12, CBSE practical, ISC, qualitative analysis, ammonium chloride, aluminium sulphate, lead nitrate, copper sulphate"
+    >
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageJsonLd) }}
       />
       <div className={styles.container}>
         <div className={styles.leftSection}>
-          <h1 className={styles.title}>Salts = Cation + Anion</h1>
-          <p className={styles.subtitle}>Create any salt you want and view it's analysis</p>
+          <h1 className={styles.title}>CBSE Class 12 Salt Analysis</h1>
+          <p className={styles.subtitle}>
+            Writeups for every salt — CBSE, ISC and other boards. Observation
+            tables, confirmatory tests and a flowchart you can print.
+          </p>
 
           <div className={styles.buttonContainer}>
             <Link
               href="/lab"
               className={styles.createButton}
-              onClick={() => trackEvent('Lab Opened', { source: 'home_primary_action' })}
+              onClick={() => trackEvent("Lab Opened", { source: "home_primary_action" })}
             >
               Create Salt
             </Link>
           </div>
+          <p className={styles.secondaryLinks}>
+            <Link href="/how-to-do-salt-analysis">How to do salt analysis</Link>
+            {" · "}
+            <Link href="/viva">Viva questions</Link>
+            {" · "}
+            <Link href="/quiz">Unknown-salt quiz</Link>
+          </p>
 
-          <h2 className={styles.sectionTitle}>Quick Analysis</h2>
-          {isLoading ? (
-            <p aria-label="Loading random salts">Loading...</p>
-          ) : error ? (
-            <p className={styles.error} role="alert">{error}</p>
-          ) : (
-            <div className={styles.saltGrid} role="list">
-              {randomSalts.map((salt, index) => (
-                <Link
-                  key={salt.formula} 
-                  href={salt.url}
-                  className={styles.saltCard}
-                  onClick={() => handleSaltClick(salt, index + 1)}
-                  aria-label={`View analysis for ${salt.name} (${salt.formula})`}
+          <h2 className={styles.sectionTitle}>Common salts</h2>
+          <div className={styles.saltGrid} role="list">
+            {salts.map((salt, index) => (
+              <Link
+                key={salt.formula}
+                href={salt.url}
+                className={styles.saltCard}
+                onClick={() => handleSaltClick(salt, index + 1)}
+                aria-label={`View analysis for ${salt.name} (${salt.formula})`}
+              >
+                <div
+                  className={styles.saltBox}
+                  style={{
+                    background: `linear-gradient(to bottom, ${getGradientByIndex(index)})`,
+                  }}
+                  role="img"
+                  aria-label={`Chemical formula: ${salt.cation} + ${salt.anion}`}
                 >
-                  <div 
-                    className={styles.saltBox} 
-                    style={{ background: `linear-gradient(to bottom, ${getGradientColors()})` }}
-                    role="img"
-                    aria-label={`Chemical formula: ${salt.cation} + ${salt.anion}`}
-                  >
-                    <span className={styles.cation}>{salt.cation}</span>
-                    <span className={styles.anion}>{salt.anion}</span>
-                  </div>
-                  <p className={styles.formula}>{salt.formula}</p>
-                </Link>
-              ))}
-            </div>
-          )}
+                  <span className={styles.cation}>{salt.cation}</span>
+                  <span className={styles.anion}>{salt.anion}</span>
+                </div>
+                <p className={styles.formula}>{salt.formula}</p>
+                <p className={styles.saltLabel}>{salt.name}</p>
+              </Link>
+            ))}
+          </div>
         </div>
 
         <div className={styles.rightSection}>
-          {!isLoading && randomSalts.length > 0 && (
+          {preview && (
             <div className={styles.flowPreview}>
-              <h2 className={styles.flowTitle}>Analysis Flow Preview</h2>
+              <h2 className={styles.flowTitle}>
+                {preview.name} flowchart
+              </h2>
               <div className={styles.flowContainer}>
-                <SaltAnalysisFlow 
-                  anion={randomSalts[0].fullAnion} 
-                  cation={randomSalts[0].fullCation} 
+                <SaltAnalysisFlow
+                  anion={preview.fullAnion}
+                  cation={preview.fullCation}
                 />
               </div>
             </div>
@@ -173,3 +151,11 @@ export default function Home() {
     </Layout>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const salts = getHomepageSalts().map(toHomeSalt);
+  return {
+    props: { salts },
+    revalidate: 3600,
+  };
+};

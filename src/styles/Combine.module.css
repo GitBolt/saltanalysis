@@ -20,6 +20,44 @@
   font-weight: 300;
 }
 
+.saltSearchLabel {
+  display: block;
+  font-size: 0.9rem;
+  color: rgb(196, 196, 213);
+  margin-bottom: 0.4rem;
+}
+
+.saltSearchInput {
+  width: 100%;
+  margin-bottom: 0.75rem;
+  padding: 0.85rem 1rem;
+  font-size: 1.05rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: white;
+}
+
+.saltHits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.saltHits a {
+  display: block;
+  padding: 0.65rem 0.85rem;
+  background: rgba(52, 119, 253, 0.2);
+  border-radius: 8px;
+  color: white;
+}
+
+.saltHits a:hover {
+  background: rgba(52, 119, 253, 0.35);
+}
+
 .ionListsContainer {
   display: flex;
   flex-direction: column;
@@ -40,6 +78,11 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 0.5rem;
   color: white;
+}
+
+.ionButtonContainer {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .ionButton {

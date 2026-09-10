@@ -10,6 +10,7 @@ interface LayoutProps {
   keywords?: string;
   author?: string;
   robots?: string;
+  faqs?: Array<{ q: string; a: string }>;
   salt?: {
     name: string;
     formula: string;
@@ -37,6 +38,7 @@ const Layout: React.FC<LayoutProps> = ({
   keywords = "salt analysis, chemistry practical, qualitative analysis, cations, anions, chemical reactions, lab experiments, chemistry writeup",
   author = "Aabis",
   robots = "index, follow",
+  faqs,
   salt
 }) => {
   const isHomePage = canonicalUrl.replace(/\/$/, '') === 'https://saltanalysis.com';
@@ -48,6 +50,19 @@ const Layout: React.FC<LayoutProps> = ({
     "alternateName": "Salt Analysis Guide",
     "url": "https://saltanalysis.com",
     "description": description
+  } : null;
+
+  const faqJsonLd = faqs && faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((item) => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.a
+      }
+    }))
   } : null;
 
   const saltJsonLd = salt ? {
@@ -156,6 +171,12 @@ const Layout: React.FC<LayoutProps> = ({
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: serializeJsonLd(saltJsonLd) }}
+          />
+        )}
+        {faqJsonLd && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqJsonLd) }}
           />
         )}
       </Head>

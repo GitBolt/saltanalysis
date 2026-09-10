@@ -19,3 +19,24 @@ export interface Test {
   inference: string;
   confirmatory?: boolean;
 }
+
+export interface VivaItem {
+  q: string;
+  a: string;
+}
+
+export interface SaltWriteup {
+  prelims: Test[];
+  anionTests: Test[];
+  cationTests: Test[];
+  anionEquations: string[];
+  cationEquations: string[];
+  viva: VivaItem[];
+  faqs: VivaItem[];
+  related: Array<{ cation: string; anion: string }>;
+  hindi?: {
+    title: string;
+    paragraphs: string[];
+  };
+  precautions?: string[];
+}

@@ -1,0 +1,142 @@
+import { useState } from "react";
+import Layout from "@/components/Layout";
+import styles from "@/styles/Guide.module.css";
+import Link from "next/link";
+import { trackEvent } from "@/utils/mixpanel";
+
+const QUESTIONS = [
+  {
+    q: "Colour of hydrated copper sulphate (CuSO₄·5H₂O)?",
+    options: ["White", "Blue", "Green", "Yellow"],
+    answer: 1,
+  },
+  {
+    q: "Odour of ammonium chloride?",
+    options: ["Odourless", "Vinegar-like", "Ammoniacal", "Rotten eggs"],
+    answer: 2,
+  },
+  {
+    q: "NH₄⁺ belongs to which group?",
+    options: ["Group I", "Group III", "Group 0", "Group V"],
+    answer: 2,
+  },
+  {
+    q: "Confirmatory test for Cl⁻?",
+    options: [
+      "Brown ring",
+      "Lime water milky",
+      "Curdy white AgCl soluble in NH₄OH",
+      "Canary yellow molybdate ppt",
+    ],
+    answer: 2,
+  },
+  {
+    q: "Brown ring at the junction of two layers confirms?",
+    options: ["Sulphate", "Nitrate", "Chloride", "Acetate"],
+    answer: 1,
+  },
+  {
+    q: "Cu²⁺ is precipitated in which group?",
+    options: ["I", "II", "IV", "V"],
+    answer: 1,
+  },
+  {
+    q: "Blue lake test confirms?",
+    options: ["Zn²⁺", "Al³⁺", "Mg²⁺", "Ba²⁺"],
+    answer: 1,
+  },
+  {
+    q: "Apple-green flame indicates?",
+    options: ["Ca²⁺", "Sr²⁺", "Na⁺", "Ba²⁺"],
+    answer: 3,
+  },
+  {
+    q: "Lime water turning milky indicates?",
+    options: ["H₂S", "CO₂ / carbonate", "Cl₂", "NH₃"],
+    answer: 1,
+  },
+  {
+    q: "White ppt of ZnS appears in?",
+    options: ["Group II (acidic H₂S)", "Group III", "Group IV (alkaline H₂S)", "Group VI"],
+    answer: 2,
+  },
+];
+
+export default function QuizPage() {
+  const [picked, setPicked] = useState<Array<number | null>>(
+    QUESTIONS.map(() => null)
+  );
+  const [submitted, setSubmitted] = useState(false);
+
+  const score = picked.reduce<number>((total, choice, index) => {
+    if (choice === QUESTIONS[index].answer) return total + 1;
+    return total;
+  }, 0);
+
+  return (
+    <Layout
+      title="Unknown Salt Quiz | Class 12 Salt Analysis"
+      description="Ten-question Class 12 salt analysis quiz teachers can assign in Google Classroom: colour, groups, confirmatory tests."
+      canonicalUrl="https://saltanalysis.com/quiz"
+      keywords="salt analysis quiz, class 12 chemistry practical quiz, unknown salt"
+    >
+      <div className={styles.page}>
+        <h1>Unknown-salt quiz</h1>
+        <p className={styles.lead}>
+          Ten questions. Assign this link in Google Classroom. Then open a{" "}
+          <Link href="/how-to-do-salt-analysis">print-ready writeup</Link>.
+        </p>
+        <ol className={styles.quiz}>
+          {QUESTIONS.map((item, index) => (
+            <li key={item.q}>
+              <p>
+                <strong>{item.q}</strong>
+              </p>
+              <div className={styles.options}>
+                {item.options.map((option, optionIndex) => {
+                  const selected = picked[index] === optionIndex;
+                  const correct = submitted && optionIndex === item.answer;
+                  const wrong = submitted && selected && optionIndex !== item.answer;
+                  return (
+                    <label
+                      key={option}
+                      className={`${styles.option} ${correct ? styles.correct : ""} ${wrong ? styles.wrong : ""}`}
+                    >
+                      <input
+                        type="radio"
+                        name={`q-${index}`}
+                        checked={selected}
+                        onChange={() => {
+                          const next = [...picked];
+                          next[index] = optionIndex;
+                          setPicked(next);
+                          setSubmitted(false);
+                        }}
+                      />
+                      {option}
+                    </label>
+                  );
+                })}
+              </div>
+            </li>
+          ))}
+        </ol>
+        <button
+          type="button"
+          className={styles.submit}
+          onClick={() => {
+            setSubmitted(true);
+            trackEvent("Quiz Submitted", { score, total: QUESTIONS.length });
+          }}
+        >
+          Check answers
+        </button>
+        {submitted && (
+          <p className={styles.score}>
+            Score: {score} / {QUESTIONS.length}
+          </p>
+        )}
+      </div>
+    </Layout>
+  );
+}

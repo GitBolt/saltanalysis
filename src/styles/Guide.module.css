@@ -1,0 +1,115 @@
+.page {
+  max-width: 800px;
+  margin: 0 auto 7rem;
+  padding: 1.5rem 1.25rem 2rem;
+}
+
+.page h1 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.lead {
+  color: rgb(196, 196, 213);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.page h2 {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+}
+
+.page p,
+.page li {
+  line-height: 1.55;
+}
+
+.saltList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.6rem 1rem;
+  padding-left: 1.1rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.table th,
+.table td {
+  border: 1px solid #444;
+  padding: 0.6rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.table th {
+  background: #222;
+}
+
+.viva li,
+.quiz li {
+  margin-bottom: 1.1rem;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.option {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  background: #222;
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+}
+
+.correct {
+  outline: 2px solid #3dba6a;
+}
+
+.wrong {
+  outline: 2px solid #d35d5d;
+}
+
+.submit {
+  background: #0084ff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.4rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.score {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  .page h1 {
+    font-size: 2.6rem;
+  }
+}
+
+@media print {
+  .page {
+    margin-bottom: 0;
+    color: #000;
+  }
+}

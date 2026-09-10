@@ -1,12 +1,17 @@
+const GRADIENTS = [
+  "#A7A9EF, #5B5DE5",
+  "#E99D82, #D76A5C",
+  "#EFA7D2, #D04C86",
+  "#6AEB6E, #088F45",
+];
+
 let usedGradients: string[] = [];
 
+export const getGradientByIndex = (index: number) =>
+  GRADIENTS[index % GRADIENTS.length];
+
 export const getGradientColors = () => {
-  const gradients = [
-    '#A7A9EF, #5B5DE5',
-    '#E99D82, #D76A5C',
-    '#EFA7D2, #D04C86',
-    '#6AEB6E, #088F45'
-  ];
+  const gradients = GRADIENTS;
 
   if (usedGradients.length === gradients.length) {
     usedGradients = [];
