@@ -66,7 +66,7 @@ const Layout: React.FC<LayoutProps> = ({
         publisher: {
           "@type": "Person",
           name: "Aabis",
-          sameAs: ["https://twitter.com/0xBolt"],
+          sameAs: ["https://aabis.dev"],
         },
       }
     : null;

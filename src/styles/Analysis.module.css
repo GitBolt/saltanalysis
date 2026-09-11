@@ -383,7 +383,13 @@ input:checked + .slider:before {
 }
 
 .lightTheme .printButton {
-  background: #2424ff;
+  background: #f7f7f7;
+  color: #1a1a1a;
+  border: 1.5px solid #1a1a1a;
+}
+
+.lightTheme .printButton:hover {
+  background: #ececec;
 }
 
 .buttonContainer {

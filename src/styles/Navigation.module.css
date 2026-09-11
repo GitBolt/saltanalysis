@@ -78,6 +78,43 @@
   font-size: 0.78rem;
 }
 
+:global(html.notebook) .navigation {
+  background: rgba(255, 255, 255, 0.78);
+  border-color: rgba(20, 24, 32, 0.14);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.06),
+    0 12px 36px rgba(0, 0, 0, 0.12);
+}
+
+:global(html.notebook) .navItem {
+  color: rgba(20, 24, 32, 0.52);
+}
+
+:global(html.notebook) .navItem:hover {
+  color: #111;
+  background: rgba(20, 24, 32, 0.06);
+}
+
+:global(html.notebook) .active {
+  color: #111;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+:global(html.notebook) .builtByContainer {
+  background: rgba(255, 255, 255, 0.78);
+  color: rgba(20, 24, 32, 0.55);
+  border-color: rgba(20, 24, 32, 0.14);
+}
+
+:global(html.notebook) .boltLink {
+  color: #111;
+}
+
+:global(html.notebook) .boltLink:hover {
+  color: #333;
+}
+
 @media (min-width: 768px) {
   .navigation {
     bottom: 26px;

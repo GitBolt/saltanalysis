@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
 import styles from "@/styles/Analysis.module.css";
 import { formulaToUrl, normalizeSaltId } from "@/utils/encoders";
@@ -104,6 +104,13 @@ const Analysis: React.FC<AnalysisProps> = ({
   const [isNotebookTheme, setIsNotebookTheme] = useState(true);
   const [showFlow, setShowFlow] = useState(false);
   const prelims = getSaltPrelims(cation, anion);
+
+  useLayoutEffect(() => {
+    document.documentElement.classList.toggle("notebook", isNotebookTheme);
+    return () => {
+      document.documentElement.classList.remove("notebook");
+    };
+  }, [isNotebookTheme]);
 
   const getFlowUrl = () =>
     `/salt/${formulaToUrl(cation.formula, anion.formula)}/flow`;

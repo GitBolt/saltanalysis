@@ -45,11 +45,11 @@ const Navigation: React.FC = () => {
         <span>
           Built by{" "}
           <a
-            href="https://twitter.com/0xBolt"
+            href="https://aabis.dev"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.boltLink}
-            aria-label="Visit Aabis's Twitter profile"
+            aria-label="Visit Aabis's website"
           >
             Aabis
           </a>
