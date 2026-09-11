@@ -102,12 +102,13 @@ export default function HowTo({ salts }: { salts: SaltLink[] }) {
         <h1>How to do salt analysis</h1>
         <p className={styles.lead}>
           Find the anion and the cation. Write Experiment, Observation, Inference.
-          Print the page for your file. Works for CBSE, ISC, and other boards.
+          Print if you need a file. This is the qualitative analysis scheme Class 12
+          CBSE students follow; ISC and other labs use the same tests.
         </p>
 
         <h2 id="common-salts">Common salts</h2>
         <p>
-          The salts that usually come in the practical. Open one and copy the table.
+          The salts that usually come up. Open one and copy the table.
         </p>
         <ul className={styles.saltList}>
           {salts.map((salt) => (
@@ -168,7 +169,7 @@ export default function HowTo({ salts }: { salts: SaltLink[] }) {
           </tbody>
         </table>
 
-        <h2>Order in the practical file</h2>
+        <h2>Order of tests</h2>
         <ol>
           <li>Physical examination: colour, odour, state, solubility.</li>
           <li>Dry heating and flame test.</li>

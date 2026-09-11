@@ -14,7 +14,7 @@ export default function NotFound({ salts }: { salts: SaltLink[] }) {
   return (
     <Layout
       title="Page not found | Salt Analysis"
-      description="That page is missing. Open a Class 12 salt analysis writeup instead."
+      description="That page is missing. Open a salt analysis writeup instead."
       canonicalUrl="https://saltanalysis.com/"
       robots="noindex, follow"
     >

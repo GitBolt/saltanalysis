@@ -1,7 +1,7 @@
 .labContainer {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1.25rem 1.25rem 6.5rem;
+  padding: clamp(5rem, 12vh, 8rem) 1.25rem 6.5rem;
 }
 
 .title {
@@ -199,6 +199,10 @@
 }
 
 @media (min-width: 768px) {
+  .labContainer {
+    padding: clamp(5.5rem, 13vh, 8.5rem) 1.5rem 6.5rem;
+  }
+
   .title {
     font-size: 2.8rem;
   }

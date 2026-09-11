@@ -27,7 +27,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ category, salts }) => {
       <div className={styles.container}>
         <h1 className={styles.title}>{category} Salts</h1>
         <p className={styles.description}>
-          {category} salts. Open a salt for the observation table.
+          {category} salts. Open one for the observation table.
         </p>
 
         <div className={styles.saltGrid}>

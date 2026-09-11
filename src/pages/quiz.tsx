@@ -119,7 +119,7 @@ export default function QuizPage() {
       <div className={styles.page}>
         <h1>Unknown salt quiz</h1>
         <p className={styles.lead}>
-          15 questions. Share this in class. Then open a{" "}
+          15 questions on colour, groups, and confirmatory tests. Then open a{" "}
           <Link href="/how-to-do-salt-analysis">salt writeup</Link>.
         </p>
         <ol className={styles.quiz}>

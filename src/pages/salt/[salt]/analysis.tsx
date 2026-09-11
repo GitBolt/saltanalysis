@@ -197,7 +197,7 @@ const Analysis: React.FC<AnalysisProps> = ({
         <h1 className={styles.experimentTitle}>
           Analysis of {salt.name} ({salt.formula})
         </h1>
-        <p className={styles.saltName}>Class 12 Chemistry Practical</p>
+        <p className={styles.saltName}>Qualitative analysis</p>
         <p className={`${styles.moreLinks} ${styles.noPrint}`}>
           <Link href="/how-to-do-salt-analysis">How to do salt analysis</Link>
           {" · "}

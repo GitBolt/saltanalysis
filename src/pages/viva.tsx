@@ -66,9 +66,10 @@ export default function VivaPage() {
       }}
     >
       <div className={styles.page}>
-        <h1>Salt analysis viva (Class 12)</h1>
+        <h1>Salt analysis viva</h1>
         <p className={styles.lead}>
-          40 questions for the chemistry practical. Print a{" "}
+          40 questions on the tests. Written for Class 12 practicals; useful
+          anywhere you run qualitative analysis. Print a{" "}
           <Link href="/how-to-do-salt-analysis">salt writeup</Link> with this.
         </p>
         <ol className={styles.viva}>

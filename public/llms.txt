@@ -1,6 +1,6 @@
 # Salt Analysis
 
-Class 12 CBSE / ISC qualitative salt analysis writeups.
+Qualitative salt analysis writeups. Used most by Class 12 CBSE / ISC students.
 https://saltanalysis.com
 
 Copper sulphate is blue. Ammonium chloride smells of ammonia. Write BaCl2, not Ba(Cl)2.

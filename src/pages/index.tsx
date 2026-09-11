@@ -49,9 +49,9 @@ export default function Home({ salts }: { salts: HomeSalt[] }) {
   const homepageJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "CBSE Class 12 Salt Analysis",
+    name: "Salt Analysis",
     description:
-      "Class 12 salt analysis tables for CBSE and ISC practicals.",
+      "Qualitative salt analysis tables. Used most by Class 12 CBSE and ISC students.",
     url: "https://saltanalysis.com",
     inLanguage: "en-IN",
     isAccessibleForFree: true,
@@ -80,10 +80,10 @@ export default function Home({ salts }: { salts: HomeSalt[] }) {
     >
       <div className={styles.container}>
         <div className={styles.leftSection}>
-          <h1 className={styles.title}>CBSE Class 12 Salt Analysis</h1>
+          <h1 className={styles.title}>Salt Analysis</h1>
           <p className={styles.subtitle}>
-            Observation tables for the practical file. Make any salt, print the
-            writeup. CBSE, ISC, and other boards.
+            Qualitative analysis for any inorganic salt: tests, flowchart, and
+            a table you can print. The scheme Class 12 CBSE students use most.
           </p>
 
           <div className={styles.buttonContainer}>

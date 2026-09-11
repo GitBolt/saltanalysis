@@ -1,7 +1,7 @@
 .page {
   max-width: 800px;
   margin: 0 auto 7rem;
-  padding: 1.5rem 1.25rem 2rem;
+  padding: clamp(5rem, 12vh, 8rem) 1.25rem 2rem;
 }
 
 .page h1 {
@@ -112,7 +112,7 @@
 
 @media (min-width: 768px) {
   .page {
-    padding: 2rem 1.5rem 3rem;
+    padding: clamp(5.5rem, 13vh, 8.5rem) 1.5rem 3rem;
   }
 
   .page h1 {

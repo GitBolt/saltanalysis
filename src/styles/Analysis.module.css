@@ -47,7 +47,7 @@
 /* Notebook like design stuff */
 .notebook {
   max-width: 800px;
-  margin: 1.25rem auto 7.5rem;
+  margin: clamp(3.75rem, 10vh, 6.5rem) auto 7.5rem;
   border-radius: 24px;
   padding: 20px;
   border: 1px solid var(--hairline);

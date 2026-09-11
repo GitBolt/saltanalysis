@@ -1,7 +1,7 @@
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1.25rem 1.25rem 6.5rem;
+  padding: clamp(5rem, 12vh, 8rem) 1.25rem 6.5rem;
   display: flex;
   gap: 2.5rem;
 }
@@ -15,8 +15,8 @@
   flex: 1;
   max-width: 600px;
   position: sticky;
-  top: 1.5rem;
-  height: calc(100vh - 7.5rem);
+  top: clamp(5rem, 12vh, 8rem);
+  height: calc(100vh - 14rem);
 }
 
 .title {
@@ -210,7 +210,7 @@
 
 @media (min-width: 640px) {
   .container {
-    padding: 1.5rem 2rem 7rem;
+    padding: clamp(5.5rem, 13vh, 8.5rem) 2rem 7rem;
   }
 
   .title {
