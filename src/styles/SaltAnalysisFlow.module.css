@@ -96,3 +96,46 @@
     grid-template-columns: 1fr;
   }
 }
+
+.paper {
+  color: #111;
+}
+
+.paper .saltHead,
+.paper .branch {
+  background: #fff;
+  border: 1.5px solid #1a1a1a;
+  box-shadow: none;
+  color: #111;
+}
+
+.paper .card {
+  background: #fff;
+  border: 1.5px solid #1a1a1a;
+  box-shadow: none;
+}
+
+.paper .confirmatory {
+  background: #eef2ff;
+  border-color: #1a1a1a;
+}
+
+.paper .testName {
+  color: #111;
+}
+
+.paper .card p {
+  color: #2424ff;
+}
+
+.paper .card p.badge {
+  color: #111;
+}
+
+.paper .card span {
+  color: #111;
+}
+
+.paper .arrow {
+  color: #555;
+}

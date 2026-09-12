@@ -370,7 +370,11 @@ const Analysis: React.FC<AnalysisProps> = ({
                 </svg>
               </Link>
             </div>
-            <SaltAnalysisFlow anion={anion} cation={cation} />
+            <SaltAnalysisFlow
+              anion={anion}
+              cation={cation}
+              paper={isNotebookTheme}
+            />
           </div>
         )}
 

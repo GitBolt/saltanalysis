@@ -268,18 +268,17 @@ input:checked + .slider:before {
 }
 
 .flowButton {
-  background: #0084FF;
+  background: #2c3e50;
   color: white;
   border: none;
   padding: 1rem 2rem;
   border-radius: 8px;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: background 0.2s ease;
 }
 
 .flowButton:hover {
-  background: #0066CC;
+  background: #1f2d3a;
 }
 
 .flowWrapper {
@@ -288,12 +287,17 @@ input:checked + .slider:before {
 }
 
 /* Add these styles for the light theme */
-.lightTheme .flowButton {
-  background: #2424ff;
+.lightTheme .flowButton,
+.lightTheme .fullscreenButton {
+  background: #f7f7f7;
+  color: #1a1a1a;
+  border: 1.5px solid #1a1a1a;
 }
 
-.lightTheme .flowButton:hover {
-  background: #1a1aff;
+.lightTheme .flowButton:hover,
+.lightTheme .fullscreenButton:hover {
+  background: #ececec;
+  color: #1a1a1a;
 }
 
 .flowHeader {
@@ -339,27 +343,17 @@ input:checked + .slider:before {
 }
 
 .flowButton {
-  background: #0084FF;
+  background: #2c3e50;
   color: white;
   border: none;
   padding: 1rem 2rem;
   border-radius: 8px;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: background 0.2s ease;
 }
 
 .flowButton:hover {
-  background: #0066CC;
-}
-
-/* Add these styles for the light theme */
-.lightTheme .fullscreenButton {
-  background: #2424ff;
-}
-
-.lightTheme .fullscreenButton:hover {
-  background: #1a1aff;
+  background: #1f2d3a;
 }
 
 .subHeading {

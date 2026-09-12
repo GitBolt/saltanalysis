@@ -5,6 +5,7 @@ import { calculateSaltFormula } from "@/utils/formula";
 interface SaltAnalysisFlowProps {
   anion: Ion;
   cation: Ion;
+  paper?: boolean;
 }
 
 const orderedTests = (ion: Ion): Test[] => [
@@ -62,11 +63,12 @@ const Column = ({
 const SaltAnalysisFlow: React.FC<SaltAnalysisFlowProps> = ({
   anion,
   cation,
+  paper = false,
 }) => {
   const formula = calculateSaltFormula(cation, anion);
 
   return (
-    <div className={styles.chart}>
+    <div className={`${styles.chart} ${paper ? styles.paper : ""}`}>
       <div className={styles.saltHead}>Analysis of {formula}</div>
       <div className={styles.arrow} aria-hidden>
         ↓
