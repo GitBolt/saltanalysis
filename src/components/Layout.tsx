@@ -203,8 +203,8 @@ const Layout: React.FC<LayoutProps> = ({
         )}
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@0xBolt" />
-        <meta name="twitter:creator" content="@0xBolt" />
+        <meta name="twitter:site" content="@aabisbuilds" />
+        <meta name="twitter:creator" content="@aabisbuilds" />
         <meta name="twitter:url" content={canonicalUrl} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
